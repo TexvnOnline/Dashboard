@@ -30,3 +30,7 @@ Route::get('/addLugarTuristico',function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/reporteincidentes', function () {
+    return view('reporte_incidente');
+});
