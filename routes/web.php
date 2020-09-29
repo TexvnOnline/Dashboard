@@ -32,7 +32,9 @@ Route::get('/registroObras',function(){
 	return view ('registroObras');
 })->name('registroObras');
 
-
+Route::get('/VistaAutori', function(){
+	return view('VistaAutori');
+})->name('VistaAutori');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

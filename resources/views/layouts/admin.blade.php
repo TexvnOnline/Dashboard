@@ -203,7 +203,12 @@
                 </a>
               </li>
             
-           
+              <li class="nav-item">
+                <a href="{{route('VistaAutori')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Vista de Autoridades</p>
+                </a>
+              </li>
              
           </ul>
 
