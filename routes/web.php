@@ -27,6 +27,12 @@ Route::get('/addLugarTuristico',function(){
     return view('addLugarTuristico');
 })->name('addLugarTuristico');
 
+
+Route::get('/registroObras',function(){
+	return view ('registroObras');
+})->name('registroObras');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
