@@ -10,7 +10,8 @@
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
-                <i class="fas fa-plus-square"></i></button>
+                <i class="fas fa-plus-square"></i>
+            </button>
 
 
 
@@ -73,4 +74,10 @@
         </ul>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+{!! Html::script('adminlte/plugins/chart.js/Chart.min.js') !!}
+{!! Html::script('adminlte/dist/js/demo.js') !!}
+{!! Html::script('adminlte/dist/js/pages/dashboard3.js') !!}
 @endsection
