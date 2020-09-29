@@ -148,16 +148,6 @@
 
 
 
-                        <li class="nav-item has-treeview">
-                            <a href="{{route('reporteincidentes')}}" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>
-                                    Reporte de incidentes
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                        </li>
-
 
 
 
@@ -178,6 +168,17 @@
                                         <p>Incidentes</p>
                                     </a>
                                 </li>
+                            </ul>
+
+
+
+                            <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{route('reporteincidentes')}}" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Reportes</p>
+                                  </a>
+                              </li>
                             </ul>
 
                         </li>
@@ -261,7 +262,7 @@
         </aside>
         <!-- /.control-sidebar -->
     </div>
-    
+
     {!! Html::script('adminlte/plugins/jquery/jquery.min.js') !!}
     <!-- jQuery UI 1.11.4 -->
     {!! Html::script('adminlte/plugins/jquery-ui/jquery-ui.min.js') !!}
