@@ -173,12 +173,12 @@
 
 
                             <ul class="nav nav-treeview">
-                              <li class="nav-item">
-                                  <a href="{{route('reporteincidentes')}}" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Reportes</p>
-                                  </a>
-                              </li>
+                                <li class="nav-item">
+                                    <a href="{{route('reporteincidentes')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Reportes</p>
+                                    </a>
+                                </li>
                             </ul>
 
                         </li>
@@ -186,38 +186,38 @@
 
 
                         <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
-            <p>
-                Part. Ciudadana   
-                <i class="right fas fa-angle-left"></i>
-            </p>
-         
-          </a>
-          
-          <ul class="nav  nav-treeview">
-            <li class="nav-item">
-                <a href="{{route('registroObras')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Registro de Obras </p>
-                </a>
-              </li>
-            
-              <li class="nav-item">
-                <a href="{{route('VistaAutori')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Vista de Autoridades</p>
-                </a>
-              </li>
-             
-          </ul>
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Part. Ciudadana
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
 
-       
+                            </a>
 
-          
+                            <ul class="nav  nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('registroObras')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Registro de Obras </p>
+                                    </a>
+                                </li>
 
-         
-          </li>
+                                <li class="nav-item">
+                                    <a href="{{route('VistaAutori')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Vista de Autoridades</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+
+
+
+
+
+                        </li>
 
 
 
@@ -239,7 +239,7 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1>
-                                @yield('title')
+                               <h1>@yield('title')</h1> 
                             </h1>
                         </div>
                         <div class="col-sm-6">

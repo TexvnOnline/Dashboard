@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/estadodeobra', function () {
+    return view('estadodeobra');
+})->name('estado.obra');
+
+Route::get('/detallesdeobra', function () {
+    return view('detallesdeobra');
+})->name('obra.detalles');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
