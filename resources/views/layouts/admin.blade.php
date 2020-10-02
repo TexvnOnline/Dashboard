@@ -94,7 +94,7 @@
 
 
                         {{-- Ejemplo --}}
-                        {{--  <li class="nav-item has-treeview">
+                        <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
@@ -211,18 +211,29 @@
                                 </li>
 
                             </ul>
+                        </li>
 
 
+                        <!--Menu seguridad-->
+                        <li class="nav-item has-treeview">
+                            <a href="" class="nav-link">
+                                <i class="fas fa-car-crash"></i>
+                                <p>
+                                    Seguridad Ciudadana
+                                <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
 
-
-
-
-                        </li>  --}}
-
-
-
-
-
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('seguridad')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Actividad delictiva</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- /Fin menu seguridad -->
 
                     </ul>
                 </nav>
