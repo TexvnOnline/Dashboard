@@ -15,12 +15,12 @@ class CreateVehiclesTable extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            // crear 
+            $table->unsignedBigInteger('company_id');
             $table->string('driver');
             $table->string('plate');
-            $table->unsignedBigInteger('company_id');
+            $table->softDeletes();
             $table->timestamps();
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('company_id')->references('id')->on('companies')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

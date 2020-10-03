@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title','Gestión de company ')
+@section('title','Gestión de Empresas')
 @section('breadcrumb')
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
 @section('content')
 <div class="card">
 	<div class="card-header">
-	  <h3 class="card-title">Sección de company</h3>
+	  <h3 class="card-title">Sección de Empresas</h3>
 	  <div class="card-tools">
 		<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
 		  <i class="fas fa-minus"></i></button>
@@ -30,15 +30,15 @@
 			<tr>
 				  <th scope="row">{{$company->id}}</td>
                   <td>{{$company->name}}</td>
-                  <td>{{$company->description}}</td>
-			  	{{--  <td width="10px">
-				  <a class="btn btn-default" href="{{route('company.show', $company->id)}}">Ver</a>
-			  	</td>  --}}
+				  <td>{{$company->description}}</td>
+				<td width="10px">
+					<a class="btn btn-info" href="{{route('companies.show', $company)}}">Autos</a>
+				</td>
 			  	<td width="10px">
-					<a class="btn btn-info" href="{{route('companies.edit', $company->id)}}">Editar</a>
+					<a class="btn btn-info" href="{{route('companies.edit', $company)}}">Editar</a>
 				</td>
 				<td width="10px">
-					{!! Form::open(['route'=>['companies.destroy',$company->id], 'method'=>'DELETE']) !!}
+					{!! Form::open(['route'=>['companies.destroy', $company], 'method'=>'DELETE']) !!}
 					<button class="btn btn-danger">Eliminar</button>
 					{!! Form::close() !!}
 				</td>
@@ -46,10 +46,9 @@
 			  @endforeach
 		  </tbody>
 	  </table>
-	{{$companies->render()}}
 	</div>
 	<div class="card-footer">
-	  Footer
+		{{$companies->render()}}
 	</div>
   </div>
 @endsection

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vehicle extends Model
 {
     protected $fillable = [
-        'driver', 'plate', 'company',
+       'company_id','driver', 'plate',
     ];
     public function incidents(){
         return $this->belongsToMany(Incident::class);

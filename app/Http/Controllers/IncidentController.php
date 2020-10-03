@@ -13,32 +13,25 @@ class IncidentController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
-    {
-        $incidents = Incident::orderBy('id', 'DESC')->paginate(10);
-        return view('dashboard.incidentes.index',compact('incidents'));
-    }
+    
     public function create()
     {
-        
-        return view('dashboard.incidentes.create', compact('companies'));
+        return view('dashboard.incidents.create');
     }
     public function store(Request $request)
     {
-        $incident = new Incident($request->all());
-
         if($request->hasfile('image')){
             $image = $request->file('image');
             $name = time().$image->getClientOriginalName();
             $ruta = public_path().'/images';
             $image->move($ruta, $name);
             $urlimage ='/images/'.$name;
-            $incident->image =$urlimage;
         }
-
-        $incident->save();
-        // $incidents  = Incident::create($request->all());
-        return redirect()->route('incidents.index');
+        $incident  = Incident::create($request->all() + 
+        [
+            'image' => $urlimage,
+        ]);
+        return redirect()->route('vehicles.index');
     }
     public function show(Incident $incident)
     {
@@ -46,22 +39,17 @@ class IncidentController extends Controller
     }
     public function edit(Incident $incident)
     {
-        return view('dashboard.incidentes.edit', compact('incident'));
+        return view('dashboard.incidents.edit', compact('incident'));
     }
     public function update(Request $request, Incident $incident)
     {
         
         $incident->fill($request->all())->save(); 
-        return redirect()->route('incidents.index'); 
+        return redirect()->route('vehicles.index'); 
     }
     public function destroy(Incident $incident)
     {
         $incident->delete();
-        return redirect()->route('incidents.index'); 
-    }
-
-    public function empresa(){
-
-        $incidents = Incident::orderBy('id', 'DESC')->paginate(10);
+        return redirect()->route('vehicles.index'); 
     }
 }

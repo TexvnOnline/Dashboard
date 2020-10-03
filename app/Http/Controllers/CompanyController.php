@@ -3,18 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use Illuminate\Auth\SessionGuard;
 use Illuminate\Http\Request;
+use Session;
 
 class CompanyController extends Controller
 {
     public function index()
     {
         $companies = Company::orderBy('id', 'DESC')->paginate(10);
-        return view('dashboard.company.index',compact('companies'));
+        return view('dashboard.companies.index',compact('companies'));
     }
     public function create()
     {
-        return view('dashboard.company.create');
+        return view('dashboard.companies.create');
     }
     public function store(Request $request)
     {
@@ -23,21 +25,21 @@ class CompanyController extends Controller
     }
     public function show(Company $company)
     {
-        //
+        Session::put('company_id',$company->id);
+        return redirect()->route('vehicles.index', compact('company'));
     }
-    public function edit(Company $vehiculo)
+    public function edit(Company $company)
     {
-        return view('dashboard.company.edit', compact('vehiculo'));
+        return view('dashboard.companies.edit', compact('company'));
     }
-    public function update(Request $request, Company $vehiculo)
+    public function update(Request $request, Company $company)
     {
-        
-        $vehiculo->fill($request->all())->save(); 
+        $company->fill($request->all())->save(); 
         return redirect()->route('companies.index'); 
     }
-    public function destroy(Company $vehiculo)
+    public function destroy(Company $company)
     {
-        $vehiculo->delete();
+        $company->delete();
         return redirect()->route('companies.index'); 
     }
 }

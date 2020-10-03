@@ -12,16 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('company', 'CompanyController')->names('companies');
+Route::resource('vehicle', 'VehicleController')->names('vehicles');
 
-Route::resource('/incidentes/vehiculos', 'VehicleController')->names('vehicle');
+Route::resource('incident', 'IncidentController')->names('incidents');
+// Route::get('incident', 'IncidentController@empresa')->name('incidents.company');
 
-Route::resource('reporte-de-incidentes/incident', 'IncidentController')->names('incidents');
-
-
-Route::get('incident/empresa', 'IncidentController@empresa')->name('incidents.empresa');
-
-
-Route::resource('empresas', 'CompanyController')->names('companies');
 
 
 

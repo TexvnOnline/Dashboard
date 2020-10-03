@@ -1,6 +1,5 @@
 
 {!! Form::hidden('user_id', auth()->user()->id) !!}
-
 <div class="from-group">
     {!! Form::label('title','Titulo') !!}
     {!! Form::text('title', null, ['class'=>'form-control']) !!}
@@ -10,8 +9,11 @@
     {!! Form::textarea('description', null, ['class'=>'form-control']) !!}
 </div>
 <div class="from-group">
-    {!! Form::label('image','foto') !!}
-    {!! Form::file('image', null, ['class'=>'form-control']) !!}
+    {!! Form::label('image','Imagen de incidente') !!} <br>
+    {!! Form::file('image') !!}
+    <small class="form-text text-muted">
+        Solo archivos de imágenes de dimensiones 270x414 px.
+    </small>
 </div>
 
 
