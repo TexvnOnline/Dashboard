@@ -14,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resource('company', 'CompanyController')->names('companies');
 Route::resource('vehicle', 'VehicleController')->names('vehicles');
-
 Route::resource('incident', 'IncidentController')->names('incidents');
-// Route::get('incident', 'IncidentController@empresa')->name('incidents.company');
 
+Route::get('dashboard/incident', 'IncidentBoardController@incident')->name('dashboard.incidents');
 
 
 
