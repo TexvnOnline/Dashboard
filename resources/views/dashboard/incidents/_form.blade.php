@@ -16,4 +16,13 @@
     </small>
 </div>
 
-
+<div class="form-group">
+    {!! Form::label('vehicles', 'Vehículos involucrados') !!}
+    <div>
+        @foreach ($vehicles as $vehicle)
+            <label> 
+                {!! Form::checkbox('vehicles[]', $vehicle->id) !!} {{$vehicle->plate}}   
+            </label>
+        @endforeach
+    </div>
+</div>
