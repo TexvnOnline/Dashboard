@@ -93,6 +93,54 @@
                with font-awesome or any other icon font library -->
 
 
+
+
+                        {{--  INCIDENTES DE TRANCITO  --}}
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-car-crash"></i>
+                                <p>
+                                    Incidentes
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{route('dashboard.incidents')}}" class="nav-link">
+                                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                                        <p>Panel</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{route('companies.index')}}" class="nav-link">
+                                        <i class="far fa-building nav-icon"></i>
+                                        <p>Empresas</p>
+                                    </a>
+                                </li>
+
+                                {{--  <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lista</p>
+                                    </a>
+                                </li>  --}}
+
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
                         {{-- Ejemplo --}}
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
@@ -220,7 +268,7 @@
                                 <i class="fas fa-car-crash"></i>
                                 <p>
                                     Seguridad Ciudadana
-                                <i class="right fas fa-angle-left"></i>
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
 
@@ -250,7 +298,7 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1>
-                               <h1>@yield('title')</h1> 
+                                <h1>@yield('title')</h1>
                             </h1>
                         </div>
                         <div class="col-sm-6">

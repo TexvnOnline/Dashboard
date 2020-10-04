@@ -31,14 +31,14 @@ class IncidentController extends Controller
             $image->move($ruta, $name);
             $urlimage ='/images/'.$name;
         }
-        $incident->$urlimage;
+        $incident->image =  $urlimage;
         $incident->save();
         $incident->vehicles()->attach($request->get('vehicles'));
         return redirect()->route('vehicles.index');
     }
     public function show(Incident $incident)
     {
-        //
+        return view('dashboard.incidents.show', compact('incident'));
     }
     public function edit(Incident $incident)
     {

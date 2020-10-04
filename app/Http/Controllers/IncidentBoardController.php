@@ -11,6 +11,6 @@ class IncidentBoardController extends Controller
     public function incident()
     {
         $incidents = Incident::with('vehicles','user','vehicles.company')->get();
-        return view('dashboard.vehicles.dashboard');
+        return view('dashboard.vehicles.dashboard', compact('incidents'));
     }
 }
