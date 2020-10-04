@@ -17,9 +17,10 @@ class CreateIncidentVehicleTable extends Migration
             $table->id();
             $table->unsignedBigInteger('incident_id');
             $table->unsignedBigInteger('vehicle_id');
+            $table->softDeletes();
             $table->timestamps();
-            $table->foreign('incident_id')->references('id')->on('incidents');
-            $table->foreign('vehicle_id')->references('id')->on('vehicles');
+            $table->foreign('incident_id')->references('id')->on('incidents')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

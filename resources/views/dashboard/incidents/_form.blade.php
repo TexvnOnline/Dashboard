@@ -8,6 +8,12 @@
     {!! Form::label('description','Descripción') !!}
     {!! Form::textarea('description', null, ['class'=>'form-control']) !!}
 </div>
+
+<div class="form-group">
+    {!! Form::label('type','Tipo de incidente') !!}  
+    {!! Form::select('type', getArrayTypes(),null, ['class'=>'form-control']) !!}
+</div> 
+
 <div class="from-group">
     {!! Form::label('image','Imagen de incidente') !!} <br>
     {!! Form::file('image') !!}
