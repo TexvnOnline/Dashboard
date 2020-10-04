@@ -19,7 +19,9 @@ Route::resource('incident', 'IncidentController')->names('incidents');
 Route::get('dashboard/incident', 'IncidentBoardController@incident')->name('dashboard.incidents');
 
 
-
+Route::get('/detalleturistalugar', function () {
+    return view('detalleturistalugar');
+})->name('detalleturistalugar');
 
 
  Route::get('/estadodeobra', function () {

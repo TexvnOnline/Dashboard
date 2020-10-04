@@ -187,6 +187,13 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Agregar lugar</p>
                                     </a>
+
+                                    <li class="nav-item">
+                                    <a href="{{route('detalleturistalugar')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Detalle de Lugar turistico</p>
+                                    </a>
+                                </li>
                                 </li>
                             </ul>
                         </li>
