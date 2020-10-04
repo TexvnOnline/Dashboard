@@ -65,3 +65,20 @@ Auth::routes();
  Route::get('/reporteincidentes', function () {
      return view('reporte_incidente');
  })->name('reporteincidentes');
+
+ Route::get('/vista_registro_rutas',function()
+ {
+
+ 	return view('vista_registro_rutas');
+
+
+ })->name('vista_registro_rutas');
+
+
+  Route::get('/registro_rutas',function()
+ {
+
+ 	return view('registro_rutas');
+
+
+ })->name('registro_rutas');

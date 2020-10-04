@@ -235,7 +235,53 @@
                         </li>
                         <!-- /Fin menu seguridad -->
 
+
+
+
+                        <!-- Inicio Menu de Rutas de Transporte-->
+                        <li class="nav-item has-treeview">
+
+                        <a href="" class="nav-link">
+                             <i class="fas fa-taxi"></i>
+                             <p>
+
+                                Rutas de Transporte
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+
+                        </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Inicio</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('vista_registro_rutas')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Registro</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+
+
+
                     </ul>
+
+
+
+
+
+
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
