@@ -83,3 +83,12 @@ Auth::routes();
 
 
  })->name('registro_rutas');
+
+
+  Route::get('/inicio_rutas_trans',function()
+ {
+
+    return view('inicio_rutas_trans');
+
+
+ })->name('inicio_rutas_trans');
