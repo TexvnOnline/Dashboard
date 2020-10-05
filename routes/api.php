@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('incidents', 'IncidentBoardController@incident');
+Route::get('dashboard/incident', 'Api\IncidentController@graphic');

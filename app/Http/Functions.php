@@ -11,6 +11,8 @@
             '4'=>'Maltrato psicológico y fisco del conductor',
             '5'=>'Accidentes de tránsito',
         ];
+        dd($a);
         return $a;
+
     }
 ?>
