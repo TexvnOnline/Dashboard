@@ -189,9 +189,33 @@
                                     </a>
 
                                     <li class="nav-item">
-                                    <a href="{{route('detalleturistalugar')}}" class="nav-link">
+                                    <a href="{{route('eventos')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Detalle de Lugar turistico</p>
+                                        <p>Eventos</p>
+                                    </a>
+
+                                    <li class="nav-item">
+                                    <a href="{{route('detallesderestaurantes')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Restaurantes</p>
+                                    </a>
+
+                                    <li class="nav-item">
+                                    <a href="{{route('nuevorestaurante')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agregar Restaurantes</p>
+                                    </a>
+
+                                    <li class="nav-item">
+                                    <a href="{{route('Hospedaje')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Hospedajes</p>
+                                    </a>
+
+                                    <li class="nav-item">
+                                    <a href="{{route('addHospedaje')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agregar Hospedajes</p>
                                     </a>
                                 </li>
                                 </li>
