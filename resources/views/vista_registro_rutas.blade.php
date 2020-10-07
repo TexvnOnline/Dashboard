@@ -1,4 +1,8 @@
 @extends('layouts.admin')
+
+@section('breadcrumb')
+<li class="breadcrumb-item active">@yield('title')</li>
+@endsection
 @section('content')
 
 <h1>Empresas</h1>
@@ -34,18 +38,28 @@
             <tr>
               
                 <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td><img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" alt="" height="70px"></td>
-                <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
+                <td>Huancayo</td>
+                <td>Rojo</td>
+                
+                <td>435</td>
+                <td>S/.1,500</td>
+                <td>Celular</td>
+                <td>Facebook</td>
+                <td><button type="submit" class="btn btn-outline-info">Editar</button></td>
+                <td><button type="submit" class="btn btn-outline-danger">Ver Ruta</button></td>
             </tr>
             <tr>
                 
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td><img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" alt="" height="70px"></td>
-                <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
+                <td>Jose</td>
+                <td>Huancayo</td>
+                <td>Verde</td>
+                
+                <td>460</td>
+                <td>S/.1,800</td>
+                <td>Celular</td>
+                <td>Facebook</td>
+                 <td><button type="submit" class="btn btn-outline-info">Editar</button></td>
+                <td><button type="submit" class="btn btn-outline-danger">Ver Ruta</button></td>
             </tr>
             
         </tbody>

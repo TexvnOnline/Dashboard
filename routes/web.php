@@ -22,10 +22,31 @@ Route::resource('incident', 'IncidentController')->names('incidents');
 
 Route::get('dashboard/incident', 'IncidentBoardController@incident')->name('dashboard.incidents');
 
+Route::get('/TuristaCiudad', function () {
+    return view('TuristaCiudad');
+})->name('TuristaCiudad');
 
-Route::get('/detalleturistalugar', function () {
-    return view('detalleturistalugar');
-})->name('detalleturistalugar');
+
+Route::get('/addHospedaje', function () {
+    return view('addHospedaje');
+})->name('addHospedaje');
+
+Route::get('/Hospedaje', function () {
+    return view('Hospedaje');
+})->name('Hospedaje');
+
+Route::get('/nuevorestaurante', function () {
+    return view('nuevorestaurante');
+})->name('nuevorestaurante');
+
+Route::get('/detallesderestaurantes', function () {
+    return view('detallesderestaurantes');
+})->name('detallesderestaurantes');
+
+
+Route::get('/eventos', function () {
+    return view('eventos');
+})->name('eventos');
 
 
  Route::get('/estadodeobra', function () {
@@ -87,3 +108,12 @@ Auth::routes();
 
 
  })->name('registro_rutas');
+
+
+  Route::get('/inicio_rutas_trans',function()
+ {
+
+    return view('inicio_rutas_trans');
+
+
+ })->name('inicio_rutas_trans');
