@@ -11,8 +11,22 @@
             '4'=>'Maltrato psicológico y fisco del conductor',
             '5'=>'Accidentes de tránsito',
         ];
-        dd($a);
         return $a;
-
     }
+    function getProvinces(){
+        $a = [
+            '0'=>'Huancayo',
+            '1'=>'Chupaca',
+        ];
+        return $a;
+    }
+
+    function getDistricts(){
+        $a = [
+            '0'=>'Huancayo',
+            '1'=>'tambo',
+        ];
+        return $a;
+    }
+    
 ?>

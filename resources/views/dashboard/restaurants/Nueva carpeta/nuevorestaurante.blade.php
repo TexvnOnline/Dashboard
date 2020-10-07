@@ -3,7 +3,7 @@
 <h1>Agregar Restaurante</h1>
 <div class="row justify-content-center">
     <div class="col-sm-10 ">
-    <form>
+    <form> 
         <div class="form-row">
             <div class="form-group col-md-6">
             <label for="inputEmail4">Nombre </label>

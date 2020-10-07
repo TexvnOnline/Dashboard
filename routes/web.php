@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('restaurants', 'RestaurantController')->names('restaurants');
+Route::get('dashboard/restaurant', 'RestaurantController@dashboard')->name('restaurants.dashboard');
+
+
 Route::resource('park', 'ParkController')->names('parks');
 Route::get('dashboard/park', 'ParkController@dashboard')->name('parks.dashboard');
 
