@@ -1,26 +1,56 @@
 @extends('layouts.admin')
-<style type="text/css">
-	
-.map-container{
 
-padding-bottom:30%;
-position:relative;
-height:0;
-}
-.map-container iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
-}
-</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 60%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 60%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+    	
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -12.0484232, lng: -75.2376588 },
+          zoom: 11,
+        });
+        var huancayo={lat:-12.068546, lng:-75.212144};
+        var huanca={lat:-12.067622,  lng:-75.208324};
+       var marker=new google.maps.Marker(
+       {
+       	position:huancayo,
+       	map: map
+       });
+
+       var marker=new google.maps.Marker(
+       {
+       	position:huanca,
+       	map: map
+       });
+      }
+    </script>
 @section('content')
 
-<div id="map-container-google-1" class="z-depth-1-half map-container ">
+<!--<div id="map-container-google-1" class="z-depth-1-half map-container ">
   <iframe src="https://maps.google.com/maps?q=huancayo&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
     style="border:0" allowfullscreen></iframe>
-</div>
+</div>-->
+<div id="map"></div>
  <div class="row">
         <div class="col-sm-2 col-md-7">
             <H3>Empresa</H3>
