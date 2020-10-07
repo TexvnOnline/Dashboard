@@ -92,9 +92,31 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tree"></i>
+                                <p>
+                                    Parques
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                                        <p>Panel</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('parks.index')}}" class="nav-link">
+                                        <i class="far fa-building nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-
-
+                        
                         {{--  INCIDENTES DE TRANCITO  --}}
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
@@ -188,15 +210,15 @@
                                         <p>Agregar lugar</p>
                                     </a>
 
-                                    <li class="nav-item">
+                                <li class="nav-item">
                                     <a href="{{route('detalleturistalugar')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Detalle de Lugar turistico</p>
                                     </a>
                                 </li>
-                                </li>
-                            </ul>
                         </li>
+                    </ul>
+                    </li>
 
 
 
@@ -207,125 +229,125 @@
 
 
 
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-car-crash"></i>
-                                <p>
-                                    Transporte
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
+                    <li class="nav-item has-treeview">
+                        <a href="" class="nav-link">
+                            <i class="fas fa-car-crash"></i>
+                            <p>
+                                Transporte
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
 
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('incidentes')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Incidentes</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('reporteincidentes')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Reportes</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </li>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('incidentes')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Incidentes</p>
+                                </a>
+                            </li>
+                        </ul>
 
 
 
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>
-                                    Part. Ciudadana
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('reporteincidentes')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Reportes</p>
+                                </a>
+                            </li>
+                        </ul>
 
-                            </a>
-
-                            <ul class="nav  nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('registroObras')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Registro de Obras </p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{route('VistaAutori')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Vista de Autoridades</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-
-                        <!--Menu seguridad-->
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-car-crash"></i>
-                                <p>
-                                    Seguridad Ciudadana
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('seguridad')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Actividad delictiva</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- /Fin menu seguridad -->
+                    </li>
 
 
 
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Part. Ciudadana
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
 
-                        <!-- Inicio Menu de Rutas de Transporte-->
-                        <li class="nav-item has-treeview">
+                        </a>
+
+                        <ul class="nav  nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('registroObras')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registro de Obras </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('VistaAutori')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Vista de Autoridades</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                    <!--Menu seguridad-->
+                    <li class="nav-item has-treeview">
+                        <a href="" class="nav-link">
+                            <i class="fas fa-car-crash"></i>
+                            <p>
+                                Seguridad Ciudadana
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('seguridad')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Actividad delictiva</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- /Fin menu seguridad -->
+
+
+
+
+                    <!-- Inicio Menu de Rutas de Transporte-->
+                    <li class="nav-item has-treeview">
 
                         <a href="" class="nav-link">
-                             <i class="fas fa-taxi"></i>
-                             <p>
+                            <i class="fas fa-taxi"></i>
+                            <p>
 
                                 Rutas de Transporte
                                 <i class="right fas fa-angle-left"></i>
                             </p>
 
                         </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Inicio</p>
-                                    </a>
-                                </li>
-                            </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Inicio</p>
+                                </a>
+                            </li>
+                        </ul>
 
 
 
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('vista_registro_rutas')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Registro</p>
-                                    </a>
-                                </li>
-                            </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('vista_registro_rutas')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registro</p>
+                                </a>
+                            </li>
+                        </ul>
 
-                        </li>
+                    </li>
 
 
 
@@ -424,8 +446,8 @@
     <!-- Sparkline -->
     {!! Html::script('adminlte/plugins/sparklines/sparkline.js') !!}
     <!-- JQVMap -->
-    {!! Html::script('adminlte/plugins/jqvmap/jquery.vmap.min.js') !!}
-    {!! Html::script('adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js') !!}
+    {{--  {!! Html::script('adminlte/plugins/jqvmap/jquery.vmap.min.js') !!}  --}}
+    {{--  {!! Html::script('adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js') !!}  --}}
     <!-- jQuery Knob Chart -->
     {!! Html::script('adminlte/plugins/jquery-knob/jquery.knob.min.js') !!}
     <!-- daterangepicker -->
@@ -440,9 +462,16 @@
     <!-- AdminLTE App -->
     {!! Html::script('adminlte/dist/js/adminlte.js') !!}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    {!! Html::script('adminlte/dist/js/pages/dashboard.js') !!}
+    {{--  {!! Html::script('adminlte/dist/js/pages/dashboard.js') !!}  --}}
     <!-- AdminLTE for demo purposes -->
     {!! Html::script('adminlte/dist/js/demo.js') !!}
+
+    {!! Html::script('https://maps.googleapis.com/maps/api/js?key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA') !!}
+
+
+    {{--  PRUEBA  --}}
+    
+
     @yield('scripts')
 </body>
 

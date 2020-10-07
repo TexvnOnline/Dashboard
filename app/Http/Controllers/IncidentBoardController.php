@@ -13,10 +13,21 @@ class IncidentBoardController extends Controller
     public function incident()
     {
 
+       
+        $companiesId = Company::count();
+        
+        // foreach ($companiesId as $companieId) {
+        //     $companieId;
+        //     dd($companieId);
+        // }
+        // for ($i=0; $i < $companiesId; $i++) { 
+        //     $asdadsa = Incident::where('id', $i)->get();
+        //     dd($asdadsa);
+        // }
 
+// =================================================
+        
         $companies = Company::pluck('name')->toArray();
-    
-        // $companiesIncidents = Company::
 
         $incidents0 = Incident::where('type', 0)->count();
         $incidents1 = Incident::where('type', 1)->count();
