@@ -5,7 +5,57 @@
 @endsection
 @section('content')
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 60%;
+      }
 
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 60%;
+        margin: 0px;
+        padding: 0;
+      }
+    </style>
+    <script>
+      
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -12.0484232, lng: -75.2376588 },
+          zoom: 12,
+        });
+        var huancayo={lat:-12.068546, lng:-75.212144};
+        var huanca={lat:-12.070835,  lng:-75.204644};
+
+       var marker=new google.maps.Marker(
+       {
+        position:huancayo,
+        map: map
+       });
+
+      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+       var marker=new google.maps.Marker(
+       {
+        position:huanca,
+        map: map,
+        icon: iconBase + 'parking_lot_maps.png'
+       });
+      }
+
+    </script>
+@section('content')
+
+<div id="map"></div>
 <h5 class="mt-4 mb-2">Detalle delitos</h5>
 
 <div class="row">
@@ -126,9 +176,6 @@
 @endsection
 
 @section('scripts')
-{!! Html::script('adminlte/dist/js/pages/dashboard2.js') !!}
-{!! Html::script('adminlte/plugins/raphael/raphael.min.js') !!}
-{!! Html::script('adminlte/plugins/jquery-mapael/jquery.mapael.min.js') !!}
-{!! Html::script('adminlte/plugins/jquery-mapael/maps/usa_states.min.js') !!}
+
 @endsection
 
