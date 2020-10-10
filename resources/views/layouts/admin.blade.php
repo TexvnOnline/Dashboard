@@ -193,7 +193,7 @@
                             <a href="{{route('turismo')}}" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
-                                    Lugares Turísticos
+                                   Identidad Cultural
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -208,14 +208,6 @@
                                     <a href="{{route('addLugarTuristico')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Agregar lugar</p>
-                                    </a>
-
-
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Eventos</p>
                                     </a>
 
                                     <li class="nav-item">
@@ -241,6 +233,15 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Agregar Hospedajes</p>
                                     </a>
+
+                                    
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Eventos</p>
+                                    </a>
+
                                 </li>
                         </li>
                     </ul>
@@ -375,6 +376,58 @@
                         </ul>
 
                     </li>
+
+                 <!-- Inicio Menu Turista y Ciudad -->
+
+                 <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Turista y la Ciudad
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('TuristaCiudad')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>lugar Turistico</p>
+                                    </a>
+                               
+                                    <li class="nav-item">
+                                    <a href="{{route('addlugarturistica')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agregar Lugar Turistico</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{route('addfotografia')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agregar Fotografia</p>
+                                    </a>
+                                </li>
+                            
+                                <li class="nav-item">
+                                    <a href="{{('addanimacion')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agregar Animacion</p>
+                                    </a>
+                                </li>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{('resumen')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Resumen</p>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+
+
+
 
 
 

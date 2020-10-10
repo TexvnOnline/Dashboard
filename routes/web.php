@@ -27,6 +27,22 @@ Route::resource('incident', 'IncidentController')->names('incidents');
 
 Route::get('dashboard/incident', 'IncidentBoardController@incident')->name('dashboard.incidents');
 
+Route::get('/resumen', function () {
+    return view('resumen');
+})->name('resumen');
+
+Route::get('/addanimacion', function () {
+    return view('addanimacion');
+})->name('addanimacion');
+
+Route::get('/addfotografia', function () {
+    return view('addfotografia');
+})->name('addfotografia');
+
+Route::get('/addlugarturistica', function () {
+    return view('addlugarturistica');
+})->name('addlugarturistica');
+
 Route::get('/TuristaCiudad', function () {
     return view('TuristaCiudad');
 })->name('TuristaCiudad');

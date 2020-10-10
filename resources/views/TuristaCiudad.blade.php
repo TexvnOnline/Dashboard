@@ -17,7 +17,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Descripción</th>
             <th scope="col">Distrito</th>
-            <th scope="col">Fotografía</th>
+            <th scope="col">Fecha y Hora</th>
             <th scope="col"></th>
             </tr>
         </thead>
@@ -27,7 +27,7 @@
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
-                <td><img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" alt="" height="70px"></td>
+                <td></td>
                 <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
             </tr>
             <tr>
@@ -35,7 +35,7 @@
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>@fat</td>
-                <td><img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" alt="" height="70px"></td>
+                <td></td>
                 <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
             </tr>
             <tr>
@@ -43,7 +43,7 @@
                 <td>Larry</td>
                 <td>the Bird</td>
                 <td>@twitter</td>
-                <td><img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" alt="" height="70px"></td>
+                <td></td>
                 <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
             </tr>
             <tr>
@@ -51,33 +51,10 @@
                 <td>Larry</td>
                 <td>the Bird</td>
                 <td>@twitter</td>
-                <td><img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" alt="" height="70px"></td>
+                <td></td>
                 <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
             </tr>
-            <tr>
-                <th scope="row">5</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td><img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" alt="" height="70px"></td>
-                <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
-            </tr>
-            <tr>
-                <th scope="row">6</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td><img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" alt="" height="70px"></td>
-                <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
-            </tr>
-            <tr>
-                <th scope="row">7</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td><img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" alt="" height="70px"></td>
-                <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
-            </tr>
+           
         </tbody>
         </table>
     </div>
