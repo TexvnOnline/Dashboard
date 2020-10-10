@@ -13,9 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+
+
+
+Route::resource('sensor', 'SensorController')->names('sensors');
+Route::put('dashboard/sensor/active/{sensor}', 'SensorController@active')->name('parks.active');
+
+// UNO
 Route::resource('restaurants', 'RestaurantController')->names('restaurants');
 Route::get('dashboard/restaurant', 'RestaurantController@dashboard')->name('restaurants.dashboard');
 
+//hoteles
+Route::resource('hotels', 'HotelController')->names('hotels');
+
+// Route::get('dashboard/hotels', 'HotelController@dashboard')->name('restaurants.dashboard');
+//hoteles fin
 
 Route::resource('park', 'ParkController')->names('parks');
 Route::get('dashboard/park', 'ParkController@dashboard')->name('parks.dashboard');

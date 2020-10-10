@@ -44,41 +44,20 @@
                         }}</span>
                         <span>Incidentes a lo largo del tiempo</span>
                     </p>
-                    {{--  <p class="ml-auto d-flex flex-column text-right">
-                        <span class="text-success">
-                            <i class="fas fa-arrow-up"></i> 12.5%
-                        </span>
-                        <span class="text-muted">Último mes</span>
-                    </p>  --}}
                 </div>
                 <div class="position-relative mb-4">
-
-                    {{--  GRAFICA  --}}
-                    {{--  <canvas id="visitors-chart" height="200"></canvas>  --}}
-
-
                     <canvas id="myChart" height="100"></canvas>
-
                 </div>
                 <div class="d-flex flex-row justify-content-end">
-                    {{--  <span class="mr-2">
-                        <i class="fas fa-square text-primary"></i> Esta semana
-                    </span>
-
-                    <span>
-                        <i class="fas fa-square text-gray"></i> Semana pasada
-                    </span>  --}}
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="card-body">
                 <table id="example" class="table table-striped table-bordered">
-                    
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-
                             <th>Empresa</th>
                             <th>Informante</th>
                             <th>Titulo</th>
@@ -99,18 +78,9 @@
                             <td>{{$incident->title}}</td>
                             <td>{{$incident->description}}</td>
                             <td class="text-center">
-                                {{--  {!! Form::open(['route'=>['incidents.destroy',$incident], 'method'=>'DELETE']) !!}  --}}
-
                                 <a class="btn btn-info btn-sm" href="{{route('incidents.show', $incident)}}">
                                     <i class="far fa-eye"></i> Ver detalles de incidente
                                 </a>
-                                {{--  <a class="btn btn-default btn-sm" href="{{route('incidents.edit', $incident)}}">
-                                <i class="far fa-edit"></i>
-                                </a> --}}
-                                {{--  <button class="btn btn-default btn-sm">
-                            <i class="far fa-trash-alt"></i>
-                        </button>  --}}
-                                {{--  {!! Form::close() !!}  --}}
                             </td>
                         </tr>
                         @endforeach
