@@ -7,79 +7,60 @@ use Illuminate\Http\Request;
 
 class HotelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $hotels = Hotel::orderBy('id', 'DESC')->paginate(10);
+        return view('dashboard.hotels.index',compact('hotels'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('dashboard.hotels.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $hotel = new Hotel($request->all());
+        if($request->hasfile('image')){
+            $image = $request->file('image');
+            $name = time().$image->getClientOriginalName();
+            $ruta = public_path().'/images';
+            $image->move($ruta, $name);
+            $urlimage ='/images/'.$name;
+        }
+        $hotel->image =  $urlimage;
+        $hotel->save();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Hotel  $hotel
-     * @return \Illuminate\Http\Response
-     */
+        return redirect()->route('hotels.index');
+    }
     public function show(Hotel $hotel)
     {
-        //
+       
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Hotel  $hotel
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Hotel $hotel)
     {
-        //
+        return view('dashboard.hotels.edit', compact('hotel'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hotel  $hotel
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Hotel $hotel)
     {
-        //
+        $hotel->fill($request->all()); 
+        if($request->hasfile('image')){
+            $image = $request->file('image');
+            $name = time().$image->getClientOriginalName();
+            $ruta = public_path().'/images';
+            $image->move($ruta, $name);
+            $urlimage ='/images/'.$name;
+        }
+        if ($request->hasFile('image')){
+            $hotel->image =  $urlimage;
+        }
+        $hotel->save();
+        return redirect()->route('hotels.index'); 
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Hotel  $hotel
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Hotel $hotel)
     {
-        //
+        if(file_exists(public_path('/images/'. $hotel->image))){
+            unlink(public_path('/images/'. $hotel->image));
+        }
+        $hotel->delete();
+        return redirect()->route('hotels.index'); 
     }
 }

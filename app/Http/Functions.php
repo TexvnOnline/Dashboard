@@ -28,5 +28,15 @@
         ];
         return $a;
     }
+
+    function getSensorTypes(){
+        $a = [
+            '0'=>'Humedad',
+            '1'=>'Radiación',
+            '2'=>'Ruido',
+        ];
+        return $a;
+    }
+    
     
 ?>

@@ -3,23 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Park;
+use App\Sensor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
+use Session;
 
 class ParkController extends Controller
 {
     public function dashboard()
     {
+        $parks = Park::get();
         // $markers = Park::get(['name','latitude', 'length'])->toJson();
 
-        $markers = Park::get(['name','description','latitude', 'length'])->toArray();
+        $markers = Park::get(['id','name','description','latitude', 'length'])->toArray();
         // $markers->toString();
         // $markers = Arr::only($data,['name','direction','latitude', 'length']);
 
         
         $parksCount = Park::count();
-        return view('dashboard.parks.dashboard',compact('markers','parksCount'));
+        return view('dashboard.parks.dashboard',compact('parks','markers','parksCount'));
         // return view('dashboard.parks.dashboard',compact('parks'))->with('markers',json_encode($markers,JSON_NUMERIC_CHECK));;
     }
 
@@ -51,7 +54,11 @@ class ParkController extends Controller
     }
     public function show(Park $park)
     {
-        return view('dashboard.parks.show', compact('park'));
+        Session::put('park_id',$park->id);
+
+        $sensors = Sensor::where('park_id', $park->id)->orderBy('id', 'DESC')->paginate(10);
+
+        return view('dashboard.parks.show', compact('park','sensors'));
     }
     public function edit(Park $park)
     {
