@@ -29,11 +29,10 @@
 </div>
 
 <div class="from-group">
-    {!! Form::label('Date','Fecha') !!}
-    {!! Form::number('Date', null, ['class'=>'form-control']) !!}
+    {!! Form::label('date','Fecha') !!}
+    {!! Form::date('date', null, ['class'=>'form-control']) !!}
 </div>
-
 <div class="from-group">
-    {!! Form::label('Time','Hora') !!}
-    {!! Form::number('Time', null, ['class'=>'form-control']) !!}
+    {!! Form::label('time','Hora') !!}
+    {!! Form::datetime('time', null, ['class'=>'form-control']) !!}
 </div>

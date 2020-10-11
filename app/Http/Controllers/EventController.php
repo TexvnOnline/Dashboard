@@ -21,6 +21,7 @@ class EventController extends Controller
     }
     public function store(Request $request)
     {
+        
         $event = new Event($request->all());
         if($request->hasfile('image')){
             $image = $request->file('image');
@@ -29,9 +30,8 @@ class EventController extends Controller
             $image->move($ruta, $name);
             $urlimage ='/images/'.$name;
         }
-        $event->image =  $urlimage;
+        $event->image = $urlimage;
         $event->save();
-
         return redirect()->route('events.index');
     }
     public function show(Event $event)
@@ -44,7 +44,8 @@ class EventController extends Controller
     }
     public function update(Request $request, Event $event)
     {
-        $event->fill($request->all()); 
+        $event->fill($request->all());
+         
         if($request->hasfile('image')){
             $image = $request->file('image');
             $name = time().$image->getClientOriginalName();

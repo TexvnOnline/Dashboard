@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('dashboard/incident', 'Api\IncidentController@graphic');
+
+Route::get('hospedajes22', 'Api\HotelController@getHotels');

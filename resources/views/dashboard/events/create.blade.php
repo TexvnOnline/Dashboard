@@ -17,7 +17,7 @@
 		  <i class="fas fa-times"></i></button>
 	  </div>
     </div>
-    {!! Form::open(['route'=>'events.store', 'method'=>'POST', 'file'=>true]) !!}
+    {!! Form::open(['route'=>'events.store', 'method'=>'POST', 'files'=>true]) !!}
 	<div class="card-body ">
         @include('dashboard.events._form')
 	</div>

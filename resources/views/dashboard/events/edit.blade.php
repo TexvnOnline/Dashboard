@@ -17,7 +17,7 @@
 		  <i class="fas fa-times"></i></button>
 	  </div>
     </div>
-    {!! Form::model($event, ['route'=>['events.update',$event],'method'=>'PUT']) !!}
+    {!! Form::model($event, ['route'=>['events.update',$event],'method'=>'PUT', 'files'=>true]) !!}
 	<div class="card-body ">
 		@include('dashboard.events._form')
 	</div>

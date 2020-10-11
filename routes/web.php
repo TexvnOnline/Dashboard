@@ -38,6 +38,9 @@ Route::resource('hotels', 'HotelController')->names('hotels');
 Route::resource('events', 'EventController')->names('events');
 
 
+Route::get('cultural_identity', 'CulturalIdentityController@dashboard')->name('culturalIdentity.dashboard');
+
+
 // Route::get('dashboard/hotels', 'HotelController@dashboard')->name('restaurants.dashboard');
 //eventos fin
 
