@@ -1,15 +1,15 @@
 @extends('layouts.admin')
-@section('title','....')
+@section('title','Editar Hotel')
 @section('breadcrumb')
 <li class="breadcrumb-item active">
-    <a href="{{route('hotels.index')}}">.....</a>
+    <a href="{{route('hotels.index')}}">Hotel</a>
 </li>
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">....{{$hotel->name}}</h3>
+        <h3 class="card-title">Hotel{{$hotel->name}}</h3>
         {{--  <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                 title="Collapse">

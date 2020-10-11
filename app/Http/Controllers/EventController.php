@@ -7,79 +7,63 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+        $events = Event::orderBy('id', 'DESC')->paginate(10);
+        return view('dashboard.events.index',compact('events'));
+           
+       dd($events);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('dashboard.events.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $event = new Event($request->all());
+        if($request->hasfile('image')){
+            $image = $request->file('image');
+            $name = time().$image->getClientOriginalName();
+            $ruta = public_path().'/images';
+            $image->move($ruta, $name);
+            $urlimage ='/images/'.$name;
+        }
+        $event->image =  $urlimage;
+        $event->save();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
+        return redirect()->route('events.index');
+    }
     public function show(Event $event)
     {
-        //
+       
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Event $event)
     {
-        //
+        return view('dashboard.events.edit', compact('event'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Event $event)
     {
-        //
+        $event->fill($request->all()); 
+        if($request->hasfile('image')){
+            $image = $request->file('image');
+            $name = time().$image->getClientOriginalName();
+            $ruta = public_path().'/images';
+            $image->move($ruta, $name);
+            $urlimage ='/images/'.$name;
+        }
+        if ($request->hasFile('image')){
+            $event->image =  $urlimage;
+        }
+        $event->save();
+        return redirect()->route('events.index'); 
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Event $event)
     {
-        //
+        if(file_exists(public_path('/images/'. $event->image))){
+            unlink(public_path('/images/'. $event->image));
+        }
+        $event->delete();
+        return redirect()->route('events.index'); 
     }
 }

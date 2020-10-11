@@ -32,6 +32,15 @@ Route::resource('hotels', 'HotelController')->names('hotels');
 // Route::get('dashboard/hotels', 'HotelController@dashboard')->name('restaurants.dashboard');
 //hoteles fin
 
+
+
+//eventos
+Route::resource('events', 'EventController')->names('events');
+
+
+// Route::get('dashboard/hotels', 'HotelController@dashboard')->name('restaurants.dashboard');
+//eventos fin
+
 Route::resource('park', 'ParkController')->names('parks');
 Route::get('dashboard/park', 'ParkController@dashboard')->name('parks.dashboard');
 
@@ -79,6 +88,9 @@ Route::get('/detallesderestaurantes', function () {
     return view('detallesderestaurantes');
 })->name('detallesderestaurantes');
 
+Route::get('/addeventos', function () {
+    return view('addeventos');
+})->name('addeventos');
 
 Route::get('/eventos', function () {
     return view('eventos');

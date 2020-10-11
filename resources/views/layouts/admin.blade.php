@@ -240,6 +240,13 @@
 
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Eventos</p>
+                                    </a>22
+
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agregar Eventos</p>
                                     </a>
 
                                 </li>
