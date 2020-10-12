@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title','Gestion de Hoteles')
+@section('title','Gestion Lugar Turistico')
 @section('breadcrumb')
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Hoteles</h3>
+        <h3 class="card-title">Lugar Turistico</h3>
         
 
             <div class="card-tools">
@@ -18,8 +18,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{route('hotels.create')}}" title="Agregar" >
-                            <i class="fas fa-plus"></i> Agregar hoteles
+                        <a class="nav-link active" href="{{route('tourists.create')}}" title="Agregar" >
+                            <i class="fas fa-plus"></i> Agregar Lugar Turistico
                         </a>
                     </li>
                 </ul>
@@ -39,19 +39,19 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($hotels as $hotel)
+                @foreach ($tourists as $tourist)
                 <tr>
-                    <td>{{$hotel->id}}</td>
-                    <td>{{$hotel->name}}</td>
-                    <td>{{$hotel->description}}</td>
-                    <td>{{$hotel->province}}</td>
-                    <td>{{$hotel->district}}</td>
+                    <td>{{$tourist->id}}</td>
+                    <td>{{$tourist->name}}</td>
+                    <td>{{$tourist->description}}</td>
+                    <td>{{$tourist->province}}</td>
+                    <td>{{$tourist->district}}</td>
                     <td class="text-center">
-                        {!! Form::open(['route'=>['hotels.destroy', $hotel], 'method'=>'DELETE']) !!}
-                        <a class="btn btn-light" href="{{route('hotels.show', $hotel)}}">
+                        {!! Form::open(['route'=>['tourists.destroy', $tourist], 'method'=>'DELETE']) !!}
+                        <a class="btn btn-light" href="{{route('tourists.show', $tourist)}}">
                             <i class="far fa-eye"></i>
                         </a>
-                        <a class="btn btn-light" href="{{route('hotels.edit', $hotel)}}">
+                        <a class="btn btn-light" href="{{route('tourists.edit', $tourist)}}">
                             <i class="far fa-edit"></i>
                         </a>
                         <button class="btn btn-light">
@@ -66,7 +66,7 @@
 
     </div>
     <div class="card-footer">
-        {{$hotels->render()}}
+        {{$tourists->render()}}
     </div>
 </div>
 @endsection

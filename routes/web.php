@@ -28,9 +28,27 @@ Route::get('dashboard/restaurant', 'RestaurantController@dashboard')->name('rest
 
 //hoteles
 Route::resource('hotels', 'HotelController')->names('hotels');
-
-// Route::get('dashboard/hotels', 'HotelController@dashboard')->name('restaurants.dashboard');
+Route::get('dashboard/hotels', 'HotelController@dashboard')->name('restaurants.dashboard');
 //hoteles fin
+
+
+//lugarturistiContacto//
+
+Route::resource('contacts', 'ContactController')->names('contacts');
+
+
+//finlugarturistiContacto//
+
+
+
+
+//lugarturisticoIdentidad//
+
+Route::resource('tourists', 'TouristController')->names('tourists');
+
+
+//finlugarturisticoIdentidad//
+
 
 
 

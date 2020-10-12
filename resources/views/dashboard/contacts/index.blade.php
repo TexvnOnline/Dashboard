@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title','Gestion de Hoteles')
+@section('title','Gestión de Lugar turistico')
 @section('breadcrumb')
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Hoteles</h3>
+        <h3 class="card-title">Lugar turistico</h3>
         
 
             <div class="card-tools">
@@ -18,8 +18,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{route('hotels.create')}}" title="Agregar" >
-                            <i class="fas fa-plus"></i> Agregar hoteles
+                        <a class="nav-link active" href="{{route('contacts.create')}}" title="Agregar" >
+                            <i class="fas fa-plus"></i> Agregar Lugar turistico
                         </a>
                     </li>
                 </ul>
@@ -31,27 +31,31 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Provincia</th>
-                    <th>Distrito</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Provincia</th>
+                    <th scope="col">Distrito</th>
+					<th scope="col">Inicio</th>
+					<th scope="col">Fin</th>
                     <th>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($hotels as $hotel)
+                @foreach ($contacts as $contact)
                 <tr>
-                    <td>{{$hotel->id}}</td>
-                    <td>{{$hotel->name}}</td>
-                    <td>{{$hotel->description}}</td>
-                    <td>{{$hotel->province}}</td>
-                    <td>{{$hotel->district}}</td>
+                    <td>{{$contact->id}}</td>
+                    <td>{{$contact->name}}</td>
+                    <td>{{$contact->description}}</td>
+                    <td>{{$contact->province}}</td>
+                    <td>{{$contact->district}}</td>
+					<td>{{$contact->time}}</td>
+					<td>{{$contact->time}}</td>
                     <td class="text-center">
-                        {!! Form::open(['route'=>['hotels.destroy', $hotel], 'method'=>'DELETE']) !!}
-                        <a class="btn btn-light" href="{{route('hotels.show', $hotel)}}">
+                        {!! Form::open(['route'=>['contacts.destroy', $contact], 'method'=>'DELETE']) !!}
+                        <a class="btn btn-light" href="{{route('contacts.show', $contact)}}">
                             <i class="far fa-eye"></i>
                         </a>
-                        <a class="btn btn-light" href="{{route('hotels.edit', $hotel)}}">
+                        <a class="btn btn-light" href="{{route('contacts.edit', $contact)}}">
                             <i class="far fa-edit"></i>
                         </a>
                         <button class="btn btn-light">
@@ -66,7 +70,7 @@
 
     </div>
     <div class="card-footer">
-        {{$hotels->render()}}
+        {{$contacts->render()}}
     </div>
 </div>
 @endsection
