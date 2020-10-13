@@ -115,6 +115,7 @@
                                 </li>
                             </ul>
                         </li>
+                        
 
                         
                         {{--  INCIDENTES DE TRANCITO  --}}
@@ -324,7 +325,30 @@
                         </ul>
                     </li>
 
-
+                    <!--Semaforos-->
+                    <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tree"></i>
+                                <p>
+                                    Semáforos
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('semaforos.dashboard')}}" class="nav-link">
+                                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                                        <p>Panel</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('semaforos.index')}}" class="nav-link">
+                                        <i class="far fa-building nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                     <!--Menu seguridad-->
                     <li class="nav-item has-treeview">

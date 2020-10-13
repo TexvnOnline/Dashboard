@@ -19,8 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::resource('sensor', 'SensorSemaforos')->names('sensorSemaforos');
+Route::put('dashboard/sensorSemaforos/active/{sensorSemaforos}', 'SensorSemaforosController@active')->name('semaforos.active');
+
 Route::resource('sensor', 'SensorController')->names('sensors');
-Route::put('dashboard/sensor/active/{sensor}', 'SensorController@active')->name('parks.active');
+Route::put('dashboard/sensor/active/{sensor}', 'SemaforoController@active')->name('parks.active');
 
 // UNO
 Route::resource('restaurants', 'RestaurantController')->names('restaurants');
@@ -64,6 +67,9 @@ Route::get('cultural_identity', 'CulturalIdentityController@dashboard')->name('c
 
 Route::resource('park', 'ParkController')->names('parks');
 Route::get('dashboard/park', 'ParkController@dashboard')->name('parks.dashboard');
+
+Route::resource('semaforo', 'SemaforoController')->names('semaforos');
+Route::get('dashboard/semaforo', 'SemaforoController@dashboard')->name('semaforos.dashboard');
 
 
 Route::resource('company', 'CompanyController')->names('companies');

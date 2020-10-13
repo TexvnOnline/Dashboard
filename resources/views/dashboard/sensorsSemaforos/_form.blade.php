@@ -1,4 +1,4 @@
-{!! Form::hidden('semaforo_id', $semaforo->id) !!}
+{!! Form::hidden('park_id', $park->id) !!}
 <div class="from-group">
     {!! Form::label('name','Nombre') !!}
     {!! Form::text('name', null, ['class'=>'form-control']) !!}
