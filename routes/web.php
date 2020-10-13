@@ -49,6 +49,10 @@ Route::resource('contacts', 'ContactController')->names('contacts');
 
 Route::resource('tourists', 'TouristController')->names('tourists');
 
+Route::get('tourists/images/{tourist}', 'TouristController@images')->name('tourists.images');
+
+Route::post('tourists/images/save/{tourist}', 'TouristController@save_image')->name('tourists.save_image');
+
 
 //finlugarturisticoIdentidad//
 
@@ -77,6 +81,12 @@ Route::resource('vehicle', 'VehicleController')->names('vehicles');
 Route::resource('incident', 'IncidentController')->names('incidents');
 
 Route::get('dashboard/incident', 'IncidentBoardController@incident')->name('dashboard.incidents');
+
+
+
+Route::get('/fotografia', function () {
+    return view('fotografia');
+})->name('fotografia');
 
 Route::get('/resumen', function () {
     return view('resumen');

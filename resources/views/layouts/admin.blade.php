@@ -353,7 +353,7 @@
                     <!--Menu seguridad-->
                     <li class="nav-item has-treeview">
                         <a href="" class="nav-link">
-                            <i class="fas fa-car-crash"></i>
+                            <i class="fas fa-shield-alt"></i>
                             <p>
                                 Seguridad Ciudadana
                                 <i class="right fas fa-angle-left"></i>
@@ -364,7 +364,7 @@
                             <li class="nav-item">
                                 <a href="{{route('seguridad')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Actividad delictiva</p>
+                                    <p>Detalle Delitos</p>
                                 </a>
                             </li>
                         </ul>
@@ -432,6 +432,12 @@
                                     </a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a href="{{route('fotografia')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Fotografia</p>
+                                    </a>
+                                    
                                 <li class="nav-item">
                                     <a href="{{route('addfotografia')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>

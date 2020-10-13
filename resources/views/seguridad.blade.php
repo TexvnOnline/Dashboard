@@ -25,34 +25,59 @@
         padding: 0;
       }
     </style>
-    <script>
-      
+
+
+<script>
+
       let map;
+      let marker; //Animación
 
       function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: -12.0484232, lng: -75.2376588 },
-          zoom: 12,
+          center: { lat: -12.0665806, lng: -75.2128854, },
+          zoom: 14,
         });
         var huancayo={lat:-12.068546, lng:-75.212144};
         var huanca={lat:-12.070835,  lng:-75.204644};
+        var ocopilla={lat:-12.073043,  lng:-75.198949};
 
        var marker=new google.maps.Marker(
        {
         position:huancayo,
-        map: map
+        map: map,
+        icon:'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
        });
 
-      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+
        var marker=new google.maps.Marker(
        {
         position:huanca,
         map: map,
-        icon: iconBase + 'parking_lot_maps.png'
+        icon:'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
+        draggable: true,
+        animation: google.maps.Animation.DROP,
        });
+
+        marker.addListener("click", toggleBounce);
+
+       function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+        }
+
+        var marker=new google.maps.Marker(
+        {
+        position:ocopilla,
+        map: map,
+        icon:'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        });
+
       }
 
-    </script>
+</script>
 @section('content')
 
 <div id="map"></div>

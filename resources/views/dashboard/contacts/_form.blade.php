@@ -15,14 +15,13 @@
     {!! Form::select('district',getDistricts(),null, ['class'=>'form-control']) !!}
 </div>
 <div class="from-group">
-    {!! Form::label('time','Inicio') !!}
-    {!! Form::datetime('time', null, ['class'=>'form-control']) !!}
+    {!! Form::label('start','Inicio') !!}
+    {!! Form::datetime('start', null, ['class'=>'form-control']) !!}
 </div>
 <div class="from-group">
-    {!! Form::label('time','Fin') !!}
-    {!! Form::datetime('time', null, ['class'=>'form-control']) !!}
+    {!! Form::label('end','Fin') !!}
+    {!! Form::datetime('end', null, ['class'=>'form-control']) !!}
 </div>
-
 <div class="from-group">
     {!! Form::label('image','Fotografía') !!}
     {!! Form::file('image') !!}

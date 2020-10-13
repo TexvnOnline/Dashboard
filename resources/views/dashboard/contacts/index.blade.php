@@ -48,8 +48,8 @@
                     <td>{{$contact->description}}</td>
                     <td>{{$contact->province}}</td>
                     <td>{{$contact->district}}</td>
-					<td>{{$contact->time}}</td>
-					<td>{{$contact->time}}</td>
+					<td>{{$contact->start}}</td>
+					<td>{{$contact->end}}</td>
                     <td class="text-center">
                         {!! Form::open(['route'=>['contacts.destroy', $contact], 'method'=>'DELETE']) !!}
                         <a class="btn btn-light" href="{{route('contacts.show', $contact)}}">

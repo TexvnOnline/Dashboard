@@ -35,6 +35,8 @@
                     <th>Descripción</th>
                     <th>Provincia</th>
                     <th>Distrito</th>
+                    <th>fotografías</th>
+                    
                     <th>&nbsp;</th>
                 </tr>
             </thead>
@@ -46,6 +48,10 @@
                     <td>{{$tourist->description}}</td>
                     <td>{{$tourist->province}}</td>
                     <td>{{$tourist->district}}</td>
+                    <td><a href="{{route('tourists.images',$tourist)}}" class="btn btn-primary">
+                        Agregar fotografías
+                        </a>
+                    </td>
                     <td class="text-center">
                         {!! Form::open(['route'=>['tourists.destroy', $tourist], 'method'=>'DELETE']) !!}
                         <a class="btn btn-light" href="{{route('tourists.show', $tourist)}}">

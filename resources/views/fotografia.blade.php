@@ -16,6 +16,7 @@
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Fecha de Descripción</th>
+            <th scope="col">Imagen</th>
             <th scope="col"></th>
             </tr>
         </thead>
@@ -24,7 +25,7 @@
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
-                <td>@mdo</td>
+                <td></td>
                 <td></td>
                 <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
             </tr>
@@ -32,27 +33,11 @@
                 <th scope="row">2</th>
                 <td>Jacob</td>
                 <td>Thornton</td>
-                <td>@fat</td>
+                <td></td>
                 <td></td>
                 <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
             </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td></td>
-                <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td></td>
-                <td><i class="fas fa-pen-square mr-4"></i><i class="fas fa-trash"></i></td>
-            </tr>
-           
+                     
         </tbody>
         </table>
     </div>
