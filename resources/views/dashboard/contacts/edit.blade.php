@@ -1,15 +1,15 @@
 @extends('layouts.admin')
-@section('title','Editar Lugar turistico')
+@section('title','Editar Lugar Turistico')
 @section('breadcrumb')
 <li class="breadcrumb-item active">
-	<a href="{{route('contacts.index')}}">Lugar turistico</a>
+	<a href="{{route('contacts.index')}}">Lugar Turistico</a>
 </li>
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
 @section('content')
 <div class="card">
 	<div class="card-header">
-	  <h3 class="card-title">Editar Lugar turistico</h3>
+	  <h3 class="card-title">Editar Evento</h3>
 	  <div class="card-tools">
 		<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
 		  <i class="fas fa-minus"></i></button>

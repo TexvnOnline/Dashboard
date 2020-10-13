@@ -72,6 +72,12 @@ Route::resource('incident', 'IncidentController')->names('incidents');
 
 Route::get('dashboard/incident', 'IncidentBoardController@incident')->name('dashboard.incidents');
 
+
+
+Route::get('/fotografia', function () {
+    return view('fotografia');
+})->name('fotografia');
+
 Route::get('/resumen', function () {
     return view('resumen');
 })->name('resumen');

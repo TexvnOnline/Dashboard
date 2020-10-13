@@ -8,14 +8,15 @@
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>150</h3>
+          <h3>{{$tourists_count}}<sup style="font-size: 20px"></sup></h3>
 
             <p>Lugares turísticos</p>
           </div>
           <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-city"></i>
+            
           </div>
-          <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{route('tourists.index')}}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -23,14 +24,16 @@
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>53<sup style="font-size: 20px">%</sup></h3>
+          <h3>{{$restaurants_count}}<sup style="font-size: 20px"></sup></h3>
+            
 
             <p>Restaurantes</p>
           </div>
           <div class="icon">
-            <i class="ion ion-stats-bars"></i>
-          </div>
-          <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            <i class="fas fa-utensils"></i>
+            
+            </div>
+          <a href="{{route('restaurants.index')}}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -38,7 +41,7 @@
         <!-- small box -->
         <div class="small-box bg-warning">
           <div class="inner">
-            <h3>{{$hotels_count}}</h3>
+            <h3>{{$hotels_count}}<sup style="font-size: 20px"></sup></h3>
 
             <p>Hospedajes</p>
           </div>
@@ -55,17 +58,18 @@
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>65</h3>
+          <h3>{{$events_count}}<sup style="font-size: 20px"></sup></h3>
 
             <p>Eventos</p>
           </div>
           <div class="icon">
-            <i class="ion ion-pie-graph"></i>
+             <i class="fas fa-calendar-week"></i>
           </div>
-          <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{route('events.index')}}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
+      
     </div>
     <!-- /.row -->
     <!-- Main row -->

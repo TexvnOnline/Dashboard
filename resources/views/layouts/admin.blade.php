@@ -409,6 +409,12 @@
                                 </li>
 
                                 <li class="nav-item">
+                                    <a href="{{route('fotografia')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Fotografia</p>
+                                    </a>
+                                    
+                                <li class="nav-item">
                                     <a href="{{route('addfotografia')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Agregar Fotografia</p>
