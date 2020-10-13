@@ -46,6 +46,10 @@ Route::resource('contacts', 'ContactController')->names('contacts');
 
 Route::resource('tourists', 'TouristController')->names('tourists');
 
+Route::get('tourists/images/{tourist}', 'TouristController@images')->name('tourists.images');
+
+Route::post('tourists/images/save/{tourist}', 'TouristController@save_image')->name('tourists.save_image');
+
 
 //finlugarturisticoIdentidad//
 

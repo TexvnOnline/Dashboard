@@ -67,8 +67,25 @@ class TouristController extends Controller
         return redirect()->route('tourists.index'); 
     }
 
+    public function images(Tourist $tourist){
 
+        return view('dashboard.tourists.images', compact('tourist'));
+    }
 
+    public function save_image(Request $request, Tourist $tourist){
+        $urlimages = [];
+        if($request->hasFile('imagenes')){
+            $imagenes = $request->file('imagenes');
+            foreach ($imagenes as $imagen) {
+               $nombre = time().'_'.$imagen->getClientOriginalName();
+               $ruta = public_path().'/imagenes';
+               $imagen->move($ruta, $nombre);
+               $urlimages[]['url'] ='/imagenes/'.$nombre;
+            }
+        }
+        $tourist->images()->createMany($urlimages);
+       return redirect()->back();
+    }
 
 
 

@@ -15,6 +15,7 @@ class CreateTouristsTable extends Migration
     {
         Schema::create('tourists', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
             $table->string('description');
             $table->string('province');
@@ -23,6 +24,7 @@ class CreateTouristsTable extends Migration
             $table->string('imageDescription');
             $table->string('image360');
             $table->string('imageDescription360');
+            
             $table->timestamps();
         });
 

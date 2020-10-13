@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     protected $fillable = [
-        'name', 'description', 'province','district', 'time', 'time','image', 
+        'name', 'description', 'province','district', 'start', 'end','image', 
     ];
 
 
