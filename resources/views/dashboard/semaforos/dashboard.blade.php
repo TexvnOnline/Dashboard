@@ -20,9 +20,9 @@
         <div class="card-tools">
             <ul class="nav nav-pills ml-auto">
 
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{route('semaforos.index')}}" title="Agregar" >
-                        <i class="fas fa-list"></i> Lista de semáforos
+                <li class="nav-item">   
+                    <a class="nav-link active btn-success" href="{{route('semaforos.index')}}" title="Agregar" >
+                        <i class="fas fa-list "></i> Lista de semáforos
                     </a>
                 </li>
 

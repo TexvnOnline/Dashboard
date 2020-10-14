@@ -328,7 +328,7 @@
                     <!--Semaforos-->
                     <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tree"></i>
+                            <i class="fas fa-traffic-light nav-icon"></i>
                                 <p>
                                     Semáforos
                                     <i class="right fas fa-angle-left"></i>
@@ -337,13 +337,13 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('semaforos.dashboard')}}" class="nav-link">
-                                        <i class="fas fa-tachometer-alt nav-icon"></i>
-                                        <p>Panel</p>
+                                    <i class="fas fa-eye nav-icon"></i>
+                                        <p>Visualización</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('semaforos.index')}}" class="nav-link">
-                                        <i class="far fa-building nav-icon"></i>
+                                        <i class="fas fa-clipboard-list nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>

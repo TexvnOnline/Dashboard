@@ -12,13 +12,13 @@
             <div class="card-tools">
                 <ul class="nav nav-pills ml-auto">
                     <li class="nav-item mr-2">
-                        <a class="nav-link active" href="{{route('semaforos.dashboard')}}" title="Agregar" >
-                            <i class="fas fa-tachometer-alt"></i> Ver Dashboard
+                        <a class="nav-link active btn-success" href="{{route('semaforos.dashboard')}}" title="Agregar" >
+                            <i class="fas fa-tachometer-alt"></i> Ver semáforos
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{route('semaforos.create')}}" title="Agregar" >
+                        <a class="nav-link active btn-success " href="{{route('semaforos.create')}}" title="Agregar" >
                             <i class="fas fa-plus"></i> Agregar semaforo
                         </a>
                     </li>
