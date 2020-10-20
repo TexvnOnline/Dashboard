@@ -19,9 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::resource('sensor', 'SensorSemaforos')->names('sensorSemaforos');
-Route::put('dashboard/sensorSemaforos/active/{sensorSemaforos}', 'SensorSemaforosController@active')->name('semaforos.active');
-
 Route::resource('sensor', 'SensorController')->names('sensors');
 Route::put('dashboard/sensor/active/{sensor}', 'SemaforoController@active')->name('parks.active');
 
