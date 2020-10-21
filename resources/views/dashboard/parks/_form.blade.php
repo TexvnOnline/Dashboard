@@ -1,22 +1,15 @@
-{{--  <div class="form-row">
-    <div class="col">
-      
-    </div>
-    <div class="col">
-      
-    </div>
-</div>  --}}
+
 <div class="form-row">
     <div class="col">
         <div class="from-group">
-            {!! Form::label('name','Nombre') !!}
-            {!! Form::text('name', null, ['class'=>'form-control']) !!}
+            {!! Form::label('PQ_Nombre','Nombre') !!}
+            <input type="text" name="PQ_Nombre" id="PQ_Nombre" class="form-control">
         </div>
     </div>
     <div class="col">
         <div class="from-group">
-            {!! Form::label('direction','Dirección') !!}
-            {!! Form::text('direction', null, ['class'=>'form-control']) !!}
+            {!! Form::label('PQ_Descripcion','Dirección') !!}
+            <input type="text" name="PQ_Descripcion" id="PQ_Descripcion" class="form-control">
         </div>
     </div>
 </div>
@@ -24,20 +17,20 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <div class="from-group">
-            {!! Form::label('reference','Referencia') !!}
-            {!! Form::text('reference', null, ['class'=>'form-control']) !!}
+            {!! Form::label('ID_Distrito','ID Distrito') !!}
+            <input type="number" name="ID_Distrito" id="ID_Distrito" class="form-control">
         </div>
     </div>
     <div class="form-group col-md-4">
         <div class="from-group">
-            {!! Form::label('latitude','Latitud') !!}
-            {!! Form::number('latitude', null, ['class'=>'form-control','step'=>"any"]) !!}
+            {!! Form::label('PQ_Latitud','Latitud') !!}
+            <input type="number" name="PQ_Latitud" id="PQ_Latitud" class="form-control">
         </div>
     </div>
     <div class="form-group col-md-4">
         <div class="from-group">
-            {!! Form::label('length','Longitud') !!}
-            {!! Form::number('length', null, ['class'=>'form-control','step'=>"any"]) !!}
+            {!! Form::label('PQ_Longitud','Longitud') !!}
+            <input type="number" name="PQ_Longitud" id="PQ_Longitud" class="form-control">
         </div>
     </div>
 </div>
@@ -45,11 +38,11 @@
 <div class="form-row">
     <div class="col">
         <div class="from-group">
-            {!! Form::label('description','Descripción') !!}
-            {!! Form::textarea('description', null, ['class'=>'form-control', 'rows'=>"4"]) !!}
+            {!! Form::label('PQ_Direccion','Dirección') !!}
+            <input type="text" name="PQ_Direccion" id="PQ_Direccion" class="form-control">
         </div>
     </div>
-    <div class="col">
+    {{--  <div class="col">
         <div class="from-group">
             {!! Form::label('image','Imagen') !!}
             <div class="custom-file">
@@ -57,5 +50,5 @@
                 <label class="custom-file-label">Seleccionar Archivo</label>
             </div>
         </div>
-    </div>
+    </div>  --}}
 </div>
