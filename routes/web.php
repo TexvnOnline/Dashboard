@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
 // UNO
 Route::resource('restaurants', 'RestaurantController')->names('restaurants');
 Route::get('dashboard/restaurant', 'RestaurantController@dashboard')->name('restaurants.dashboard');

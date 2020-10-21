@@ -30,17 +30,20 @@
         <table class="table table-head-fixed">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Provincia</th>
-                    <th scope="col">Distrito</th>
-					<th scope="col">Fecha</th>
-					<th scope="col">Hora</th>
+                    <th scope="col">Id</th>
+                    <th>Nombres</th>
+                    <th>Descripción</th>
+                    <th>Detalles</th>
+                    <th>Fotografia</th>
+                    <th>Fecha y Hora</th>
+                    <th>Longitud </th>
+                    <th>Id Distrito</th>
+                    <th>Distrito</th>
+                    <th>Latitud </th>
                     <th>&nbsp;</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="res">
                 @foreach ($events as $event)
                 <tr>
                     <td>{{$event->id}}</td>
@@ -73,4 +76,45 @@
         {{$events->render()}}
     </div>
 </div>
+@endsection
+
+
+
+@section('scripts')
+
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET', 'http://smartcityhuancayo.herokuapp.com/Evento/List_Evento.php', true);
+            xhttp.send();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    //console.log(this.responseText);
+    
+                    //transformar a json
+                    let datos = JSON.parse(this.responseText);
+    
+                    let red = document.querySelector('#res');
+                    res.innerHTML = '';
+                    console.log(datos.records);
+    
+                    for(let item of datos.records){
+                        res.innerHTML += `
+                        <tr>
+                            <td>${item.ID_Eventos}</td>
+                            <td>${item.EVE_Nombres}</td>
+                            <td>${item.EVE_Descripcion}</td>
+                            <td>${item.EVE_Detalles}</td>
+                            <td>${item.EVE_Fotografia}</td>
+                            <td>${item.EVE_Fecha_Hora}</td>
+                            <td>${item.EVE_Longitud}</td>
+                            <td>${item.ID_Distrito}</td>
+                            <td>${item.Distrito}</td>
+                            <td>${item.EVE_Latitud}</td>
+                        </tr>
+                        `
+                    }
+                }
+            }
+    
+        </script>
 @endsection

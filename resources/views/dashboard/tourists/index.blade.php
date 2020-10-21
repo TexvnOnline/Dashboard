@@ -30,19 +30,17 @@
         <table class="table table-head-fixed">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Id</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
-                    <th>Provincia</th>
+                    <th>URL</th>
                     <th>Distrito</th>
-                    <th>fotografías</th>
                     
-                    <th>&nbsp;</th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach ($tourists as $tourist)
-                <tr>
+            <tbody id="res">
+             
+                {{--  <tr>
                     <td>{{$tourist->id}}</td>
                     <td>{{$tourist->name}}</td>
                     <td>{{$tourist->description}}</td>
@@ -67,14 +65,48 @@
                         </button>
                         {!! Form::close() !!}
                     </td>
-                </tr>
-                @endforeach
+                </tr>  --}}
+
             </tbody>
         </table>
 
     </div>
     <div class="card-footer">
-        {{$tourists->render()}}
+        
     </div>
 </div>
+@endsection
+@section('scripts')
+
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET', 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Listar_lugar_turistico.php', true);
+            xhttp.send();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    //console.log(this.responseText);
+    
+                    //transformar a json
+                    let datos = JSON.parse(this.responseText);
+    
+                    let red = document.querySelector('#res');
+                    res.innerHTML = '';
+                    console.log(datos.records);
+    
+                    for(let item of datos.records){
+                        res.innerHTML += `
+                        <tr>
+                            <td>${item.ID_Lugar_Turistico}</td>
+                            <td>${item.LT_Nombre}</td>
+                            <td>${item.LT_Descripcion}</td>
+                            <td>${item.LT_URL_Map}</td>
+                            <td>${item.ID_Distrito}</td>
+                            
+                        </tr>
+                        `
+                    }
+                }
+            }
+    
+        </script>
 @endsection

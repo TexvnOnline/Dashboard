@@ -29,17 +29,18 @@
         <table class="table table-head-fixed">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Id</th>
                     <th>Nombre</th>
-                    <th>Dirección</th>
-                    <th>Referencia</th>
                     <th>Descripción</th>
-                    <th>&nbsp;</th>
+                    <th>Distrito</th>
+                    <th>Dirección</th>
+
                 </tr>
             </thead>
-            <tbody>
-                @foreach ($parks as $park)
-                <tr>
+            <tbody id="res">
+
+                
+                {{--  <tr >
                     <td>{{$park->id}}</td>
                     <td>{{$park->name}}</td>
                     <td>{{$park->direction}}</td>
@@ -58,13 +59,46 @@
                         </button>
                         {!! Form::close() !!}
                     </td>
-                </tr>
-                @endforeach
+                </tr>  --}}
+                
             </tbody>
         </table>
     </div>
     <div class="card-footer">
-        {{$parks->render()}}
+        
     </div>
 </div>
+@endsection
+@section('scripts')
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.open('GET', 'http://smartcityhuancayo.herokuapp.com/Parque/List_parque.php', true);
+        xhttp.send();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                //console.log(this.responseText);
+
+                //transformar a json
+                let datos = JSON.parse(this.responseText);
+
+                let red = document.querySelector('#res');
+                res.innerHTML = '';
+                console.log(datos.records);
+
+                for(let item of datos.records){
+                    res.innerHTML += `
+                    <tr>
+                        <td>${item.ID_Parque}</td>
+                        <td>${item.PQ_Nombre}</td>
+                        <td>${item.PQ_Descripcion}</td>
+                        <td>${item.Distrito}</td>
+                        <td>${item.PQ_Direccion}</td>
+                    </tr>
+                    `
+                }
+
+            }
+        }
+
+    </script>
 @endsection
