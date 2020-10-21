@@ -15,6 +15,8 @@ class RestaurantController extends Controller
     public function index()
     {
         $restaurants = Restaurant::orderBy('id', 'DESC')->paginate(10);
+
+      
         return view('dashboard.restaurants.index',compact('restaurants'));
     }
     public function create()

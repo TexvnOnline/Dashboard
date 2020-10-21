@@ -28,49 +28,65 @@
     <div class="card-body table-responsive p-0">
 
         <table class="table table-head-fixed">
-            <thead>
+           <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Descripción</th>
-                    <th scope="col">Provincia</th>
+                    <th scope="col">URL</th>
                     <th scope="col">Distrito</th>
-					<th scope="col">Inicio</th>
-					<th scope="col">Fin</th>
+					<th scope="col">Hora inicio</th>
+					<th scope="col">Hora fin</th>
                     <th>&nbsp;</th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach ($contacts as $contact)
-                <tr>
-                    <td>{{$contact->id}}</td>
-                    <td>{{$contact->name}}</td>
-                    <td>{{$contact->description}}</td>
-                    <td>{{$contact->province}}</td>
-                    <td>{{$contact->district}}</td>
-					<td>{{$contact->start}}</td>
-					<td>{{$contact->end}}</td>
-                    <td class="text-center">
-                        {!! Form::open(['route'=>['contacts.destroy', $contact], 'method'=>'DELETE']) !!}
-                        <a class="btn btn-light" href="{{route('contacts.show', $contact)}}">
-                            <i class="far fa-eye"></i>
-                        </a>
-                        <a class="btn btn-light" href="{{route('contacts.edit', $contact)}}">
-                            <i class="far fa-edit"></i>
-                        </a>
-                        <button class="btn btn-light">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @endforeach
+
+            <tbody id="res">
+              
+
+
+
             </tbody>
         </table>
 
     </div>
     <div class="card-footer">
-        {{$contacts->render()}}
+        
     </div>
 </div>
+@endsection
+
+@section('scripts')
+
+     <script> 
+         const xhttp = new XMLHttpRequest();
+         xhttp.open('GET','http://smartcityhuancayo.herokuapp.com/LugarTuristico/Listar_lugar_turistico.php', true);
+         xhttp.send();
+         xhttp.onreadystatechange = function(){
+              if(this.readyState == 4 && this.status == 200){
+
+                 let datos = JSON.parse (this.responseText);
+
+                 let red = document.querySelector('#res');
+                 res.innerHTML = '';
+                console.log(datos.records);
+                
+                for (let item of datos.records){
+                    res.innerHTML +=
+                 <tr>
+                    <td>${item.ID_Lugar_Turistico}</td>
+                    <td>${item.LT_Nombre}</td>
+                    <td>${item.LT_Descripcion}</td>
+                    <td>${item.LT_URL_Map}</td>
+                    <td>${item.ID_Distrito}</td>
+                    <td>${item.LT_Hora_Inicio}</td>
+                    <td>${item.LT_Hora_Fin}</td>
+                </tr>
+                }
+              }
+
+         }
+    
+     </script> 
+
 @endsection

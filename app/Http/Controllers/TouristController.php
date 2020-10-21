@@ -15,8 +15,9 @@ class TouristController extends Controller
     }
     public function index()
     {
-        $tourists = Tourist::orderBy('id', 'DESC')->paginate(10);
-        return view('dashboard.tourists.index',compact('tourists'));
+        $tourists = Tourist::orderBy('id', 'DESC')->with('images')->paginate(5);
+  
+                 return view('dashboard.tourists.index',compact('tourists'));
     }
     public function create()
     {

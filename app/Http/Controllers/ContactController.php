@@ -9,10 +9,10 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $contacts = Contact::orderBy('id', 'DESC')->paginate(10);
-        return view('dashboard.contacts.index',compact('contacts'));
+        $contacts = Contact::orderBy('id', 'DESC')->paginate(10);  
+            return view('dashboard.contacts.index',compact('contacts'));
            
-       dd($contacts);
+    
     }
     public function create()
     {

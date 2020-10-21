@@ -47,7 +47,9 @@
                     <td>{{$tourist->name}}</td>
                     <td>{{$tourist->description}}</td>
                     <td>{{$tourist->province}}</td>
-                    <td>{{$tourist->district}}</td>
+                    <td>{{$tourist->latitude}}</td>
+                    <td>{{$tourist->length}}</td>
+                    
                     <td><a href="{{route('tourists.images',$tourist)}}" class="btn btn-primary">
                         Agregar fotografías
                         </a>

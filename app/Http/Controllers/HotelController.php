@@ -10,11 +10,15 @@ class HotelController extends Controller
     public function index()
     {
         $hotels = Hotel::orderBy('id', 'DESC')->paginate(10);
-        return view('dashboard.hotels.index',compact('hotels'));
+         return view('dashboard.hotels.index',compact('hotels'));
+        
     }
     public function create()
     {
+       
         return view('dashboard.hotels.create');
+
+   
     }
     public function store(Request $request)
     {
