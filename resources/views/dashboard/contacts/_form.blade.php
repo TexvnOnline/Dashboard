@@ -1,28 +1,33 @@
 <div class="from-group">
-    {!! Form::label('name','Nombre') !!}
-    {!! Form::text('name', null, ['class'=>'form-control']) !!}
+    {!! Form::label('LT_Nombre','Nombre') !!}
+    {!! Form::text('LT_Nombre', null, ['class'=>'form-control']) !!}
 </div>
 <div class="from-group">
-    {!! Form::label('description','Descripción') !!}
-    {!! Form::textarea('description', null, ['class'=>'form-control']) !!}
+    {!! Form::label('LT_Descripcion','Descripción') !!}
+    {!! Form::textarea('LT_Descripcion', null, ['class'=>'form-control']) !!}
 </div>
 <div class="from-group">
-    {!! Form::label('province','Distritos') !!}
-    {!! Form::select('province',getProvinces(),null, ['class'=>'form-control']) !!}
+    {!! Form::label('LT_URL_Map','URL MAP') !!}
+    {!! Form::text('LT_URL_Map' ,null, ['class'=>'form-control']) !!}
 </div>
 <div class="from-group">
-    {!! Form::label('district','Distritos') !!}
-    {!! Form::select('district',getDistricts(),null, ['class'=>'form-control']) !!}
+    {!! Form::label('ID_Distrito','Distritos') !!}
+    {!! Form::text('ID_Distrito',null, ['class'=>'form-control']) !!}
 </div>
 <div class="from-group">
-    {!! Form::label('start','Inicio') !!}
-    {!! Form::datetime('start', null, ['class'=>'form-control']) !!}
+    {!! Form::label('LT_Hora_Inicio','Hora Inicio') !!}
+    {!! Form::datetime('LT_Hora_Inicio', null, ['class'=>'form-control']) !!}
 </div>
 <div class="from-group">
-    {!! Form::label('end','Fin') !!}
-    {!! Form::datetime('end', null, ['class'=>'form-control']) !!}
+    {!! Form::label('LT_Hora_Fin','Hora Fin') !!}
+    {!! Form::datetime('LT_Hora_Fin', null, ['class'=>'form-control']) !!}
 </div>
 <div class="from-group">
-    {!! Form::label('image','Fotografía') !!}
-    {!! Form::file('image') !!}
+    {!! Form::label('LT_Latitud','Latitud') !!}
+    {!! Form::datetime('LT_Latitud', null, ['class'=>'form-control']) !!}
 </div>
+<div class="from-group">
+    {!! Form::label('LT_Longitud','Longitud') !!}
+    {!! Form::datetime('LT_Longitud', null, ['class'=>'form-control']) !!}
+</div>
+

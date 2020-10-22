@@ -37,6 +37,7 @@ class ParkController extends Controller
     }
     public function store(Request $request)
     {
+        dd($request);
         $slug = Str::of($request->name)->slug('-');
         $parks = new Park($request->all() + [
             'slug' => $slug, 
