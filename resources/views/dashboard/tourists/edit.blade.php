@@ -19,6 +19,7 @@
         </div>  --}}
     </div>
     {!! Form::model($tourist, ['route'=>['tourists.update',$tourist],'method'=>'PUT','files' => true]) !!}
+    
     <div class="card-body ">
         @include('dashboard.tourists._form')
     </div>
@@ -27,6 +28,7 @@
         <a class="btn btn-danger float-right" href="{{route('tourists.index')}}">Cancelar</a>
         <input type="submit" value="Actualizar" class="btn btn-primary">
     </div>
+    
     {!! Form::close() !!}
 </div>
 @endsection

@@ -2,8 +2,6 @@
 
 
 
-
-
 <div class="from-group">
     {!! Form::label('LT_Nombre','Nombre') !!}
     {{--  {!! Form::text('LT_Nombre', null, ['class'=>'form-control']) !!}  --}}

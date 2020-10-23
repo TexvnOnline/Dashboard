@@ -17,14 +17,54 @@
 		  <i class="fas fa-times"></i></button>
 	  </div>
     </div>
-    {!! Form::open(['route'=>'restaurants.store', 'method'=>'POST','files'=>true]) !!}
-	<div class="card-body ">
-        @include('dashboard.restaurants._form')
-	</div>
-	<div class="card-footer">
-      <a class="btn btn-danger float-right" href="{{route('restaurants.index')}}">Cancelar</a>
-      <input type="submit" value="Guardar" class="btn btn-primary">
-    </div>
-    {!! Form::close() !!}
+	<form id="form" method="POST">
+
+		<div class="card-body ">
+			@include('dashboard.restaurants._form')
+		</div>
+		<div class="card-footer">
+		  <a class="btn btn-danger float-right" href="{{route('restaurants.index')}}">Cancelar</a>
+
+		  <input id="submit" type="button" name="submit" class="btn btn-primary" value="Guardar">
+
+
+		</div>
+	</form>
+	
+   
   </div>
+@endsection
+
+
+@section('scripts')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#submit").on('click', function(){
+			var data = { 
+
+				'RES_Nombre' :  $('#RES_Nombre').val(), 
+				'RES_Descripcion' :  $('#RES_Descripcion').val(), 
+				'RES_Tipo' :  $('#RES_Tipo').val(), 
+				'RES_Hora_Atencion' :  $('#RES_Hora_Atencion').val(), 
+				'RES_URL_Map' :  $('#RES_URL_Map').val(),
+				'RES_Pagina_Web' :  $('#RES_Pagina_Web').val(), 
+				'RES_Telefono' :  $('#RES_Telefono').val(), 
+				'RES_Facebook' :  $('#RES_Facebook').val()
+
+			 };
+
+			$.ajax({
+				url: 'http://smartcityhuancayo.herokuapp.com/RecursosCercanos/Insertar_Recursos_Cercanos.php',
+				type: 'POST',
+				data : JSON.stringify(data),
+				datatype: 'json',
+				success : function(data) {
+					console.log(data);
+				},
+			})
+
+		});
+	});
+</script>
 @endsection

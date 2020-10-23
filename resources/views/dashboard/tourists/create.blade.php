@@ -17,7 +17,8 @@
 		  <i class="fas fa-times"></i></button>
 	  </div>  --}}
 	</div>
-	<form action="" id="miForm">
+	
+	<form id="form" method="POST">
     {{--  {!! Form::open(['route'=>'tourists.store', 'method'=>'POST','files' => true]) !!}  --}}
 	<div class="card-body ">
         @include('dashboard.tourists._form')
@@ -25,46 +26,40 @@
 	<div class="card-footer">
       <a class="btn btn-danger float-right" href="{{route('tourists.index')}}">Cancelar</a>
 	
-	  <button type="submit" name="btnSend" id="btnSend" class="btn btn-primary">Guardar</button>
+	  <input id="submit" type="button" name="submit" class="btn btn-primary" value="Guardar">
     </div>
 	{{--  {!! Form::close() !!}  --}}
 	</form>
   </div>
 @endsection
+
+
 @section('scripts')
-	<script>
-		$("#btnSend").click(function () {
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#submit").on('click', function(){
+			var data = { 
 
-	
-			
-
-			var parameters = {};
-
-			parameters.LT_Nombre = $("#LT_Nombre").val();
-			parameters.LT_Descripcion = $("#LT_Descripcion").val();
-			parameters.ID_Distrito = $("#ID_Distrito").val();
-			parameters.LT_Hora_Inicio = $("#LT_Hora_Inicio").val();
-			parameters.LT_Hora_Fin = $("#LT_Hora_Fin").val();
-			parameters.LT_URL_Map = $("#LT_URL_Map").val();
-			parameters.LT_Latitud = $("#LT_Latitud").val();
-			parameters.LT_Longitud = $("#LT_Longitud").val();
-			
-					$.ajax({
-						type: "PUT",
-						contentType: 'application/json; charset=utf-8',
-						url: "http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php",
-						data: JSON.stringify(parameters),
-						
-						dataType: "json",
-						success: function (data) {
-							console.log(data);
-						},
-						error: function (xhr, ajaxOptions, thrownError) {
-							console.log(xhr);
-							//alert(xhr.status + " " + thrownError);
-						}
-					});
-			
-			});
-	</script>
+				'LT_Nombre' : $("#LT_Nombre").val(),
+				'LT_Descripcion' : $("#LT_Descripcion").val(),
+				'ID_Distrito' : $("#ID_Distrito").val(),
+				'LT_Hora_Inicio' : $("#LT_Hora_Inicio").val(),
+				'LT_Hora_Fin' : $("#LT_Hora_Fin").val(),
+				'LT_URL_Map' : $("#LT_URL_Map").val(),
+				'LT_Latitud' : $("#LT_Latitud").val(),
+				'LT_Longitud' : $("#LT_Longitud").val()
+			 };
+			$.ajax({
+				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php',
+				type: 'POST',
+				data : JSON.stringify(data),
+				datatype: 'json',
+				success : function(data) {
+					console.log(data);
+				},
+			})
+		});
+	});
+</script>
 @endsection
