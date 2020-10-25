@@ -11,9 +11,10 @@ use Illuminate\Http\Request;
 class IncidentController extends Controller
 
 {
-    public function __construct()
+   
+    public function index()
     {
-        $this->middleware('auth');
+        return view('dashboard.incidents.index');
     }
     
     public function create()
