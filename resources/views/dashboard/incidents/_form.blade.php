@@ -13,10 +13,10 @@
 
 <div class="from-group">
     {!! Form::label('ID_Tipo_Ind','Tipo de incidente') !!}
-    <input type="text" name="ind_Fotografia" id="ind_Fotografia" class="form-control"> 
+    <input type="text" name="ID_Tipo_Ind" id="ID_Tipo_Ind" class="form-control"> 
 </div>
 
 <div class="from-group">
     {!! Form::label('ind_Fecha_Incidente','Fecha') !!}
-    <input type="text" name="ind_Fecha_Incidente" id="ind_Fecha_Incidente" class="form-control">
+    <input type="date" name="ind_Fecha_Incidente" id="ind_Fecha_Incidente" class="form-control">
 </div>

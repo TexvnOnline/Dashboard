@@ -44,13 +44,11 @@
 	$(document).ready(function(){
 		$("#submit").on('click', function(){
 			var data = { 
-
-				'ID_Vehiculo' :  'cscs'
-				'ID_Usuario' :  'cscs'
+				'ID_Vehiculo' :  $('#ID_Vehiculo').val(), 
+				'ID_Usuario' :  $('#ID_Usuario').val(), 
 				'ind_Descripcion' :  $('#ind_Descripcion').val(), 
 				'ID_Tipo_Ind' :  $('#ID_Tipo_Ind').val(), 
 				'ind_Fecha_Incidente' :  $('#ind_Fecha_Incidente').val()
-
 			 };
 			$.ajax({
 				url: 'http://smartcityhuancayo.herokuapp.com/Usuario/Insert_Usuario_Incidente.php',
