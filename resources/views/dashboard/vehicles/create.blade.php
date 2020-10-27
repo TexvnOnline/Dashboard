@@ -18,14 +18,48 @@
                 <i class="fas fa-times"></i></button>
         </div>
     </div>
-    {!! Form::open(['route'=>'vehicles.store', 'method'=>'POST']) !!}
-    <div class="card-body ">
-        @include('dashboard.vehicles._form')
-    </div>
-    <div class="card-footer">
-        <a class="btn btn-danger float-right" href="{{route('vehicles.index')}}">Cancelar</a>
-        <input type="submit" value="Guardar" class="btn btn-primary">
-    </div>
-    {!! Form::close() !!}
+    
+    <form id="form" method="POST">
+
+
+        <div class="card-body ">
+            @include('dashboard.vehicles._form')
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-danger float-right" href="{{route('vehicles.index')}}">Cancelar</a>
+            <input id="submit" type="button" name="submit" class="btn btn-primary" value="Guardar">
+        </div>
+    
+    </form>
+
 </div>
 @endsection
+@section('scripts')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#submit").on('click', function(){
+			var data = { 
+
+               
+				'VEH_Placa' : $('#VEH_Placa').val(), 
+				'VEH_Color' : $('#VEH_Color').val(),
+				'VEH_Modelo' : $('#VEH_Modelo').val(),
+				'VEH_Marca' : $('#VEH_Marca').val(), 
+				'ID_Tipo_Vehiculo' : $('#ID_Tipo_Vehiculo').val(),
+				'ID_Conductor' : $('#ID_Conductor').val()
+			 };
+			$.ajax({
+				url: 'http://smartcityhuancayo.herokuapp.com/Vehiculo/Insertar_Vehiculo.php',
+				type: 'POST',
+				data : JSON.stringify(data),
+				datatype: 'json',
+				success : function(data) {
+					console.log(data);
+				},
+			})
+		});
+	});
+</script>
+@endsection
+
