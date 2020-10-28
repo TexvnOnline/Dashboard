@@ -17,7 +17,7 @@
 
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="nav-icon fas fa-tree"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Parques
                 </span>
@@ -41,7 +41,7 @@
         {{--  INCIDENTES DE TRANCITO  --}}
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="nav-icon fas fa-car-crash"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Incidentes
                 </span>
@@ -76,7 +76,7 @@
         {{-- Ejemplo --}}
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="nav-icon fas fa-users"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Usuarios
                 </span>
@@ -101,7 +101,7 @@
 
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="nav-icon fas fa-users"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Identidad Cultural
                 </span>
@@ -163,7 +163,7 @@
 
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="fas fa-car-crash"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Transporte
                 </span>
@@ -190,7 +190,7 @@
 
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="nav-icon fas fa-users"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Part. Ciudadana
                 </span>
@@ -215,7 +215,7 @@
         <!--Semaforos-->
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="fas fa-traffic-light nav-icon"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Semáforos
                 </span>
@@ -237,7 +237,7 @@
         <!--Menu seguridad-->
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="fas fa-shield-alt"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Seguridad Ciudadana
                 </span>
@@ -260,7 +260,7 @@
         <li>
 
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="fas fa-taxi"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Rutas de Transporte
                 </span>
@@ -285,7 +285,7 @@
 
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="nav-icon fas fa-users"></i>
+                <i class="zmdi zmdi-hc-fw"></i>
                 <span>
                     Turista y la Ciudad
                 </span>
