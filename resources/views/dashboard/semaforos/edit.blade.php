@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Modificación de parques')
+@section('title','Modificación de Semáforos')
 @section('breadcrumb')
 <li class="breadcrumb-item active">
     <a href="{{route('semaforos.index')}}">Semáforos</a>
@@ -18,7 +18,7 @@
                 <i class="fas fa-times"></i></button>
         </div>
     </div>
-    {!! Form::model($semaforo, ['route'=>['semaforos.update',$park],'method'=>'PUT','files' => true]) !!}
+    {!! Form::model($semaforo, ['route'=>['semaforos.update',$semaforo],'method'=>'PUT','files' => true]) !!}
     <div class="card-body ">
         @include('dashboard.semaforos._form')
     </div>

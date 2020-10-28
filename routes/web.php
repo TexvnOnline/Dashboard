@@ -65,6 +65,7 @@ Route::get('cultural_identity', 'CulturalIdentityController@dashboard')->name('c
 Route::resource('park', 'ParkController')->names('parks');
 Route::get('dashboard/park', 'ParkController@dashboard')->name('parks.dashboard');
 
+//semaforos
 Route::resource('semaforo', 'SemaforoController')->names('semaforos');
 Route::get('dashboard/semaforo', 'SemaforoController@dashboard')->name('semaforos.dashboard');
 

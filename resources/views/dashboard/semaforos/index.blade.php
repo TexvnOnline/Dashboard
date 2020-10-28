@@ -47,10 +47,10 @@
                     <td>{{$semaforo->description}}</td>
                     <td class="text-center">
                         {!! Form::open(['route'=>['semaforos.destroy', $semaforo], 'method'=>'DELETE']) !!}
-                        <a class="btn btn-light" href="{{route('parks.show', $semaforo)}}">
+                        <!--<a class="btn btn-light" href="{{route('semaforos.show', $semaforo)}}">
                             <i class="far fa-eye"></i>
-                        </a>
-                        <a class="btn btn-light" href="{{route('parks.edit', $semaforo)}}">
+                        </a>-->
+                        <a class="btn btn-light" href="{{route('semaforos.edit', $semaforo)}}">
                             <i class="far fa-edit"></i>
                         </a>
                         <button class="btn btn-light">

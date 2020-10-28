@@ -16,7 +16,12 @@ class SemaforoController extends Controller
         $semaforos = Semaforo::get();
         // $markers = Park::get(['name','latitude', 'length'])->toJson();
 
-        $markers = Semaforo::get(['id','name','description','latitude', 'length'])->toArray();
+        $markers = Semaforo::get([
+                'id',
+                'name',
+                'description',
+                'latitude', 
+                'length'])->toArray();
         // $markers->toString();
         // $markers = Arr::only($data,['name','direction','latitude', 'length']);
 
@@ -58,16 +63,16 @@ class SemaforoController extends Controller
 
         $sensors = SensorSemaforo::where('semaforo_id', $semaforo->id)->orderBy('id', 'DESC')->paginate(10);
 
-        return view('dashboard.semaforos.show', compact('semaforo','sensors'));//falta
+        return view('dashboard.semaforos.show', compact('semaforo','sensorsSemaforos'));//falta
     }
-    public function edit(Semafoto $semaforo)
+    public function edit(Semaforo $semaforo)
     {
         return view('dashboard.semaforos.edit', compact('semaforo'));
     }
     public function update(Request $request, Semaforo $semaforo)
     {
         $slug = Str::of($request->name)->slug('-');
-        $park->fill($request->all()+ [
+        $semaforo->fill($request->all()+ [
             'slug' => $slug, 
         ]); 
         if($request->hasfile('image')){
@@ -81,7 +86,7 @@ class SemaforoController extends Controller
             $semaforo->image =  $urlimage;
         }
         $semaforo->save();
-        return redirect()->route('parks.index'); 
+        return redirect()->route('semaforos.index'); 
     }
     public function destroy(Semaforo $semaforo)
     {
