@@ -71,37 +71,59 @@
         <table class="table table-head-fixed">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Placa</th>
+                    <th>Color</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Tipo de vehículo</th>
                     <th>Conductor</th>
-                    <th>Placa</th>
-                    <th colspan="2">&nbsp;</th>
                 </tr>
-			</thead>
-			
-            <tbody>
-                @foreach ($incidents as $incident)
-                <tr>
-                    <th scope="row">{{$incident->id}}</td>
-                    <td>{{$incident->title}}</td>
-                    <td>{{$incident->description}}</td>
-                    <td width="10px">
-                        <a class="btn btn-default" href="{{route('incidents.show', $incident)}}">Detalles</a>
-                    </td>
-                    <td width="10px">
-                        <a class="btn btn-info" href="{{route('incidents.edit', $incident)}}">Editar</a>
-                    </td>
-                    <td width="10px">
-                        {!! Form::open(['route'=>['incidents.destroy',$incident], 'method'=>'DELETE']) !!}
-                        <button class="btn btn-danger">Eliminar</button>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @endforeach
+            </thead>
+            <tbody id="res">
+
             </tbody>
         </table>
     </div>
     <div class="card-footer">
-        {{$incidents->render()}}
+      
     </div>
 </div>
 @endsection
+
+@section('scripts')
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.open('GET', 'http://smartcityhuancayo.herokuapp.com/Parque/List_parque.php', true);
+        xhttp.send();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                //console.log(this.responseText);
+
+                //transformar a json
+                let datos = JSON.parse(this.responseText);
+
+                let red = document.querySelector('#res');
+                res.innerHTML = '';
+                console.log(datos.records);
+
+                for(let item of datos.records){
+                    res.innerHTML += `
+                    <tr>
+                        <td>${item.ID_Parque}</td>
+                        <td>${item.PQ_Nombre}</td>
+                        <td>${item.PQ_Descripcion}</td>
+                        <td>${item.Distrito}</td>
+                        <td>${item.PQ_Direccion}</td>
+                        <td>
+                            <a  type="button" class="btn btn-primary">Editar</a>
+                        </td>
+                    </tr>
+                    `
+                }
+
+            }
+        }
+
+    </script>
+@endsection
+

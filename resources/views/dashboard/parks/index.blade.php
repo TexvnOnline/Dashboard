@@ -34,38 +34,19 @@
                     <th>Descripción</th>
                     <th>Distrito</th>
                     <th>Dirección</th>
+                    <th>Acciones</th>
 
                 </tr>
             </thead>
             <tbody id="res">
 
-                
-                {{--  <tr >
-                    <td>{{$park->id}}</td>
-                    <td>{{$park->name}}</td>
-                    <td>{{$park->direction}}</td>
-                    <td>{{$park->reference}}</td>
-                    <td>{{$park->description}}</td>
-                    <td class="text-center">
-                        {!! Form::open(['route'=>['parks.destroy', $park], 'method'=>'DELETE']) !!}
-                        <a class="btn btn-light" href="{{route('parks.show', $park)}}">
-                            <i class="far fa-eye"></i>
-                        </a>
-                        <a class="btn btn-light" href="{{route('parks.edit', $park)}}">
-                            <i class="far fa-edit"></i>
-                        </a>
-                        <button class="btn btn-light">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>  --}}
-                
             </tbody>
         </table>
     </div>
-    <div class="card-footer">
+    <div  class="card-footer">
         
+
+        <a href=""></a>
     </div>
 </div>
 @endsection
@@ -93,6 +74,9 @@
                         <td>${item.PQ_Descripcion}</td>
                         <td>${item.Distrito}</td>
                         <td>${item.PQ_Direccion}</td>
+                        <td>
+                            <a  type="button" class="btn btn-primary">Editar</a>
+                        </td>
                     </tr>
                     `
                 }
