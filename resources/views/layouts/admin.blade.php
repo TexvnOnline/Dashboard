@@ -14,16 +14,16 @@
 
     </title>
 
-<<<<<<< HEAD
+
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://vjs.zencdn.net/7.5.4/video-js.css" rel="stylesheet">
-=======
+
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
 
     {!! Html::style('aero/assets/plugins/bootstrap/css/bootstrap.min.css') !!}
     {!! Html::style('aero/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') !!}
     {!! Html::style('aero/assets/plugins/charts-c3/plugin.css') !!}
->>>>>>> 6362e42d1f8548f4fb5a91a49f648b6d2bd1fe68
+
 
     {!! Html::style('aero/assets/plugins/morrisjs/morris.min.css') !!}
     <!-- Custom Css -->
@@ -31,7 +31,7 @@
     @yield('style')
 </head>
 
-<<<<<<< HEAD
+
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
@@ -392,9 +392,8 @@
                         </ul>
                     </li>
                     <!-- /Fin menu seguridad -->
-=======
+
 <body class="theme-blush">
->>>>>>> 6362e42d1f8548f4fb5a91a49f648b6d2bd1fe68
 
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
