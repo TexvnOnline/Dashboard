@@ -30,6 +30,7 @@
   </div>
 @endsection
 
+<<<<<<< HEAD
 @section('scripts')
 <script>
 	$(document).ready(function(){
@@ -67,3 +68,6 @@
 
 </script>
 @endsection
+=======
+
+>>>>>>> 8f0108b5030a959131e2b5284f6926028b1d1a94
