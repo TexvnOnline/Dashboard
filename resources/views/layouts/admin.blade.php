@@ -1,27 +1,37 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js " lang="en">
+
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
     <title>
+
         @yield('title')
+
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {!! Html::style('adminlte/plugins/fontawesome-free/css/all.min.css') !!}
-    {!! Html::style('adminlte/plugins/ekko-lightbox/ekko-lightbox.css') !!}
-    {!! Html::style('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') !!}
-    {!! Html::style('adminlte/dist/css/adminlte.min.css') !!}
-    {!! Html::style('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700') !!}
-
-    @yield('style')
-
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://vjs.zencdn.net/7.5.4/video-js.css" rel="stylesheet">
+=======
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
 
+    {!! Html::style('aero/assets/plugins/bootstrap/css/bootstrap.min.css') !!}
+    {!! Html::style('aero/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') !!}
+    {!! Html::style('aero/assets/plugins/charts-c3/plugin.css') !!}
+>>>>>>> 6362e42d1f8548f4fb5a91a49f648b6d2bd1fe68
+
+    {!! Html::style('aero/assets/plugins/morrisjs/morris.min.css') !!}
+    <!-- Custom Css -->
+    {!! Html::style('aero/assets/css/style.min.css') !!}
+    @yield('style')
 </head>
 
+<<<<<<< HEAD
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
@@ -382,191 +392,81 @@
                         </ul>
                     </li>
                     <!-- /Fin menu seguridad -->
+=======
+<body class="theme-blush">
+>>>>>>> 6362e42d1f8548f4fb5a91a49f648b6d2bd1fe68
 
-
-
-
-                    <!-- Inicio Menu de Rutas de Transporte-->
-                    <li class="nav-item has-treeview">
-
-                        <a href="" class="nav-link">
-                            <i class="fas fa-taxi"></i>
-                            <p>
-
-                                Rutas de Transporte
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('inicio_rutas_trans')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Inicio</p>
-                                </a>
-                            </li>
-                        </ul>
-
-
-
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('vista_registro_rutas')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Registro</p>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </li>
-
-                 <!-- Inicio Menu Turista y Ciudad -->
-
-                 <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>
-                                    Turista y la Ciudad
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('TuristaCiudad')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>lugar Turistico</p>
-                                    </a>
-                               
-                                    <li class="nav-item">
-                                    <a href="{{route('addlugarturistica')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Agregar Lugar Turistico</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{route('fotografia')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fotografia</p>
-                                    </a>
-                                    
-                                <li class="nav-item">
-                                    <a href="{{route('addfotografia')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Agregar Fotografia</p>
-                                    </a>
-                                </li>
-                            
-                                <li class="nav-item">
-                                    <a href="{{('addanimacion')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Agregar Animacion</p>
-                                    </a>
-                                </li>
-
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{('resumen')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Resumen</p>
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                        </li>
-
-
-
-
-
-
-
-                    </ul>
-
-
-
-
-
-
-                </nav>
-                <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
-        </aside>
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>
-                                <h1>@yield('title')</h1>
-                            </h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="">Inicio</a></li>
-                                @yield('breadcrumb')
-                            </ol>
-                        </div>
-                    </div>
-                </div><!-- /.container-fluid -->
-            </section>
-
-            <!-- Main content -->
-            <section class="content">
-
-                @if (session('info'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{session('info')}}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                @endif
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-                <!-- Default box -->
-                @yield('content')
-                <!-- /.card -->
-
-            </section>
-            <!-- /.content -->
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img class="zmdi-hc-spin" src="{!!asset('aero/assets/images/loader.svg')!!}" width="48"
+                    height="48" alt="Aero"></div>
+            <p>Please wait...</p>
         </div>
-
-        <!-- /.content-wrapper -->
-
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.0.3-pre
-            </div>
-            <strong>Copyright &copy; 2020-2025 <a href="http://lanube.cu.ma">LaNube.cu.ma</a>.</strong> All rights
-            reserved.
-        </footer>
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
     </div>
 
-    {!! Html::script('adminlte/plugins/jquery/jquery.min.js') !!}
-    <!-- jQuery UI 1.11.4 -->
-    {!! Html::script('adminlte/plugins/jquery-ui/jquery-ui.min.js') !!}
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-        $.widget.bridge('uibutton', $.ui.button)
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
 
+    <!-- Main Search -->
+    <div id="search">
+        <button id="close" type="button" class="close btn btn-primary btn-icon btn-icon-mini btn-round">x</button>
+        <form>
+            <input type="search" value="" placeholder="Search..." />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+    <!-- Right Icon menu Sidebar -->
+    @include('layouts._nav_right')
+
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar">
+        <div class="navbar-brand">
+            <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
+            <a href="index.html"><img src="{!!asset('aero/assets/images/logo.svg')!!}" width="25" alt="Aero"><span
+                    class="m-l-10">Aero</span></a>
+        </div>
+
+        @include('layouts._nav_menu')
+
+    </aside>
+
+    <!-- Right Sidebar -->
+    @include('layouts._nav_right_config')
+
+    <!-- Main Content -->
+
+    <section class="content">
+        <div class="">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 col-sm-12">
+                        <h2>Dashboard</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard 1</li>
+                        </ul>
+                        <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
+                                class="zmdi zmdi-sort-amount-desc"></i></button>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12">
+                        <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i
+                                class="zmdi zmdi-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+
+                @yield('content')
+
+            </div>
+        </div>
+    </section>
+
+<<<<<<< HEAD
     </script>
     
     <!-- Bootstrap 4 -->
@@ -595,14 +495,22 @@
     {{--  {!! Html::script('adminlte/dist/js/pages/dashboard.js') !!}  --}}
     <!-- AdminLTE for demo purposes -->
     {!! Html::script('adminlte/dist/js/demo.js') !!}
+=======
+>>>>>>> 6362e42d1f8548f4fb5a91a49f648b6d2bd1fe68
 
-    {!! Html::script('https://maps.googleapis.com/maps/api/js?key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA') !!}
 
+    <!-- Jquery Core Js -->
+    {!! Html::script('aero/assets/bundles/libscripts.bundle.js') !!}
+    {!! Html::script('aero/assets/bundles/vendorscripts.bundle.js') !!}
+    {!! Html::script('aero/assets/bundles/jvectormap.bundle.js') !!}
+    {!! Html::script('aero/assets/bundles/sparkline.bundle.js') !!}
+    {!! Html::script('aero/assets/bundles/c3.bundle.js') !!}
 
-    {{--  PRUEBA  --}}
+    {!! Html::script('aero/assets/bundles/mainscripts.bundle.js') !!}
     
-
+    {!! Html::script('aero/assets/js/pages/index.js') !!}
     @yield('scripts')
 </body>
+
 
 </html>

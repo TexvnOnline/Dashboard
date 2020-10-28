@@ -10,18 +10,36 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{--  {!! Html::script('aero/{{ asset('js/app.js') }}" defer></script>  --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <title>:: Aero Bootstrap4 Admin :: Sign In</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Custom Css -->
+    {!! Html::style('aero/assets/plugins/bootstrap/css/bootstrap.min.css') !!}
+    {!! Html::style('aero/assets/css/style.min.css') !!}    
+
+    {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet">  --}}
+
+   
+    {!! Html::script('aero/assets/bundles/libscripts.bundle.js') !!}
+    {!! Html::script('aero/assets/bundles/vendorscripts.bundle.js') !!}
+
+    
 </head>
-<body>
+<body class="theme-blush">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{--  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -70,7 +88,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>  --}}
 
         <main class="py-4">
             @yield('content')
