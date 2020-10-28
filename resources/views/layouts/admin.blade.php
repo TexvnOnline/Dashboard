@@ -18,7 +18,7 @@
     @yield('style')
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
+    <link href="https://vjs.zencdn.net/7.5.4/video-js.css" rel="stylesheet">
 
 </head>
 
@@ -347,6 +347,18 @@
                                         <p>Listar</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{route('semaforos.usuario')}}" class="nav-link">
+                                        <i class="fas fa-clipboard-list nav-icon"></i>
+                                        <p>Usuarios</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('semaforos.camara')}}" class="nav-link">
+                                        <i class="fas fa-clipboard-list nav-icon"></i>
+                                        <p>Videocámara</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -556,6 +568,7 @@
         $.widget.bridge('uibutton', $.ui.button)
 
     </script>
+    <script src='https://vjs.zencdn.net/7.5.4/video.js'></script>
     <!-- Bootstrap 4 -->
     {!! Html::script('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') !!}
     <!-- ChartJS -->

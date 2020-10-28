@@ -68,6 +68,8 @@ Route::get('dashboard/park', 'ParkController@dashboard')->name('parks.dashboard'
 //semaforos
 Route::resource('semaforo', 'SemaforoController')->names('semaforos');
 Route::get('dashboard/semaforo', 'SemaforoController@dashboard')->name('semaforos.dashboard');
+Route::get('camara/semaforo', 'SemaforoController@camara')->name('semaforos.camara');
+Route::get('usuario/semaforo', 'SemaforoController@usuario')->name('semaforos.usuario');
 
 
 Route::resource('company', 'CompanyController')->names('companies');
