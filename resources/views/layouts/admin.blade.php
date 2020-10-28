@@ -349,13 +349,13 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('semaforos.usuario')}}" class="nav-link">
-                                        <i class="fas fa-clipboard-list nav-icon"></i>
+                                        <i class="fas fa-users nav-icon"></i>
                                         <p>Usuarios</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('semaforos.camara')}}" class="nav-link">
-                                        <i class="fas fa-clipboard-list nav-icon"></i>
+                                        <i class="fas fa-video nav-icon"></i>
                                         <p>Videocámara</p>
                                     </a>
                                 </li>
@@ -568,7 +568,7 @@
         $.widget.bridge('uibutton', $.ui.button)
 
     </script>
-    <script src='https://vjs.zencdn.net/7.5.4/video.js'></script>
+    
     <!-- Bootstrap 4 -->
     {!! Html::script('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') !!}
     <!-- ChartJS -->
