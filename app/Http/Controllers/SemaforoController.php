@@ -36,6 +36,11 @@ class SemaforoController extends Controller
         $semaforos = Semaforo::orderBy('id', 'DESC')->paginate(10);
         return view('dashboard.semaforos.index',compact('semaforos'));
     }
+    public function usuario()
+    {
+        $usuarios = Semaforo::orderBy('id', 'DESC')->paginate(10);
+        return view('dashboard.semaforos.index',compact('semaforos'));
+    }
     public function camara()
     {
         return view('dashboard.semaforos.camara');
