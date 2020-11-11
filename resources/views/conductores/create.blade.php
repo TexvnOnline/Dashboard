@@ -1,15 +1,15 @@
 @extends('layouts.admin')
-@section('title','Registro de parques')
+@section('title','Registro de conductor')
 @section('breadcrumb')
 <li class="breadcrumb-item active">
-    <a href="{{route('parks.index')}}">Parques y jardines</a>
+    <a href="{{route('parks.index')}}">Conductores</a>
 </li>
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Registro de parques</h3>
+        <h3 class="card-title">Registro de conductor</h3>
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
