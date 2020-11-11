@@ -3,23 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Province;
-use Session;
 use Illuminate\Http\Request;
 
 class ProvinceController extends Controller
 {
     public function index()
     {
-        if(!empty(Session::get('department_id'))){
-            $provinces = Province::orderBy('id', 'DESC')->where('department_id', Session::get('department_id'))->paginate(10);
-            return view('dashboard.provinces.index',compact('provinces'));
-        }else{
-            return response()->view('errors.404', [], 404);
-        }
+        return view('dashboard.provinces.index');
     }
     public function create()
     {
-        //
+        return view('dashboard.provinces.create');
     }
     public function store(Request $request)
     {
@@ -31,7 +25,7 @@ class ProvinceController extends Controller
     }
     public function edit(Province $province)
     {
-        //
+        return view('dashboard.provinces.edit');
     }
     public function update(Request $request, Province $province)
     {

@@ -1,34 +1,38 @@
 @extends('layouts.admin')
-@section('title','Gestión de provincias')
+@section('title','Sensores')
 
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Gestión de provincias</h3>
+        <h3 class="card-title">Sensores</h3>
         
 
-            <div class="card-tools">
+            {{-- <div class="card-tools">
                 <ul class="nav nav-pills ml-auto">
                     <li class="nav-item mr-2">
-                        <a class="nav-link active" href="" title="Agregar" >
+                        <a class="nav-link active" href="{{route('parks.dashboard')}}" title="Agregar" >
                             <i class="fas fa-tachometer-alt"></i> Ver Dashboard
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="" title="Agregar" >
+                        <a class="nav-link active" href="{{route('parks.create')}}" title="Agregar" >
                             <i class="fas fa-plus"></i> Agregar parque
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
     </div>
     <div class="card-body table-responsive p-0">
         <table class="table table-head-fixed">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th>Nombre</th>
+                    <th>Id</th>
+                    <th>Tipo</th>
+                    <th>Id parque</th>
+                    <th>Nombre de parque</th>
+                    <th>Nivel</th>
+                    <th>Fecha</th>
 
                 </tr>
             </thead>
@@ -50,7 +54,7 @@
 
     <script>
         const xhttp = new XMLHttpRequest();
-        xhttp.open('GET', 'http://smartcityhyo.tk/api/Provincia/List_provincia.php', true);
+        xhttp.open('GET', 'http://smartcityhyo.tk/api/Sensores/Listar_Sensores.php', true);
         xhttp.send();
         xhttp.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
@@ -66,11 +70,12 @@
                 for(let item of datos.records){
                     res.innerHTML += `
                     <tr>
-                        <td>${item.ID_Provincia}</td>
-                        <td>${item.PROV_Nombre}</td>
-                        <td>
-                            <a  type="button" class="btn btn-primary">Editar</a>
-                        </td>
+                        <td>${item.ID_Sensor}</td>
+                        <td>${item.SE_Tipo}</td>
+                        <td>${item.ID_Parque}</td>
+                        <td>${item.Parque}</td>
+                        <td>${item.SE_Nivel}</td>
+                        <td>${item.SE_Fecha}</td>    
                     </tr>
                     `
                 }

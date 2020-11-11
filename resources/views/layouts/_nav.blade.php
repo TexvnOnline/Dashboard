@@ -16,11 +16,24 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('parks.create')}}" class="nav-link">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        <p>Registrar</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('parks.index')}}" class="nav-link">
                         <i class="far fa-building nav-icon"></i>
                         <p>Listar</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('sensors.index')}}" class="nav-link">
+                        <i class="far fa-building nav-icon"></i>
+                        <p>Sensores</p>
+                    </a>
+                </li>
+                
             </ul>
         </li>
         {{--  INCIDENTES DE TRANCITO  --}}
@@ -34,11 +47,20 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('dashboard.incidents')}}" class="nav-link">
+                    <a href="{{route('conductores.index')}}" class="nav-link">
                         <i class="fas fa-tachometer-alt nav-icon"></i>
-                        <p>Panel</p>
+                        <p>Conductores</p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{route('conductores.create')}}" class="nav-link">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        <p>Registrar conductor</p>
+                    </a>
+                </li>
+
+                
                 <li class="nav-item">
                     <a href="{{route('companies.index')}}" class="nav-link">
                         <i class="far fa-building nav-icon"></i>
@@ -47,6 +69,30 @@
                 </li>
             </ul>
         </li>
+
+        {{--  OBRAS  --}}
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-car-crash"></i>
+                <p>
+                    Obras
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{route('obras.index')}}" class="nav-link">
+                        <i class="far fa-building nav-icon"></i>
+                        <p>Lista</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+
+
+
         {{-- Ejemplo --}}
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">

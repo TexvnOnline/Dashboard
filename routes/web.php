@@ -13,8 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+route::get('conductores', 'ConductoresController@conductores')->name('conductores.index');
+route::get('conductores/registrar', 'ConductoresController@create')->name('conductores.create');
 
 
+Route::resource('obras', 'ObraController')->names('obras');
+
+Route::resource('sensors', 'SensorController')->names('sensors');
+
+Route::get('photography/delete', 'PhotographyController@delete')->name('photographs.delete');
+
+
+Route::get('provinces/edit', 'ProvinceController@edit')->name('provinces.edit');
+Route::get('provinces', 'ProvinceController@index')->name('provinces.index');
+Route::get('provinces/create', 'ProvinceController@create')->name('provinces.create');
 
 Route::resource('incident', 'IncidentController')->names('incidents');
 

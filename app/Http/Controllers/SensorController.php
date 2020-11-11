@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class SensorController extends Controller
 {
+    public function index(){
+        return view('dashboard.sensors.index');
+    }
     // public function index()
     // {
     //     $sensors = Sensor::orderBy('id', 'DESC')->paginate(10);
