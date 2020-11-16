@@ -173,6 +173,7 @@ Route::get('/eventos', function () {
  Route::get('/VistaAutori', function(){
  	return view('VistaAutori');
  })->name('VistaAutori');
+ 
 Auth::routes();
 
  Route::get('/seguridad', function(){
