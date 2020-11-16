@@ -5,78 +5,61 @@
 @endsection
 @section('content')
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA&callback=initMap&libraries=&v=weekly"
-      defer
-    ></script>
-    <style type="text/css">
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 60%;
-      }
+<style type="text/css">
+#map{
+  height:25em;
+}
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=drawing&key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA" type="text/javascript"></script>
 
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
-        height: 60%;
-        margin: 0px;
-        padding: 0;
-      }
-    </style>
-
-
-<script>
-
-      let map;
-      let marker; //Animación
-
-      function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: -12.0665806, lng: -75.2128854, },
-          zoom: 14,
-        });
-        var huancayo={lat:-12.068546, lng:-75.212144};
-        var huanca={lat:-12.070835,  lng:-75.204644};
-        var ocopilla={lat:-12.073043,  lng:-75.198949};
-
-       var marker=new google.maps.Marker(
-       {
-        position:huancayo,
-        map: map,
-        icon:'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
-       });
-
-
-       var marker=new google.maps.Marker(
-       {
-        position:huanca,
-        map: map,
-        icon:'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
-        draggable: true,
-        animation: google.maps.Animation.DROP,
-       });
-
-        marker.addListener("click", toggleBounce);
-
-       function toggleBounce() {
-        if (marker.getAnimation() !== null) {
-          marker.setAnimation(null);
-        } else {
-          marker.setAnimation(google.maps.Animation.BOUNCE);
+<script type="text/javascript">
+const getLocations = () => {
+    fetch('http://smartcityhyo.tk/api/Seguridad/Listar_delitos.php')
+    .then(response => response.json())
+    .then(locations => {
+        let locationsInfo = []
+         
+        locations.forEach(location => {
+            let locationData = {
+                position:{lat:parseFloat(location.RD_Latitud),lng:parseFloat(location.RD_Longitud)},
+                name:location.RD_Descripcion                
+            }
+            locationsInfo.push(locationData)
+            console.log(locationData);
+        })
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((data)=>{
+                let currentPosition = {
+                    lat: data.coords.latitude,
+                    lng: data.coords.longitude
+                }
+                dibujarMapa(currentPosition, locationsInfo)
+            })
         }
-        }
+    })
+}
 
-        var marker=new google.maps.Marker(
-        {
-        position:ocopilla,
-        map: map,
-        icon:'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-        });
+const dibujarMapa = (obj, locationsInfo) => {
+   let map = new google.maps.Map(document.getElementById('map'),{
+        center: { lat: -12.0665806, lng: -75.2128854, },
+        zoom: 14
+    })
 
-      }
+    let marker = new google.maps.Marker({
+        position: obj,
+        title: 'Tu ubicacion'
+    })
+    marker.setMap(map)
 
+    let markers = locationsInfo.map(place => {
+        return new google.maps.Marker({
+            position: place.position,
+            map: map,
+            title: place.name
+        })
+    })
+}
+window.addEventListener('load',getLocations)
 </script>
 @section('content')
 
@@ -97,17 +80,17 @@
         <div class="alert alert-info alert-dismissible">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <h5><i class="icon fas fa-exclamation-triangle"></i>Delito más frecuente!</h5>
-          Información de la base de datos.
+          <h6><ul id=resis></ul></h6>
         </div>
         <div class="alert alert-warning alert-dismissible">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <h5><i class="icon fas fa-exclamation-triangle"></i>Zona más peligrosa!</h5>
-          Información de la base de datos.
+          <h6><ul id=resi></ul></h6>
         </div>
         <div class="alert alert-success alert-dismissible">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <h5><i class="icon fas fa-exclamation-triangle"></i> Cantidad delitos captados!</h5>
-          Información de la base de datos.
+          <h6><ul id=resiste></ul></h6>
         </div>
       </div>
 </div>
@@ -117,7 +100,7 @@
 <div class="col-sm-6">
   <div class="form-group">
     <label>Seleccione tipo delito</label>
-    <select class="form-control">
+    <select class="form-control" id="res">
     <option>Delito 1</option>
     <option>Delito 2</option>
     <option>Delito 3</option>
@@ -128,71 +111,24 @@
 
 <div class="card">
   <div class="card-header">
-    <h3 class="card-title">Porcentaje general delitos</h3>
+    <h3 class="card-title">Detalle de delitos hasta la fecha</h3>
   </div>
   <div class="card-body p-0">
-    <table class="table table-sm">
-      <thead>
-        <tr>
-          <th style="width: 10px">#</th>
-          <th>Delito</th>
-          <th>Progreso</th>
-          <th style="width: 40px">Porcentaje</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1.</td>
-          <td>Delito 1</td>
-          <td>
-            <div class="progress progress-xs">
-              <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-            </div>
-          </td>
-          <td><span class="badge bg-danger">55%</span></td>
-        </tr>
-        <tr>
-          <td>2.</td>
-          <td>Delito 2</td>
-          <td>
-            <div class="progress progress-xs">
-              <div class="progress-bar bg-warning" style="width: 70%"></div>
-            </div>
-          </td>
-          <td><span class="badge bg-warning">70%</span></td>
-        </tr>
-        <tr>
-          <td>3.</td>
-          <td>Delito 3</td>
-          <td>
-            <div class="progress progress-xs progress-striped active">
-              <div class="progress-bar bg-primary" style="width: 30%"></div>
-            </div>
-          </td>
-          <td><span class="badge bg-primary">30%</span></td>
-        </tr>
-        <tr>
-          <td>4.</td>
-          <td>Delito 4</td>
-          <td>
-            <div class="progress progress-xs progress-striped active">
-              <div class="progress-bar bg-success" style="width: 90%"></div>
-            </div>
-          </td>
-          <td><span class="badge bg-success">90%</span></td>
-        </tr>
-        <tr>
-          <td>5.</td>
-          <td>Delito 5</td>
-          <td>
-            <div class="progress progress-xs progress-striped active">
-              <div class="progress-bar bg-success" style="width: 15%"></div>
-            </div>
-          </td>
-          <td><span class="badge bg-success">15%</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="card-body table-responsive p-0">
+      <table class="table table-head-fixed">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th>Tipo Delito</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Lugar</th>
+          </tr>
+        </thead>
+        <tbody id="resist">
+        </tbody>
+      </table>
+    </div>
     </div>
   </div>
 </div>
@@ -201,8 +137,102 @@
 @endsection
 
 @section('scripts')
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.open('GET', 'http://smartcityhyo.tk/api/Seguridad/Listar_delitos.php', true);
+        xhttp.send();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                //console.log(this.responseText);
+
+                //transformar a json
+                let datos = JSON.parse(this.responseText);
+
+                let red = document.querySelector('#res');
+                res.innerHTML = '';
+                console.log(datos);
+
+                for(let item of datos){
+                    res.innerHTML += `
+                    <tr>
+                        <option>${item.RD_Tipo_Delito}</option>
+                    </tr>
+                    `
+                }
+
+                let redi = document.querySelector('#resi');
+                resi.innerHTML = '';
+                console.log(datos);
+
+                let i = 0;
+
+                for(let item of datos){
+
+                    i++;
+                    resi.innerHTML += `
+                    <tr>
+                        <option>${item.RD_Lugar_Delito} &nbsp ${item.RD_Fecha_Hora.substr(0,10)}</option>
+                    </tr>
+                    `
+
+                    if(i<2){
+                      break;
+                    }
+                }
 
 
+                let redis = document.querySelector('#resis');
+                resis.innerHTML = '';
+                console.log(datos);
+
+                let d = 0;
+
+                for(let item of datos){
+
+                    d++;
+                    resis.innerHTML += `
+                    <tr>
+                        <option>${item.RD_Tipo_Delito} &nbsp ${item.RD_Fecha_Hora.substr(0,10)}</option>
+                    </tr>
+                    `
+
+                    if(d<2){
+                      break;
+                    }
+                }
+
+                let redil = document.querySelector('#resist');
+                resist.innerHTML = '';
+                console.log(datos);
+
+                for(let item of datos){
+                    resist.innerHTML += `
+                    <tr>
+                        <td>${item.ID_Camara}</td>
+                        <td>${item.RD_Tipo_Delito}</td>
+                        <td>${item.RD_Descripcion}</td>
+                        <td>${item.RD_Fecha_Hora.substr(0,10)}</td>
+                        <td>${item.RD_Lugar_Delito}</td>
+                    </tr>
+                    `
+                }
+
+                let redila = document.querySelector('#resiste');
+                resiste.innerHTML = '';
+                console.log(datos);
 
 
+                for(let item of datos){
+
+                    resiste.innerHTML += `
+                    <tr>
+                        <td>${item.ID_Camara}</td>
+                    </tr>
+                    `
+                }
+
+            }
+        }
+
+    </script>
 @endsection

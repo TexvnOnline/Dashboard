@@ -68,7 +68,6 @@ Route::get('dashboard/park', 'ParkController@dashboard')->name('parks.dashboard'
 Route::resource('semaforo', 'SemaforoController')->names('semaforos');
 Route::get('dashboard/semaforo', 'SemaforoController@dashboard')->name('semaforos.dashboard');
 
-
 Route::resource('company', 'CompanyController')->names('companies');
 Route::resource('vehicle', 'VehicleController')->names('vehicles');
 
@@ -160,9 +159,10 @@ Route::get('/eventos', function () {
  })->name('VistaAutori');
 Auth::routes();
 
- Route::get('/seguridad', function(){
+Route::get('/seguridad', function(){
      return view('seguridad');
  })->name('seguridad');
+
 
  Route::get('/home', 'HomeController@index')->name('home');
 
