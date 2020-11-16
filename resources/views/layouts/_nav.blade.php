@@ -93,7 +93,7 @@
 
 
 
-        {{-- Ejemplo --}}
+        {{-- Usuarios --}}
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>
@@ -117,8 +117,10 @@
                 </li>
             </ul>
         </li>
+
+        {{--  Identidad Cultural  --}}
         <li class="nav-item has-treeview">
-            <a href="{{route('turismo')}}" class="nav-link">
+            <a href="" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                     Identidad Cultural
@@ -127,51 +129,40 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('turismo')}}" class="nav-link">
+                    <a href="{{route('tourists.index')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Lugares Turísticos</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('addLugarTuristico')}}" class="nav-link">
+                    <a href="{{route('tourists.create')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Agregar lugar</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('detallesderestaurantes')}}" class="nav-link">
+                    <a href="{{route('restaurants.index')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Restaurantes</p>
+                        <p>Recurso</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('nuevorestaurante')}}" class="nav-link">
+                    <a href="{{route('restaurants.create')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Agregar Restaurantes</p>
+                        <p>Agregar recursos</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('Hospedaje')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Hospedajes</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('addHospedaje')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Agregar Hospedajes</p>
-                    </a>
-                </li>
+              
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('events.index')}}" class="nav-link">
 
                         <i class="far fa-circle nav-icon"></i>
                         <p>Eventos</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('events.create')}}" class="nav-link">
 
                         <i class="far fa-circle nav-icon"></i>
                         <p>Agregar Eventos</p>
@@ -181,6 +172,9 @@
 
             </ul>
         </li>
+
+
+        
         <li class="nav-item has-treeview">
             <a href="" class="nav-link">
                 <i class="fas fa-car-crash"></i>

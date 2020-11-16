@@ -167,6 +167,7 @@ Route::get('/eventos', function () {
  Route::get('/turismo',function(){
      return view('turismo');
  })->name('turismo');
+ 
  Route::get('/addLugarTuristico',function(){
      return view('addLugarTuristico');
  })->name('addLugarTuristico');

@@ -55,20 +55,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($parks as $park)
-                <tr>
-                    <td>{{$park->id}}</td>
-                    <td>{{$park->name}}</td>
-                    <td>{{$park->direction}}</td>
-                    <td>{{$park->reference}}</td>
-                    <td>{{$park->description}}</td>
-                    <td class="text-center">
-                        <a class="btn btn-light" href="{{route('parks.show', $park)}}">
-                            <i class="far fa-eye"></i>
-                        </a>
-                    </td>
-                </tr>
-                @endforeach
+               
             </tbody>
         </table>
     </div>
@@ -167,7 +154,7 @@
     window.addEventListener('load',getLocations)
 </script>
 
-<script>
+{{--  <script>
     function initMap() {
         var map;
         var bounds = new google.maps.LatLngBounds();
@@ -265,7 +252,7 @@
     // Load initialize function
     google.maps.event.addDomListener(window, 'load', initMap);
 
-</script>
+</script>  --}}
 
 
 @endsection

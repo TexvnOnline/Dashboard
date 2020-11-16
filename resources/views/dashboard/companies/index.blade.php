@@ -26,29 +26,12 @@
 			  </tr>
 		  </thead>
 		  <tbody>
-			  @foreach ($companies as $company)
-			<tr>
-				  <th scope="row">{{$company->id}}</td>
-                  <td>{{$company->name}}</td>
-				  <td>{{$company->description}}</td>
-				<td width="10px">
-					<a class="btn btn-info" href="{{route('companies.show', $company)}}">Autos</a>
-				</td>
-			  	<td width="10px">
-					<a class="btn btn-info" href="{{route('companies.edit', $company)}}">Editar</a>
-				</td>
-				<td width="10px">
-					{!! Form::open(['route'=>['companies.destroy', $company], 'method'=>'DELETE']) !!}
-					<button class="btn btn-danger">Eliminar</button>
-					{!! Form::close() !!}
-				</td>
-			</tr>
-			  @endforeach
+	
 		  </tbody>
 	  </table>
 	</div>
 	<div class="card-footer">
-		{{$companies->render()}}
+		
 	</div>
   </div>
 @endsection
