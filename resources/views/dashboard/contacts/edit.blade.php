@@ -30,7 +30,6 @@
   </div>
 @endsection
 
-<<<<<<< HEAD
 @section('scripts')
 <script>
 	$(document).ready(function(){
@@ -51,7 +50,7 @@
 			 };
 
 			$.ajax({
-				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php,
+				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php',
 			
 				type: 'PUT',
 				data : JSON.stringify(data),
@@ -68,6 +67,3 @@
 
 </script>
 @endsection
-=======
-
->>>>>>> 8f0108b5030a959131e2b5284f6926028b1d1a94

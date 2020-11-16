@@ -13,6 +13,5 @@ class IncidentBoardController extends Controller
     public function incident()
     {
         return view('dashboard.vehicles.dashboard');
-
     }
 }

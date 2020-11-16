@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Http;
 
-class HomeController extends Controller
+class SecurityController extends Controller
 {
     public function index()
     {
-        return view('home');
+        return view('dashboard.security.index');
     }
 }

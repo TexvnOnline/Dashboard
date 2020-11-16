@@ -30,7 +30,6 @@
   </div>
 @endsection
 
-<<<<<<< HEAD
 @section('scripts')
 <script>
 	$(document).ready(function(){
@@ -51,7 +50,7 @@
 			 };
 
 			$.ajax({
-				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php,
+				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php',
 			
 				type: 'POST',
 				data : JSON.stringify(data),
@@ -66,36 +65,5 @@
 		});
 	});
 
-=======
-
-
-@section('scripts')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-	$(document).ready(function(){
-		$("#submit").on('click', function(){
-			var data = { 
-
-				'LT_Nombre' : $("#LT_Nombre").val(),
-				'LT_Descripcion' : $("#LT_Descripcion").val(),
-				'ID_Distrito' : $("#ID_Distrito").val(),
-				'LT_Hora_Inicio' : $("#LT_Hora_Inicio").val(),
-				'LT_Hora_Fin' : $("#LT_Hora_Fin").val(),
-				'LT_URL_Map' : $("#LT_URL_Map").val(),
-				'LT_Latitud' : $("#LT_Latitud").val(),
-				'LT_Longitud' : $("#LT_Longitud").val()
-			 };
-			$.ajax({
-				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php',
-				type: 'POST',
-				data : JSON.stringify(data),
-				datatype: 'json',
-				success : function(data) {
-					console.log(data);
-				},
-			})
-		});
-	});
->>>>>>> 8f0108b5030a959131e2b5284f6926028b1d1a94
 </script>
 @endsection

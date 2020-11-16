@@ -102,7 +102,7 @@
         <div class="alert alert-warning alert-dismissible">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <h5><i class="icon fas fa-exclamation-triangle"></i>Zona más peligrosa!</h5>
-          <div id=resi>Información de la base de datos.</div>
+          Información de la base de datos.
         </div>
         <div class="alert alert-success alert-dismissible">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -117,7 +117,7 @@
 <div class="col-sm-6">
   <div class="form-group">
     <label>Seleccione tipo delito</label>
-    <select class="form-control" id="res">
+    <select class="form-control">
     <option>Delito 1</option>
     <option>Delito 2</option>
     <option>Delito 3</option>
@@ -201,43 +201,8 @@
 @endsection
 
 @section('scripts')
-    <script>
-        const xhttp = new XMLHttpRequest();
-        xhttp.open('GET', 'http://localhost/smartcity/Seguridad/Listar_delitos.php', true);
-        xhttp.send();
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
-                //console.log(this.responseText);
 
-                //transformar a json
-                let datos = JSON.parse(this.responseText);
 
-                let red = document.querySelector('#res');
-                res.innerHTML = '';
-                console.log(datos.records);
 
-                for(let item of datos.records){
-                    res.innerHTML += `
-                    <tr>
-                        <option>${item.RD_Tipo_Delito}</option>
-                    </tr>
-                    `
-                }
 
-                let redi = document.querySelector('#resi');
-                resi.innerHTML = '';
-                console.log(datos.records);
-
-                for(let item of datos.records){
-                    resi.innerHTML += `
-                    <tr>
-                        <option>${item.RD_Lugar_Delito}</option>
-                    </tr>
-                    `
-                }
-
-            }
-        }
-
-    </script>
 @endsection

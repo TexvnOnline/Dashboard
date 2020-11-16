@@ -13,6 +13,5 @@ class CulturalIdentityController extends Controller
 {
     public function dashboard(){
         return view('dashboard.culturalIdentity.dashboard');
-
     }
 }

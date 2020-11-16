@@ -39,6 +39,11 @@ Route::resource('hotels', 'HotelController')->names('hotels');
 Route::get('dashboard/hotels', 'HotelController@dashboard')->name('restaurants.dashboard');
 //hoteles fin
 
+//semaforos
+Route::resource('semaforo', 'SemaforoController')->names('semaforos');
+Route::get('dashboard/semaforo', 'SemaforoController@dashboard')->name('semaforos.dashboard');
+Route::get('camara/semaforo', 'SemaforoController@camara')->name('semaforos.camara');
+Route::get('usuario/semaforo', 'SemaforoController@usuario')->name('semaforos.usuario');
 
 //lugarturistiContacto//
 
@@ -211,3 +216,24 @@ Auth::routes();
 
 
  })->name('inicio_rutas_trans');
+
+
+  Route::get('/registro_tramo_rutas',function()
+  {
+    return view('registro_tramo_rutas');
+})->name('registro_tramo_rutas');
+
+
+  Route::get('/registrar_tramo',function()
+
+{
+
+    return view('registrar_tramo');
+
+})->name('registrar_tramo');
+
+
+  Route::get('/vista_emp_ru_tra',function()
+  {
+    return view('vista_emp_ru_tra');
+  })->name('vista_emp_ru_tra');

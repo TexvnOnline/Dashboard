@@ -27,6 +27,7 @@
         <table class="table table-head-fixed">
             <thead>
                 <tr>
+                    
                     <th scope="col">Id</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
@@ -79,7 +80,9 @@
                             <a  type="button" class="btn btn-primary">Editar</a>
                         </td>
                     </tr>
+                    
                     `
+
                 }
 
             }

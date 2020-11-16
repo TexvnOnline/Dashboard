@@ -10,7 +10,6 @@ class HotelController extends Controller
     public function index()
     {
          return view('dashboard.hotels.index');
-        
     }
     public function create()
     {

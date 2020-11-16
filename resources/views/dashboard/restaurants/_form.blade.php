@@ -43,11 +43,7 @@
 
 
 <div class="from-group">
-<<<<<<< HEAD
     {!! Form::label('RES_Nombre','Nombre') !!}
-=======
-    {!! Form::label('RES_Nombre','Nombre de la Empresa') !!}
->>>>>>> 8f0108b5030a959131e2b5284f6926028b1d1a94
     <input type="text" name="RES_Nombre" id="RES_Nombre" class="form-control"> 
 </div>
 <div class="from-group">
@@ -55,11 +51,7 @@
     <input type="text" name="RES_Descripcion" id="RES_Descripcion" class="form-control"> 
 </div>
 <div class="from-group">
-<<<<<<< HEAD
     {!! Form::label('RES_Tipo','Tipo') !!}
-=======
-    {!! Form::label('RES_Tipo','Tipo de Empresa') !!}
->>>>>>> 8f0108b5030a959131e2b5284f6926028b1d1a94
     <input type="text" name="RES_Tipo" id="RES_Tipo" class="form-control"> 
 </div>
 <div class="from-group">
