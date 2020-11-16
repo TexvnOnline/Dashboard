@@ -158,6 +158,7 @@
 {!! Html::script('adminlte/dist/js/adminlte.min.js') !!}
 {!! Html::script('adminlte/dist/js/demo.js') !!}
 {!! Html::script('adminlte/plugins/filterizr/jquery.filterizr.min.js') !!}
+
 @yield('scripts') 
 </body>
 </html>

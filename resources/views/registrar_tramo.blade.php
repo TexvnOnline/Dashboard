@@ -30,6 +30,7 @@ $codigo = $_GET["codigo"];
         </script>
         <script src="js/wicket-gmap3.js" type="text/javascript">
         </script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=drawing&key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA" type="text/javascript"></script>
         <script type="text/javascript">
             var app = (function () {
     return {

@@ -411,7 +411,43 @@
                             </li>
                         </ul>
                     </li>
+
                     <!-- /Fin menu seguridad -->
+
+                    <!-- Rutas de Transporte-->
+                    <li class="nav-item has-treeview">
+
+                        <a href="" class="nav-link">
+                            <i class="fas fa-taxi"></i>
+                            <p>
+
+                                Rutas de Transporte
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('inicio_rutas_trans')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Inicio</p>
+                                </a>
+                            </li>
+                        </ul>
+
+
+
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('vista_registro_rutas')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registro</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                        <!--Fin Rutas de Transporte-->
                 </nav>
 <body class="theme-blush">
 
@@ -528,6 +564,7 @@
     {!! Html::script('aero/assets/bundles/mainscripts.bundle.js') !!}
     
     {!! Html::script('aero/assets/js/pages/index.js') !!}
+    
     @yield('scripts')
 </body>
 
