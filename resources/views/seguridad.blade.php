@@ -85,7 +85,11 @@ window.addEventListener('load',getLocations)
         <div class="alert alert-warning alert-dismissible">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <h5><i class="icon fas fa-exclamation-triangle"></i>Zona más peligrosa!</h5>
+<<<<<<< HEAD
           <h6><ul id=resi></ul></h6>
+=======
+          <div id=resi>Información de la base de datos.</div>
+>>>>>>> d85816850f39df17e2805875736bb3604c3e5e46
         </div>
         <div class="alert alert-success alert-dismissible">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -139,7 +143,11 @@ window.addEventListener('load',getLocations)
 @section('scripts')
     <script>
         const xhttp = new XMLHttpRequest();
+<<<<<<< HEAD
         xhttp.open('GET', 'http://smartcityhyo.tk/api/Seguridad/Listar_delitos.php', true);
+=======
+        xhttp.open('GET', 'http://localhost/smartcity/Seguridad/Listar_delitos.php', true);
+>>>>>>> d85816850f39df17e2805875736bb3604c3e5e46
         xhttp.send();
         xhttp.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
@@ -150,9 +158,15 @@ window.addEventListener('load',getLocations)
 
                 let red = document.querySelector('#res');
                 res.innerHTML = '';
+<<<<<<< HEAD
                 console.log(datos);
 
                 for(let item of datos){
+=======
+                console.log(datos.records);
+
+                for(let item of datos.records){
+>>>>>>> d85816850f39df17e2805875736bb3604c3e5e46
                     res.innerHTML += `
                     <tr>
                         <option>${item.RD_Tipo_Delito}</option>
@@ -162,6 +176,7 @@ window.addEventListener('load',getLocations)
 
                 let redi = document.querySelector('#resi');
                 resi.innerHTML = '';
+<<<<<<< HEAD
                 console.log(datos);
 
                 let i = 0;
@@ -227,6 +242,14 @@ window.addEventListener('load',getLocations)
                     resiste.innerHTML += `
                     <tr>
                         <td>${item.ID_Camara}</td>
+=======
+                console.log(datos.records);
+
+                for(let item of datos.records){
+                    resi.innerHTML += `
+                    <tr>
+                        <option>${item.RD_Lugar_Delito}</option>
+>>>>>>> d85816850f39df17e2805875736bb3604c3e5e46
                     </tr>
                     `
                 }
@@ -235,4 +258,8 @@ window.addEventListener('load',getLocations)
         }
 
     </script>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> d85816850f39df17e2805875736bb3604c3e5e46

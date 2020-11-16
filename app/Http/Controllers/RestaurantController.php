@@ -9,15 +9,11 @@ class RestaurantController extends Controller
 {
     public function dashboard()
     {
-        $restaurants = Restaurant::orderBy('id', 'DESC')->get();
-        return view('dashboard.restaurants.dashboard',compact('restaurants'));
+        return view('dashboard.restaurants.dashboard');
     }
     public function index()
     {
-        $restaurants = Restaurant::orderBy('id', 'DESC')->paginate(10);
-
-      
-        return view('dashboard.restaurants.index',compact('restaurants'));
+        return view('dashboard.restaurants.index');
     }
     public function create()
     {
@@ -25,16 +21,6 @@ class RestaurantController extends Controller
     }
     public function store(Request $request)
     {
-        $restaurant = new Restaurant($request->all());
-        if($request->hasfile('image')){
-            $image = $request->file('image');
-            $name = time().$image->getClientOriginalName();
-            $ruta = public_path().'/images';
-            $image->move($ruta, $name);
-            $urlimage ='/images/'.$name;
-        }
-        $restaurant->image =  $urlimage;
-        $restaurant->save();
         return redirect()->route('restaurants.index');
     }
     public function show(Restaurant $restaurant)
@@ -43,28 +29,14 @@ class RestaurantController extends Controller
     }
     public function edit(Restaurant $restaurant)
     {
-        return view('dashboard.restaurants.edit', compact('restaurant'));
+        return view('dashboard.restaurants.edit');
     }
     public function update(Request $request, Restaurant $restaurant)
     {
-        $restaurant->fill($request->all()); 
-        if($request->hasfile('image')){
-            $image = $request->file('image');
-            $name = time().$image->getClientOriginalName();
-            $ruta = public_path().'/images';
-            $image->move($ruta, $name);
-            $urlimage ='/images/'.$name;
-        }
-        if ($request->hasFile('image')){
-            $restaurant->image =  $urlimage;
-        }
-        $restaurant->save();
-
         return redirect()->route('restaurants.index'); 
     }
     public function destroy(Restaurant $restaurant)
     {
-        $restaurant->delete();
         return redirect()->route('restaurants.index'); 
     }
 }

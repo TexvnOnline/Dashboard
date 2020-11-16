@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 @section('title','Gestión de parques y jardines')
-@section('breadcrumb')
-<li class="breadcrumb-item active">@yield('title')</li>
-@endsection
+
 @section('content')
 <div class="card">
     <div class="card-header">
@@ -29,6 +27,7 @@
         <table class="table table-head-fixed">
             <thead>
                 <tr>
+                    
                     <th scope="col">Id</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
@@ -51,6 +50,9 @@
 </div>
 @endsection
 @section('scripts')
+
+
+
     <script>
         const xhttp = new XMLHttpRequest();
         xhttp.open('GET', 'http://smartcityhuancayo.herokuapp.com/Parque/List_parque.php', true);
@@ -78,7 +80,9 @@
                             <a  type="button" class="btn btn-primary">Editar</a>
                         </td>
                     </tr>
+                    
                     `
+
                 }
 
             }

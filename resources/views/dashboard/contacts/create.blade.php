@@ -23,7 +23,8 @@
 	</div>
 	<div class="card-footer">
       <a class="btn btn-danger float-right" href="{{route('contacts.index')}}">Cancelar</a>
-      <input type="submit" value="Guardar" class="btn btn-primary">
+     
+	  <input id="submit" type="button" name="submit" class="btn btn-primary" value="Guardar">
     </div>
           </form>
   </div>
@@ -49,7 +50,7 @@
 			 };
 
 			$.ajax({
-				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php,
+				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php',
 			
 				type: 'POST',
 				data : JSON.stringify(data),

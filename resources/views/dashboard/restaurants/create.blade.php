@@ -1,15 +1,15 @@
 @extends('layouts.admin')
-@section('title','Registrar Restaurante')
+@section('title','Registrar Empresa')
 @section('breadcrumb')
 <li class="breadcrumb-item active">
-	<a href="{{route('restaurants.index')}}">Gestion de Restaurante</a>
+	<a href="{{route('restaurants.index')}}">Gestion de Empresa</a>
 </li>
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection 
 @section('content')
 <div class="card">
 	<div class="card-header">
-	  <h3 class="card-title">Registro de Restaurante</h3>
+	  <h3 class="card-title">Registro de Empresa</h3>
 	  <div class="card-tools">
 		<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
 		  <i class="fas fa-minus"></i></button>

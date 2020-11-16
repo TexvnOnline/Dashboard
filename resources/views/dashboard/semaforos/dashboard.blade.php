@@ -55,20 +55,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($semaforos as $semaforo)
-                <tr>
-                    <td>{{$semaforo->id}}</td>
-                    <td>{{$semaforo->name}}</td>
-                    <td>{{$semaforo->direction}}</td>
-                    <td>{{$semaforo->reference}}</td>
-                    <td>{{$semaforo->description}}</td>
-                    <td class="text-center">
-                        <a class="btn btn-light" href="{{route('semaforos.show', $semaforo)}}">
-                            <i class="far fa-eye"></i>
-                        </a>
-                    </td>
-                </tr>
-                @endforeach
+             
             </tbody>
         </table>
     </div>
@@ -121,7 +108,7 @@
 {{--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4P11ikLTgBjGY_tWHvdkxTF0JC7jYzH4&callback=initMap">
 </script>  --}}
 
-<script>
+{{--  <script>
     function initMap() {
         var map;
         var bounds = new google.maps.LatLngBounds();
@@ -219,7 +206,7 @@
     // Load initialize function
     google.maps.event.addDomListener(window, 'load', initMap);
 
-</script>
+</script>  --}}
 
 
 @endsection

@@ -50,7 +50,7 @@
 			 };
 
 			$.ajax({
-				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php,
+				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php',
 			
 				type: 'PUT',
 				data : JSON.stringify(data),

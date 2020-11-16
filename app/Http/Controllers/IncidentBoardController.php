@@ -12,34 +12,6 @@ class IncidentBoardController extends Controller
     
     public function incident()
     {
-
-       
-        $companiesId = Company::count();
-        
-        // foreach ($companiesId as $companieId) {
-        //     $companieId;
-        //     dd($companieId);
-        // }
-        // for ($i=0; $i < $companiesId; $i++) { 
-        //     $asdadsa = Incident::where('id', $i)->get();
-        //     dd($asdadsa);
-        // }
-
-// =================================================
-        
-        $companies = Company::pluck('name')->toArray();
-
-        $incidents0 = Incident::where('type', 0)->count();
-        $incidents1 = Incident::where('type', 1)->count();
-        $incidents2 = Incident::where('type', 2)->count();
-        $incidents3 = Incident::where('type', 3)->count();
-        $incidents4 = Incident::where('type', 4)->count();
-        $incidents5 = Incident::where('type', 5)->count();
-
-
-        $incidents = Incident::with('vehicles','user','vehicles.company')->get();
-
-        return view('dashboard.vehicles.dashboard', compact('incidents','incidents0','incidents1','incidents2','incidents3','incidents4','incidents5'))->with('companies',json_encode($companies,JSON_NUMERIC_CHECK));
-
+        return view('dashboard.vehicles.dashboard');
     }
 }

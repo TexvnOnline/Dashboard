@@ -38,33 +38,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($semaforos as $semaforo)
-                <tr>
-                    <td>{{$semaforo->id}}</td>
-                    <td>{{$semaforo->name}}</td>
-                    <td>{{$semaforo->direction}}</td>
-                    <td>{{$semaforo->reference}}</td>
-                    <td>{{$semaforo->description}}</td>
-                    <td class="text-center">
-                        {!! Form::open(['route'=>['semaforos.destroy', $semaforo], 'method'=>'DELETE']) !!}
-                        <a class="btn btn-light" href="{{route('parks.show', $semaforo)}}">
-                            <i class="far fa-eye"></i>
-                        </a>
-                        <a class="btn btn-light" href="{{route('parks.edit', $semaforo)}}">
-                            <i class="far fa-edit"></i>
-                        </a>
-                        <button class="btn btn-light">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @endforeach
+              
             </tbody>
         </table>
     </div>
     <div class="card-footer">
-        {{$semaforos->render()}}
+       
     </div>
 </div>
 @endsection

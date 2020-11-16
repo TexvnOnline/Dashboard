@@ -44,36 +44,13 @@
                 </tr>
             </thead>
             <tbody id="res">
-                @foreach ($events as $event)
-                <tr>
-                    <td>{{$event->id}}</td>
-                    <td>{{$event->name}}</td>
-                    <td>{{$event->description}}</td>
-                    <td>{{$event->province}}</td>
-                    <td>{{$event->district}}</td>
-					<td>{{$event->date}}</td>
-					<td>{{$event->time}}</td>
-                    <td class="text-center">
-                        {!! Form::open(['route'=>['events.destroy', $event], 'method'=>'DELETE']) !!}
-                        <a class="btn btn-light" href="{{route('events.show', $event)}}">
-                            <i class="far fa-eye"></i>
-                        </a>
-                        <a class="btn btn-light" href="{{route('events.edit', $event)}}">
-                            <i class="far fa-edit"></i>
-                        </a>
-                        <button class="btn btn-light">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @endforeach
+               
             </tbody>
         </table>
 
     </div>
     <div class="card-footer">
-        {{$events->render()}}
+     
     </div>
 </div>
 @endsection

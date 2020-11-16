@@ -1,4 +1,3 @@
-@extends('layouts.admin')
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
@@ -16,122 +15,174 @@
       html,
       body {
         height: 60%;
-        margin: 0;
+        margin: 0px;
         padding: 0;
       }
     </style>
-    <script>
-    	
-      let map;
 
-      function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: -12.0484232, lng: -75.2376588 },
-          zoom: 11,
-        });
-        var huancayo={lat:-12.068546, lng:-75.212144};
-        var huanca={lat:-12.067622,  lng:-75.208324};
-       var marker=new google.maps.Marker(
-       {
-       	position:huancayo,
-       	map: map
-       });
 
-       var marker=new google.maps.Marker(
-       {
-       	position:huanca,
-       	map: map
-       });
-      }
-    </script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=drawing&key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA" type="text/javascript"></script>
+<script type="text/javascript">
+const getLocations = () => {
+    fetch('http://127.0.0.1/wb-pdo/EmpresaTransporte/consulta_tramo_id.php?ID_Ruta=40')
+    .then(response => response.json())
+    .then(locations => {
+        let locationsInfo = []
+         
+        locations.forEach(location => {
+            let locationData = {
+                position:{lat:parseFloat(location.RT_Latitud_inicio),lng:parseFloat(location.RT_Longitud_inicio)},
+                name:location.nombre_sede                
+            }
+            locationsInfo.push(locationData)
+           
+        })
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((data)=>{
+                let currentPosition = {
+                    lat: data.coords.latitude,
+                    lng: data.coords.longitude
+                }
+                dibujarMapa(currentPosition, locationsInfo)
+            })
+        }
+    })
+}
+
+const dibujarMapa = (obj, locationsInfo) => {
+   let map = new google.maps.Map(document.getElementById('map'),{
+        zoom: 12,
+        center: obj
+    })
+
+    let marker = new google.maps.Marker({
+        position: obj,
+        title: 'Tu ubicacion'
+
+    })
+    marker.setMap(map)
+
+    let markers = locationsInfo.map(place => {
+        return new google.maps.Marker({
+            position: place.position,
+            map: map,
+            title: place.name,
+            icon:'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
+        })
+    })
+}
+window.addEventListener('load',getLocations)
+</script>
+@extends('layouts.admin')
+
+
 @section('content')
 
-<!--<div id="map-container-google-1" class="z-depth-1-half map-container ">
-  <iframe src="https://maps.google.com/maps?q=huancayo&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-    style="border:0" allowfullscreen></iframe>
-</div>-->
-<div id="map"></div>
- <div class="row">
-        <div class="col-sm-2 col-md-7">
-            <H3>Empresa</H3>
-        </div>
-        <div class="col-md-5 text-center">
-            <h3>Ruta</h3>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-9">
-            <div class="row justify-content-left ">
-    <div class="col-sm-9 ">
+<div id="map"></div>
+<div class="row">
+    <div class="col-sm-2 col-md-7">
+        <H3>Empresa</H3>
+    </div>
+    
+</div>
+
+<div class="row justify-content-center ">
+    <div class="col-sm-8 ">
         <input class="form-control " type="search" placeholder="Buscar" aria-label="Buscar">
     </div>
-    <div class="col-sm-3 ">
+    <div class="col-sm-2 ">
         <button class="btn btn-outline-success" type="submit">Recargar</button>
-       
-       <a href="{{route('registro_rutas')}}"> <button class="btn btn-outline-primary" type="submit">Nuevo</button></a>
+        
+        <a href="{{route('registro_rutas')}}"> <button class="btn btn-outline-primary" type="submit">Nuevo</button></a>
     </div>
-    <div class='col-sm-2 '>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-           
-            <th scope="col">Nombre</th>
-            <th scope="col">Locación</th>
-            <th scope="col">Color</th>
-            <th scope="col">Pasajeros</th>
-            <th scope="col">Ganancias</th>
-            <th scope="col">Contacto</th>
-            <th scope="col">Social</th>
-            <th scope="col">Editar</th>
-            <th scope="col">Ruta</th>
-            
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-              
-                <td>Mark</td>
-                <td>Huancayo</td>
-                <td>Rojo</td>
-                
-                <td>435</td>
-                <td>S/.1,500</td>
-                <td>Celular</td>
-                <td>Facebook</td>
-                <td><button type="submit" class="btn btn-outline-info">Editar</button></td>
-                <td><button type="submit" class="btn btn-outline-danger">Ver Ruta</button></td>
-            </tr>
-            <tr>
-                
-                <td>Jose</td>
-                <td>Huancayo</td>
-                <td>Verde</td>
-                
-                <td>460</td>
-                <td>S/.1,800</td>
-                <td>Celular</td>
-                <td>Facebook</td>
-                 <td><button type="submit" class="btn btn-outline-info">Editar</button></td>
-                <td><button type="submit" class="btn btn-outline-danger">Ver Ruta</button></td>
-            </tr>
-            
-        </tbody>
+    <div class="col-sm-10 mr-2">
+
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th >Nombre</th>
+                    <th >Direccion</th>
+                    <th> Ruta</th>
+                    <th>Descripción de Ruta</th>
+
+                    <th >Telefono</th>
+                    
+                    <th > Ver Ruta</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="res">
+
+            </tbody>
         </table>
-
     </div>
-
 </div>
-        </div>
-        <div class="col-md-3">
-            <img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" class="rounded float-center"height="70px" alt="...">
-            <img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" class="rounded float-center"height="70px" alt="...">
-            <img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" class="rounded float-center"height="70px" alt="...">
-            <img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" class="rounded float-center"height="70px" alt="...">
-        </div>
-    </div>
+<!--<div class="col-md-3">
+    <img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" class="rounded float-center"height="70px" alt="...">
+    <img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" class="rounded float-center"height="70px" alt="...">
+    <img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" class="rounded float-center"height="70px" alt="...">
+    <img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/6AFE/production/_102809372_machu.jpg" class="rounded float-center"height="70px" alt="...">
+</div>-->
+</div>
 
 
 @endsection
 
 
+
+
+@section('scripts')
+<script>
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', 'http://127.0.0.1/wb-pdo/EmpresaTransporte/consulta_empresa_ruta.php', true);
+    xhttp.send();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+                //console.log(this.responseText);
+
+                //transformar a json
+                let datos = JSON.parse(this.responseText);
+
+                let red = document.querySelector('#res');
+                res.innerHTML = '';
+                console.log(datos.records);
+
+                for(let item of datos.records){
+                    res.innerHTML += `
+
+                    <tr>
+                    <td>${item.ID_Empresa_Transp}</td>
+                    <td>${item.EMT_Nombre}</td>
+                    <td>${item.EMT_Direccion}</td>
+                    <td>${item.RUT_Nombre}</td>
+                    <td>${item.RUT_Descripcion}</td>
+                    
+                    <td>${item.EMT_Telefono}</td>
+
+
+
+
+                    <td>
+                    <form action="{{route('vista_emp_ru_tra')}}" method="GET">
+                    <input type="submit" name="submit" value="Ver Ruta" class="btn btn-dark">
+                    <input type="hidden" value="<?php echo '${item.ID_Ruta}';?>" name="ID_Ruta">
+                    <input type="hidden" value="<?php echo '${item.ID_Empresa_Transp}';?>" name="ID_Empresa_Transp">
+                    </form>
+                    </td>
+                    </tr>
+
+
+
+
+                    `
+
+                }
+
+            }
+        }
+
+    </script>
+    @endsection

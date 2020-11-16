@@ -35,27 +35,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($restaurants as $restaurant)
-                <tr>
-                    <th scope="row">{{$restaurant->id}}</th>
-                    <td>{{$restaurant->name}}</td>
-                    <td>{{$restaurant->description}}</td>
-                    <td>{{$restaurant->district}}</td>
-                    <td class="text-center">
-                        {!! Form::open(['route'=>['restaurants.destroy', $restaurant], 'method'=>'DELETE']) !!}
-                        <a class="btn btn-light" href="{{route('restaurants.show', $restaurant)}}">
-                            <i class="far fa-eye"></i>
-                        </a>
-                        <a class="btn btn-light" href="{{route('restaurants.edit', $restaurant)}}">
-                            <i class="far fa-edit"></i>
-                        </a>
-                        <button class="btn btn-light">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @endforeach
+               
             </tbody>
         </table>
     </div>

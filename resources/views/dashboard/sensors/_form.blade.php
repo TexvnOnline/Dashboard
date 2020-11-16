@@ -1,9 +1,22 @@
-{!! Form::hidden('park_id', $park->id) !!}
+
 <div class="from-group">
-    {!! Form::label('name','Nombre') !!}
-    {!! Form::text('name', null, ['class'=>'form-control']) !!}
+    {!! Form::label('SE_Tipo','Tipo') !!}
+    {!! Form::text('SE_Tipo', null, ['class'=>'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('type','Tipo de sensor') !!}  
-    {!! Form::select('type', getSensorTypes(),null, ['class'=>'form-control']) !!}
+    {!! Form::label('ID_Parque','Id parque') !!}  
+    {!! Form::text('ID_Parque',null, ['class'=>'form-control']) !!}
 </div> 
+<div class="from-group">
+    {!! Form::label('Parque','Nombre de parque') !!}
+    {!! Form::text('Parque', null, ['class'=>'form-control']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('SE_Nivel','Nivel') !!}  
+    {!! Form::text('SE_Nivel',null, ['class'=>'form-control']) !!}
+</div> 
+<div class="form-group">
+    {!! Form::label('SE_Fecha','Fecha') !!}  
+    {!! Form::text('SE_Fecha',null, ['class'=>'form-control']) !!}
+</div> 
+
