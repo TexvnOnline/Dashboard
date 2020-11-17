@@ -41,6 +41,7 @@
 		$("#submit").on('click', function(){
 			var data = { 
 
+
 				'LT_Nombre' : $("#LT_Nombre").val(),
 				'LT_Descripcion' : $("#LT_Descripcion").val(),
 				'ID_Distrito' : $("#ID_Distrito").val(),
@@ -49,9 +50,12 @@
 				'LT_URL_Map' : $("#LT_URL_Map").val(),
 				'LT_Latitud' : $("#LT_Latitud").val(),
 				'LT_Longitud' : $("#LT_Longitud").val()
+				
+
+
 			 };
 			$.ajax({
-				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php',
+				url: 'http://smartcityhyo.tk/api/LugarTuristico/Insert_lugar_turistico.php',
 				type: 'POST',
 				data : JSON.stringify(data),
 				datatype: 'json',
@@ -63,3 +67,16 @@
 	});
 </script>
 @endsection
+
+
+
+
+
+LT_Nombre
+LT_Descripcion
+LT_URL_Map
+ID_DistritoÍndice
+LT_Hora_Inicio
+LT_Hora_Fin
+LT_Latitud
+LT_Longitud

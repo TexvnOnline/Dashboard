@@ -17,7 +17,13 @@ route::get('conductores', 'ConductoresController@conductores')->name('conductore
 route::get('conductores/registrar', 'ConductoresController@create')->name('conductores.create');
 
 
+Route::get('lugar/top', 'LugarTopController@index');
+
+
+
 Route::resource('obras', 'ObraController')->names('obras');
+
+
 
 Route::resource('sensors', 'SensorController')->names('sensors');
 
