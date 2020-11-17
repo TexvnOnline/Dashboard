@@ -94,7 +94,6 @@ Route::get('dashboard/semaforo', 'SemaforoController@dashboard')->name('semaforo
 Route::get('camara/semaforo', 'SemaforoController@camara')->name('semaforos.camara');
 Route::get('usuario/semaforo', 'SemaforoController@usuario')->name('semaforos.usuario');
 
-
 Route::resource('company', 'CompanyController')->names('companies');
 Route::resource('vehicle', 'VehicleController')->names('vehicles');
 
@@ -188,9 +187,10 @@ Route::get('/eventos', function () {
  
 Auth::routes();
 
- Route::get('/seguridad', function(){
+Route::get('/seguridad', function(){
      return view('seguridad');
  })->name('seguridad');
+
 
  Route::get('/home', 'HomeController@index')->name('home');
 
