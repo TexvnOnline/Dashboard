@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// tipo de incidente
+
+Route::get('tipoincidente', 'TipoIncidenteController@index')->name('tipo.incidente.index');
+Route::get('tipoincidente/create', 'TipoIncidenteController@create')->name('tipo.incidente.create');
+
+
+
+// fin de tipo de incidente
+
+Route::resource('vehicle', 'VehicleController')->names('vehicles');
+
+
 route::get('conductores', 'ConductoresController@conductores')->name('conductores.index');
 route::get('conductores/registrar', 'ConductoresController@create')->name('conductores.create');
 
@@ -95,7 +107,6 @@ Route::get('camara/semaforo', 'SemaforoController@camara')->name('semaforos.cama
 Route::get('usuario/semaforo', 'SemaforoController@usuario')->name('semaforos.usuario');
 
 Route::resource('company', 'CompanyController')->names('companies');
-Route::resource('vehicle', 'VehicleController')->names('vehicles');
 
 
 Route::get('dashboard/incident', 'IncidentBoardController@incident')->name('dashboard.incidents');

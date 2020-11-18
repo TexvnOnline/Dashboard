@@ -39,46 +39,56 @@
                 </div>
             </div>  --}}
 
-
+             
+             
+            
+            
+             
+            
+             
+            
+             
+             
+            
 
             <div class="form-row">
                
                 <div class="form-group col-md-6">
-                     <label>CON_Nombre</label>
+                     <label>Nombre</label>
                 <input type="text" name="CON_Nombre" id="" class="form-control" >
                 </div>
                 <div class="form-group col-md-6">
-                <label>CON_Apellidos</label>
+                <label>Apellidos</label>
                 <input type="text" name="CON_Apellidos" id="" class="form-control" >
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-4">
-                <label>CON_Telefono</label>
+                <label>Teléfono</label>
                 <input type="text" name="CON_Telefono" id="" class="form-control" >
                 </div>
                 <div class="form-group col-md-4">
-                  <label>CON_Direccion</label>
+                  <label>Dirección</label>
                 <input type="text" name="CON_Direccion" id="" class="form-control" >
                 </div>
                 <div class="form-group col-md-4">
-                 <label>CON_Licencia</label>
+                 <label>Licencia</label>
                 <input type="text" name="CON_Licencia" id="" class="form-control" >
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-4">
-              <label>ID_Empresa_Transp</label>
+              <label> Empresa de trasporte</label>
                 <input type="text" name="ID_Empresa_Transp" id="" class="form-control" >
                 </div>
                 <div class="form-group col-md-4">
-                <label>CON_Status</label>
+                <label>Status</label>
                 <input type="text" name="CON_Status" id="" class="form-control" >
                 </div>
                 <div class="form-group col-md-4">
-                    <label>CON_FCM</label>
+                    <label>FCM</label>
                 <input type="text" name="CON_FCM" id="" class="form-control" >
                 </div>
             </div>
@@ -86,11 +96,11 @@
             
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <label>CON_Fotografia_Licencia</label>
-                <input type="text" name="CON_Fotografia_Licencia" id="" class="form-control" >
+                <label>Fotografía de licencia</label> <br>
+                <input type="file" name="CON_Fotografia_Licencia">
                 </div>
                 <div class="form-group col-md-6">
-                       <label>CON_Email</label>
+                       <label>Email</label>
                 <input type="text" name="CON_Email" id="" class="form-control" >
                 </div>
             </div>

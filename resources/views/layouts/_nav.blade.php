@@ -33,7 +33,7 @@
                         <p>Sensores</p>
                     </a>
                 </li>
-                
+
             </ul>
         </li>
         {{--  INCIDENTES DE TRANCITO  --}}
@@ -46,6 +46,40 @@
                 </p>
             </a>
             <ul class="nav nav-treeview">
+                {{--  insertar vehiculo  --}}
+                <li class="nav-item">
+                    <a href="{{route('vehicles.create')}}" class="nav-link">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        <p>Registrar vehículo</p>
+                    </a>
+                </li>
+
+                {{--  registrar conductor   --}}
+                <li class="nav-item">
+                    <a href="{{route('conductores.create')}}" class="nav-link">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        <p>Registrar conductor</p>
+                    </a>
+                </li>
+
+                {{--  listar tipos de incidente  --}}
+                <li class="nav-item">
+                    <a href="{{route('tipo.incidente.index')}}" class="nav-link">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        <p>Tipos de incidente</p>
+                    </a>
+                </li>
+                {{--  registar tipo de incidente  --}}
+                <li class="nav-item">
+                    <a href="{{route('tipo.incidente.create')}}" class="nav-link">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        <p>Registrar tipo</p>
+                    </a>
+                </li>
+
+                
+                 
+                
                 <li class="nav-item">
                     <a href="{{route('conductores.index')}}" class="nav-link">
                         <i class="fas fa-tachometer-alt nav-icon"></i>
@@ -60,7 +94,7 @@
                     </a>
                 </li>
 
-                
+
                 <li class="nav-item">
                     <a href="{{route('companies.index')}}" class="nav-link">
                         <i class="far fa-building nav-icon"></i>
@@ -152,7 +186,7 @@
                         <p>Agregar recursos</p>
                     </a>
                 </li>
-              
+
 
                 <li class="nav-item">
                     <a href="{{route('events.index')}}" class="nav-link">
@@ -174,7 +208,7 @@
         </li>
 
 
-        
+
         <li class="nav-item has-treeview">
             <a href="" class="nav-link">
                 <i class="fas fa-car-crash"></i>
@@ -258,7 +292,7 @@
                 </li>
             </ul>
         </li>
-        
+
         <li class="nav-item has-treeview">
             <a href="" class="nav-link">
                 <i class="fas fa-shield-alt"></i>
@@ -277,37 +311,37 @@
                 </li>
             </ul>
         </li>
-        
-         <li class="nav-item has-treeview">
 
-                        <a href="" class="nav-link">
-                            <i class="fas fa-taxi"></i>
-                            <p>
+        <li class="nav-item has-treeview">
 
-                                Rutas de Transporte
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
+            <a href="" class="nav-link">
+                <i class="fas fa-taxi"></i>
+                <p>
 
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('inicio_rutas_trans')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Inicio</p>
-                                </a>
-                            </li>
-                        </ul>
+                    Rutas de Transporte
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{route('inicio_rutas_trans')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Inicio</p>
+                    </a>
+                </li>
+            </ul>
 
 
 
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('vista_registro_rutas')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Registro</p>
-                                </a>
-                            </li>
-                        </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{route('vista_registro_rutas')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Registro</p>
+                    </a>
+                </li>
+            </ul>
 
-                    </li>
+        </li>
 </nav>
