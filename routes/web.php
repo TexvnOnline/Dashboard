@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 // tipo de incidente
 
+Route::get('mapadeobras', function() {
+    return view('mapaobra');
+})->name('mapadeobra');
+
+
 Route::get('tipoincidente', 'TipoIncidenteController@index')->name('tipo.incidente.index');
 Route::get('tipoincidente/create', 'TipoIncidenteController@create')->name('tipo.incidente.create');
 

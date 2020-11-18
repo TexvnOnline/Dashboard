@@ -67,7 +67,7 @@
                 let red = document.querySelector('#res');
                 res.innerHTML = '';
                 console.log(datos.records);
-
+ 
                 for(let item of datos.records){
                     res.innerHTML += `
                     <tr>

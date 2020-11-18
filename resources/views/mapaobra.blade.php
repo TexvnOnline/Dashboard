@@ -1,5 +1,6 @@
+
 @extends('layouts.admin')
-@section('title','Gestión de parques y jardines')
+@section('title','Obras')
 @section('style')
 {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css') !!}
 {!! Html::style('https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css') !!}
@@ -9,20 +10,20 @@
 @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item active">
-	<a href="{{route('parks.index')}}">Parques</a>
+	<a href="{{route('parks.index')}}">Obras</a>
 </li>
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Gestión de parques y jardines</h3>
+        <h3 class="card-title">Obras</h3>
         <div class="card-tools">
             <ul class="nav nav-pills ml-auto">
 
                 <li class="nav-item">
                     <a class="nav-link active" href="{{route('parks.index')}}" title="Agregar" >
-                        <i class="fas fa-list"></i> Lista de parques
+                        <i class="fas fa-list"></i> Obras
                     </a>
                 </li>
 
@@ -110,15 +111,15 @@ defer
 
 <script>
     const getLocations = () => {
-        fetch('http://smartcityhuancayo.herokuapp.com/Parque/List_parque.php')
+        fetch('http://smartcityhyo.tk/api/Obra/Listar_Obra.php')
         .then(response => response.json())
         .then(locations => {
             let locationsInfo = []
             
             locations.records.forEach(location => {
                 let locationData = {
-                    position:{lat:parseFloat(location.PQ_Latitud), lng:parseFloat(location.PQ_Longitud)},
-                    name:location.PQ_Nombre                
+                    position:{lat:parseFloat(location.OBR_Coordenada_X), lng:parseFloat(location.OBR_Coordenada_Y)},
+                    name:location.OBR_Nombre                
                 }
                 console.log(locationData.position)
 
@@ -164,105 +165,56 @@ defer
     window.addEventListener('load',getLocations)
 </script>
 
+
 {{--  <script>
-    function initMap() {
-        var map;
-        var bounds = new google.maps.LatLngBounds();
-        var mapOptions = {
-            mapTypeId: 'roadmap'
-        };
-
-        // Display a map on the web page
-        map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
-        map.setTilt(50);
-
-        // Multiple markers location, latitude, and longitude
-        <?php $cont = 1; ?>
-        var markers = [<?php foreach($markers as $marker) {
-            if($cont < $parksCount){
-              echo '['.'"'.$marker['name'].'"'.','.$marker['latitude'].','.$marker['length'].'],';
-              $cont++;
-            }else if($cont == $parksCount){
-              echo '['.'"'.$marker['name'].'"'.','.$marker['latitude'].','.$marker['length'].']';
-            }
-          }
-       ?>];
-
-        // Info window content
-          <?php $cont2 = 1; ?>
-          var infoWindowContent = [<?php foreach($markers as $marker) {
-            if($cont2 < $parksCount){
-                ?>
-                ['<div class="info_content justify-content-center">'+
-                    '<h3> <?php echo $marker['name']; ?> </h3>'+
-                    '<p> <?php echo $marker['description']; ?> </p>'+
-
-                    '<a class="btn btn-success" href="{{route('parks.show', $marker['id'])}}">'+
-                        'Ver detalles <i class="far fa-eye"></i>'+
-                    '</a>'+
-
-
-                 '</div>'
-                ], 
-                <?php
-              $cont2++;
-            }else if($cont2 == $parksCount){
-                ?>
-                ['<div class="info_content justify-content-center">'+
-                    '<h3> <?php echo $marker['name']; ?> </h3>'+
-                    '<p> <?php echo $marker['description']; ?> </p>'+
-
-                   '<a class="btn btn-success" href="{{route('parks.show', $marker['id'])}}">'+
-                        'Ver detalles <i class="far fa-eye"></i>'+
-                    '</a>'+
-
-                 '</div>'
-                ], 
-                <?php
-            }
-          }
-       ?>];
-          
-          
-
-        // Add multiple markers to map
-        var infoWindow = new google.maps.InfoWindow(),
-            marker, i;
-
-        // Place each marker on the map  
-        for (i = 0; i < markers.length; i++) {
-            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-            bounds.extend(position);
-            marker = new google.maps.Marker({
-                position: position,
-                map: map,
-                title: markers[i][0]
-            });
-
-            // Add info window to marker    
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
-                    infoWindow.setContent(infoWindowContent[i][0]);
-                    infoWindow.open(map, marker);
+    const getLocations = () => {
+        fetch('https://www.datos.gov.co/resource/g373-n3yy.json')
+        .then(response => response.json())
+        .then(locations => {
+            let locationsInfo = []
+            
+            locations.forEach(location => {
+                let locationData = {
+                    position:{lat:location.punto.coordinates[1],lng:location.punto.coordinates[0]},
+                    name:location.nombre_sede                
                 }
-            })(marker, i));
+                console.log(locationData)
 
-            // Center the map to fit all markers on the screen
-            map.fitBounds(bounds);
-        }
-
-        // Set zoom level
-        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
-            this.setZoom(14);
-            google.maps.event.removeListener(boundsListener);
-        });
-
+                locationsInfo.push(locationData)
+            })
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition((data)=>{
+                    let currentPosition = {
+                        lat: data.coords.latitude,
+                        lng: data.coords.longitude
+                    }
+                    dibujarMapa(currentPosition, locationsInfo)
+                })
+            }
+        })
     }
-
-    // Load initialize function
-    google.maps.event.addDomListener(window, 'load', initMap);
-
+    
+    const dibujarMapa = (obj, locationsInfo) => {
+       let map = new google.maps.Map(document.getElementById('map'),{
+            zoom: 4,
+            center: obj
+        })
+    
+        let marker = new google.maps.Marker({
+            position: obj,
+            title: 'Tu ubicacion'
+        })
+        marker.setMap(map)
+    
+        let markers = locationsInfo.map(place => {
+            return new google.maps.Marker({
+                position: place.position,
+                map: map,
+                title: place.name
+            })
+        })
+    }
+    window.addEventListener('load',getLocations)
 </script>  --}}
-
 
 @endsection

@@ -120,6 +120,17 @@
                         <p>Lista</p>
                     </a>
                 </li>
+
+                {{--  mapa de obra  --}}
+                
+
+                <li class="nav-item">
+                    <a href="{{route('mapadeobra')}}" class="nav-link">
+                        <i class="far fa-building nav-icon"></i>
+                        <p>Mapa</p>
+                    </a>
+                </li>
+
             </ul>
         </li>
 
