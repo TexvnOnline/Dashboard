@@ -173,6 +173,25 @@
                 </p>
             </a>
             <ul class="nav nav-treeview">
+
+                {{--  fotos  --}}
+
+                <li class="nav-item">
+                    <a href="{{route('fotografias')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Fotografías</p>
+                    </a>
+                </li> 
+
+                <li class="nav-item">
+                    <a href="{{route('lugar.top')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Lugares top</p>
+                    </a>
+                </li> 
+
+                
+
                 <li class="nav-item">
                     <a href="{{route('tourists.index')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>

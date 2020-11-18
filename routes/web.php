@@ -19,6 +19,9 @@ Route::get('mapadeobras', function() {
     return view('mapaobra');
 })->name('mapadeobra');
 
+Route::get('fotografias', function() {
+    return view('fotografias');
+})->name('fotografias');
 
 Route::get('tipoincidente', 'TipoIncidenteController@index')->name('tipo.incidente.index');
 Route::get('tipoincidente/create', 'TipoIncidenteController@create')->name('tipo.incidente.create');
@@ -34,7 +37,7 @@ route::get('conductores', 'ConductoresController@conductores')->name('conductore
 route::get('conductores/registrar', 'ConductoresController@create')->name('conductores.create');
 
 
-Route::get('lugar/top', 'LugarTopController@index');
+Route::get('lugar/top', 'LugarTopController@index')->name('lugar.top');
 
 
 
