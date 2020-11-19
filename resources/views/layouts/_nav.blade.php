@@ -374,4 +374,47 @@
             </ul>
 
         </li>
+
+        {{--  Contacto Turista y la Ciudad  --}}
+        <li class="nav-item has-treeview">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                    Contacto Turista y la Ciudad
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+                {{--  fotos  --}}
+
+                <li class="nav-item">
+                    <a href="{{route('fotografias')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Fotografías</p>
+                    </a>
+                </li>                 
+
+                <li class="nav-item">
+                    <a href="{{route('tourists.index')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Lugares Turísticos</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('tourists.create')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Agregar lugar</p>
+                    </a>
+                </li>
+                
+                
+
+
+
+
+
+
+
+
 </nav>

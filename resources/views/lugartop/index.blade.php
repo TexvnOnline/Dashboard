@@ -17,7 +17,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link active" href="{{route('parks.create')}}" title="Agregar" >
-                            <i class="fas fa-plus"></i> Agregar parque
+                            <i class="fas fa-plus"></i> Agregar Lugar top
                         </a>
                     </li>
                 </ul>

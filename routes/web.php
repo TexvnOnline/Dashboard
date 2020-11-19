@@ -47,6 +47,10 @@ Route::resource('obras', 'ObraController')->names('obras');
 
 Route::resource('sensors', 'SensorController')->names('sensors');
 
+
+Route::get('photographs/edit', 'PhotographyController@edit')->name('photographs.edit');
+Route::get('photographs', 'PhotographyController@index')->name('photographs.index');
+Route::get('photographs/create', 'PhotographyController@create')->name('photographs.create');
 Route::get('photography/delete', 'PhotographyController@delete')->name('photographs.delete');
 
 
