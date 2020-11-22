@@ -9,7 +9,7 @@
 @section('content')
 <div class="card">
 	<div class="card-header">
-	  <h3 class="card-title">Editar Evento</h3>
+	  <h3 class="card-title"></h3>
 	  <div class="card-tools">
 		<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
 		  <i class="fas fa-minus"></i></button>
@@ -50,7 +50,7 @@
 			 };
 
 			$.ajax({
-				url: 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Insert_lugar_turistico.php',
+				url: 'http://smartcityhyo.tk/api/LugarTuristico/Update_Lugar_Turistico.php',
 			
 				type: 'PUT',
 				data : JSON.stringify(data),

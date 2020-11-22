@@ -72,11 +72,6 @@
 
 
 
-LT_Nombre
-LT_Descripcion
-LT_URL_Map
-ID_DistritoÍndice
-LT_Hora_Inicio
-LT_Hora_Fin
-LT_Latitud
-LT_Longitud
+
+
+

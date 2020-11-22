@@ -380,7 +380,7 @@
             <a href="" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
-                    Contacto Turista y la Ciudad
+                    Turista y la Ciudad
                     <i class="right fas fa-angle-left"></i>
                 </p>
             </a>

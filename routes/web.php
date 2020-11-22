@@ -77,9 +77,10 @@ Route::get('usuario/semaforo', 'SemaforoController@usuario')->name('semaforos.us
 
 //lugarturistiContacto//
 
-Route::resource('contacts', 'ContactController')->names('contacts');
-
-
+Route::get('contacts/edit', 'ContactController@edit')->name('contacts.edit');
+Route::get('contacts', 'ContactController@index')->name('contacts.index');
+Route::get('contacts/create', 'ContactController@create')->name('contacts.create');
+Route::get('contacts/delete', 'ContactController@delete')->name('contacts.delete');
 //finlugarturistiContacto//
 
 
@@ -87,11 +88,10 @@ Route::resource('contacts', 'ContactController')->names('contacts');
 
 //lugarturisticoIdentidad//
 
-Route::resource('tourists', 'TouristController')->names('tourists');
-
-Route::get('tourists/images/{tourist}', 'TouristController@images')->name('tourists.images');
-
-Route::post('tourists/images/save/{tourist}', 'TouristController@save_image')->name('tourists.save_image');
+Route::get('tourists/edit', 'TouristController@edit')->name('tourists.edit');
+Route::get('tourists', 'TouristController@index')->name('tourists.index');
+Route::get('tourists/create', 'TouristController@create')->name('tourists.create');
+Route::get('tourists/delete', 'TouristController@delete')->name('tourists.delete');
 
 
 //finlugarturisticoIdentidad//

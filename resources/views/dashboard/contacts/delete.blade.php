@@ -2,14 +2,14 @@
 @section('title','Eliminar fotografia')
 @section('breadcrumb')
 <li class="breadcrumb-item active">
-    <a href="{{route('provinces.index')}}">Eliminar fotografia</a>
+    <a href="{{route('contacts.index')}}">Eliminar Lugar turistico</a>
 </li>
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Eliminar fotografia</h3>
+        <h3 class="card-title"></h3>
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                 title="Collapse">
@@ -22,14 +22,14 @@
         <div class="card-body ">
     
             <div class="form-group">
-              <label for="">Id foto</label>
-              <input type="text" name="ID_Tipo_Fotografia" id="ID_Tipo_Fotografia" class="form-control" placeholder="nombre" aria-describedby="helpId">
+              <label for="">Id Lugar Turistico</label>
+              <input type="text" name="ID_Lugar_Turistico" id="ID_Lugar_Turistico" class="form-control" placeholder="nombre" aria-describedby="helpId">
               
             </div>
             
         </div>
         <div class="card-footer">
-			<a class="btn btn-danger float-right" href="{{route('photographs.index')}}">Cancelar</a>
+			<a class="btn btn-danger float-right" href="{{route('contacts.index')}}">Cancelar</a>
 			<input id="submit" type="button" name="submit" class="btn btn-primary" value="Guardar">
 		</div>
 	</form>
@@ -41,10 +41,10 @@
 	$(document).ready(function(){
 		$("#submit").on('click', function(){
 			var data = { 
-				'ID_Tipo_Fotografia' : $('#ID_Tipo_Fotografia').val(), 
+				'ID_Lugar_Turistico' : $('#ID_Lugar_Turistico').val(), 
 			 };
 			$.ajax({
-				url: 'http://smartcityhyo.tk/api/Tipo_de_foto/Eliminar_Tipo_de_fotografia.php',
+				url: 'http://smartcityhyo.tk/api/LugarTuristico/Eliminar_LugarTuristico.php',
 				type: 'POST',
 				data : JSON.stringify(data),
 				datatype: 'json',

@@ -17,7 +17,7 @@ class ContactController extends Controller
     }
     public function store(Request $request)
     {
-        return redirect()->route('contacts.index');
+        
     }
     public function show(Contact $contact)
     {
@@ -35,4 +35,10 @@ class ContactController extends Controller
     {
         return redirect()->route('contacts.index'); 
     }
+
+    public function delete(){
+        return view('dashboard.contacts.delete');
+    }
+
+
 }

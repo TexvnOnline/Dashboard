@@ -60,7 +60,7 @@
 
 <script>
             const xhttp = new XMLHttpRequest();
-            xhttp.open('GET', 'http://smartcityhuancayo.herokuapp.com/LugarTuristico/Listar_lugar_turistico.php', true);
+            xhttp.open('GET', 'http://smartcityhyo.tk/api/LugarTuristico/Listar_lugar_turistico.php', true);
             xhttp.send();
             xhttp.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
