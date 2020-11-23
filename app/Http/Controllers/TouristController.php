@@ -25,7 +25,7 @@ class TouristController extends Controller
     {
        
     }
-    public function edit(Contact $contact)
+    public function edit()
     {
         return view('dashboard.tourists.edit');
     }

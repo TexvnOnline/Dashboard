@@ -111,7 +111,7 @@ defer
 
 <script>
     const getLocations = () => {
-        fetch('http://smartcityhyo.tk/api/Obra/Listar_Obra.php')
+        fetch('https://smartcityhyo.tk/api/Obra/Listar_Obra.php')
         .then(response => response.json())
         .then(locations => {
             let locationsInfo = []

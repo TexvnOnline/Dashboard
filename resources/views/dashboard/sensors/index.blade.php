@@ -54,7 +54,7 @@
 
     <script>
         const xhttp = new XMLHttpRequest();
-        xhttp.open('GET', 'http://smartcityhyo.tk/api/Sensores/Listar_Sensores.php', true);
+        xhttp.open('GET', 'https://smartcityhyo.tk/api/Sensores/Listar_Sensores.php', true);
         xhttp.send();
         xhttp.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){

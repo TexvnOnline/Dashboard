@@ -13,7 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// pruebas
+
+Route::get('prueba', function() {
+    return view('prueba');
+})->name('prueba');
+
+Route::get('prueba/form', function() {
+    return view('prueba_form');
+})->name('prueba.form');
+
 // tipo de incidente
+
+
+
 
 Route::get('mapadeobras', function() {
     return view('mapaobra');

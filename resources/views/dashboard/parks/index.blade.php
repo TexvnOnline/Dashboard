@@ -55,7 +55,7 @@
 
     <script>
         const xhttp = new XMLHttpRequest();
-        xhttp.open('GET', 'http://smartcityhuancayo.herokuapp.com/Parque/List_parque.php', true);
+        xhttp.open('GET', 'https://smartcityhuancayo.herokuapp.com/Parque/List_parque.php', true);
         xhttp.send();
         xhttp.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){

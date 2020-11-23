@@ -101,16 +101,12 @@
 
 </script>
 
-{{--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVPNYNXFVLnZTPeiLBDm3CzjsQ_H3Kq4c&callback=initMap">
-</script>  --}}
 <script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA&callback=initMap&libraries=&v=weekly"
-defer
-></script>
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA&callback=initMap&libraries=&v=weekly"></script>
 
 <script>
     const getLocations = () => {
-        fetch('http://smartcityhuancayo.herokuapp.com/Parque/List_parque.php')
+        fetch('https://smartcityhuancayo.herokuapp.com/Parque/List_parque.php')
         .then(response => response.json())
         .then(locations => {
             let locationsInfo = []
@@ -163,106 +159,4 @@ defer
     }
     window.addEventListener('load',getLocations)
 </script>
-
-{{--  <script>
-    function initMap() {
-        var map;
-        var bounds = new google.maps.LatLngBounds();
-        var mapOptions = {
-            mapTypeId: 'roadmap'
-        };
-
-        // Display a map on the web page
-        map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
-        map.setTilt(50);
-
-        // Multiple markers location, latitude, and longitude
-        <?php $cont = 1; ?>
-        var markers = [<?php foreach($markers as $marker) {
-            if($cont < $parksCount){
-              echo '['.'"'.$marker['name'].'"'.','.$marker['latitude'].','.$marker['length'].'],';
-              $cont++;
-            }else if($cont == $parksCount){
-              echo '['.'"'.$marker['name'].'"'.','.$marker['latitude'].','.$marker['length'].']';
-            }
-          }
-       ?>];
-
-        // Info window content
-          <?php $cont2 = 1; ?>
-          var infoWindowContent = [<?php foreach($markers as $marker) {
-            if($cont2 < $parksCount){
-                ?>
-                ['<div class="info_content justify-content-center">'+
-                    '<h3> <?php echo $marker['name']; ?> </h3>'+
-                    '<p> <?php echo $marker['description']; ?> </p>'+
-
-                    '<a class="btn btn-success" href="{{route('parks.show', $marker['id'])}}">'+
-                        'Ver detalles <i class="far fa-eye"></i>'+
-                    '</a>'+
-
-
-                 '</div>'
-                ], 
-                <?php
-              $cont2++;
-            }else if($cont2 == $parksCount){
-                ?>
-                ['<div class="info_content justify-content-center">'+
-                    '<h3> <?php echo $marker['name']; ?> </h3>'+
-                    '<p> <?php echo $marker['description']; ?> </p>'+
-
-                   '<a class="btn btn-success" href="{{route('parks.show', $marker['id'])}}">'+
-                        'Ver detalles <i class="far fa-eye"></i>'+
-                    '</a>'+
-
-                 '</div>'
-                ], 
-                <?php
-            }
-          }
-       ?>];
-          
-          
-
-        // Add multiple markers to map
-        var infoWindow = new google.maps.InfoWindow(),
-            marker, i;
-
-        // Place each marker on the map  
-        for (i = 0; i < markers.length; i++) {
-            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-            bounds.extend(position);
-            marker = new google.maps.Marker({
-                position: position,
-                map: map,
-                title: markers[i][0]
-            });
-
-            // Add info window to marker    
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
-                    infoWindow.setContent(infoWindowContent[i][0]);
-                    infoWindow.open(map, marker);
-                }
-            })(marker, i));
-
-            // Center the map to fit all markers on the screen
-            map.fitBounds(bounds);
-        }
-
-        // Set zoom level
-        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
-            this.setZoom(14);
-            google.maps.event.removeListener(boundsListener);
-        });
-
-    }
-
-    // Load initialize function
-    google.maps.event.addDomListener(window, 'load', initMap);
-
-</script>  --}}
-
-
 @endsection
