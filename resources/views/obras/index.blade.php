@@ -7,21 +7,6 @@
         <h3 class="card-title">Gestión de obras</h3>
         
 
-            {{--  <div class="card-tools">
-                <ul class="nav nav-pills ml-auto">
-                    <li class="nav-item mr-2">
-                        <a class="nav-link active" href="{{route('parks.dashboard')}}" title="Agregar" >
-                            <i class="fas fa-tachometer-alt"></i> Ver Dashboard
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{route('parks.create')}}" title="Agregar" >
-                            <i class="fas fa-plus"></i> Agregar parque
-                        </a>
-                    </li>
-                </ul>
-            </div>  --}}
     </div>
     <div class="card-body table-responsive p-0">
         <table class="table table-head-fixed">
@@ -33,6 +18,8 @@
                     <th>Fecha de fin</th>
                     <th>Monto</th>
                     <th>Encargado</th>
+
+                    <th>Editar</th>
                 </tr>
             </thead>
             <tbody id="res">
@@ -43,7 +30,7 @@
     <div  class="card-footer">
         
 
-        <a href=""></a>
+        
     </div>
 </div>
 @endsection
@@ -75,6 +62,11 @@
                         <td>${item.OBR_Fecha_Fin}</td>
                         <td>${item.OBR_Monto}</td>
                         <td>${item.Encargado_Nombre}</td>
+
+                        <td>
+                            <a  href="/editar_obra" class="btn btn-light"><i class="far fa-edit"></i></a>
+                        </td>
+
                     </tr>
                     `
                 }

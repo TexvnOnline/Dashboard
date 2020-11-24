@@ -13,6 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('lista_incidentes', function() {
+    return view('lista_incidentes1');
+})->name('lista_incidentes');
+
+
+
+
+Route::get('editar_obra', function() {
+    return view('editar_obra');
+})->name('editar_obra');
+
+
+
+Route::get('registrar_obra', function() {
+    return view('registrar_obra');
+})->name('registrar_obra');
+
+
+
+Route::get('sensores', function() {
+    return view('dashboard.parks.sensores');
+})->name('sensores');
+
+
 // pruebas
 
 Route::get('prueba', function() {
@@ -26,6 +51,10 @@ Route::get('prueba/form', function() {
 // tipo de incidente
 
 
+
+Route::get('eliminar_incidente', function() {
+    return view('eliminar_incidente');
+})->name('eliminar_incidente');
 
 
 Route::get('mapadeobras', function() {

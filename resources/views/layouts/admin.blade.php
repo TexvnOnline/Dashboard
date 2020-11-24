@@ -149,7 +149,7 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-{{--  {!! Html::script('adminlte/plugins/jquery/jquery.min.js') !!}
+{!! Html::script('adminlte/plugins/jquery/jquery.min.js') !!}
  {!! Html::script('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')!!}
 
 {!! Html::script('adminlte/plugins/ekko-lightbox/ekko-lightbox.min.js') !!}
@@ -157,10 +157,10 @@
 {!! Html::script('https://cdn.jsdelivr.net/npm/sweetalert2@9') !!}
 {!! Html::script('adminlte/dist/js/adminlte.min.js') !!}
 
-{!! Html::script('adminlte/dist/js/demo.js') !!}  --}}
+{!! Html::script('adminlte/dist/js/demo.js') !!}
 
 
-{!! Html::script('adminlte/plugins/jquery/jquery.min.js') !!} 
+{{--  {!! Html::script('adminlte/plugins/jquery/jquery.min.js') !!} 
 <!-- Bootstrap 4 -->
 {!! Html::script('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') !!} 
 <!-- ChartJS -->
@@ -168,7 +168,7 @@
 <!-- AdminLTE App -->
 {!! Html::script('adminlte/dist/js/adminlte.min.js') !!} 
 <!-- AdminLTE for demo purposes -->
-{!! Html::script('adminlte/dist/js/demo.js') !!} 
+{!! Html::script('adminlte/dist/js/demo.js') !!}   --}}
 
 @yield('scripts')
 
