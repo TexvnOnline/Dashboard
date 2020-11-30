@@ -10,7 +10,7 @@
     <div class="card-body ">
        
 
-
+ 
         <div class="row">
             <div class="col-md-6">
                 <div class="card card-chart">
@@ -89,6 +89,7 @@
 @section('scripts')
 
 
+
 <script>
     $(function () {
 
@@ -98,7 +99,7 @@
 
  
         const xhttp = new XMLHttpRequest();
-        xhttp.open('GET', 'http://localhost/smartcity/Sensores/list_sensores_tipo_humedad.php', true);
+        xhttp.open('GET', 'https://smartcityhyo.tk/api/Sensores/list_sensores_tipo_humedad.php', true);
         xhttp.send();
         xhttp.onreadystatechange = function(){
 
@@ -142,19 +143,12 @@
 
 
 
-
-
-
-
-
-
-
         var varComprar=document.getElementById('radiacion').getContext('2d');
     
 
  
         const xhttpr = new XMLHttpRequest();
-        xhttpr.open('GET', 'http://localhost/smartcity/Sensores/list_sensores_tipo_radiacio.php', true);
+        xhttpr.open('GET', 'https://smartcityhyo.tk/api/Sensores/list_sensores_tipo_radiacio.php', true);
         xhttpr.send();
         xhttpr.onreadystatechange = function(){
 
@@ -198,33 +192,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         var varCompraru=document.getElementById('ruido').getContext('2d');
     
 
  
         const xhttpru = new XMLHttpRequest();
-        xhttpru.open('GET', 'http://localhost/smartcity/Sensores/list_sensores_tipo_ruido.php', true);
+        xhttpru.open('GET', 'https://smartcityhyo.tk/api/Sensores/list_sensores_tipo_ruido.php', true);
         xhttpru.send();
         xhttpru.onreadystatechange = function(){
 
@@ -247,7 +220,7 @@
                 data: {
                     labels: labelsru,
                     datasets: [{
-                        label: 'Radiación',
+                        label: 'Ruido',
                         data: dataru,
                     
                         borderColor: 'rgba(255, 99, 132, 1)',
@@ -268,44 +241,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         var varComprate=document.getElementById('temperatura').getContext('2d');
     
 
  
         const xhttpte = new XMLHttpRequest();
-        xhttpte.open('GET', 'http://localhost/smartcity/Sensores/list_sensores_tipo_temperatura.php', true);
+        xhttpte.open('GET', 'https://smartcityhyo.tk/api/Sensores/list_sensores_tipo_temperatura.php', true);
         xhttpte.send();
         xhttpte.onreadystatechange = function(){
 
@@ -328,7 +269,7 @@
                 data: {
                     labels: labelste,
                     datasets: [{
-                        label: 'Radiación',
+                        label: 'Temperatura',
                         data: datate,
                     
                         borderColor: 'rgba(255, 99, 132, 1)',
@@ -347,27 +288,6 @@
             });
         }
 
-
-
-
-
-
-
-
-
-
-
-
-        
-         
-        
-
-
-
-
-    
     });
     </script>
-
-
 @endsection

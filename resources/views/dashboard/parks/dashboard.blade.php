@@ -40,26 +40,7 @@
 </div>
 
 
-<div class="card">
-    <div class="card-body">
-        <table id="example" class="table table-striped table-bordered">
-            
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th>Nombre</th>
-                    <th>Dirección</th>
-                    <th>Referencia</th>
-                    <th>Descripción</th>
-                    <th>&nbsp;</th>
-                </tr>
-            </thead>
-            <tbody>
-               
-            </tbody>
-        </table>
-    </div>
-</div>
+
 
 
 
@@ -72,41 +53,14 @@
 {!! Html::script('https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js') !!}
 {!! Html::script('https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js') !!}
 
-<script>
-    $(document).ready(function () {
-        $('#example').DataTable({
-            "language": {
-                "info": "_TOTAL_ registros",
-                "search": "Buscar",
-                "paginate": {
-                    "next": "Siguiente",
-                    "previous": "Anterior",
-                },
-                "lengthMenu": 'Mostrar <select class="form-control">' +
-                    '<option value="10">10</option>' +
-                    '<option value="30">30</option>' +
-                    '<option value="50">50</option>' +
-                    '<option value="100">100</option>' +
-                    '<option value="-1">Todo</option>' +
-                    '</select> registros',
-                "loadinRecords": "Cargando...",
-                "processing": "Procesando...",
-                "emptyTable": "No hay datos",
-                "zeroRecords": "No hay coincidencias",
-                "infoEmpty": "",
-                "infoFiltered": "",
-            }
-        });
-    });
 
-</script>
 
 <script
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzi3S9cTrkjwYl6QcizSW2gLz4foG2HsA&callback=initMap&libraries=&v=weekly"></script>
 
 <script>
     const getLocations = () => {
-        fetch('https://smartcityhuancayo.herokuapp.com/Parque/List_parque.php')
+        fetch('https://smartcityhyo.tk/api/Parque/List_parque.php')
         .then(response => response.json())
         .then(locations => {
             let locationsInfo = []

@@ -30,7 +30,7 @@
         </div>
         <div class="card-footer">
 			<a class="btn btn-danger float-right" href="{{route('contacts.index')}}">Cancelar</a>
-			<input id="submit" type="button" name="submit" class="btn btn-primary" value="Guardar">
+			<input id="submit" type="button" name="submit" class="btn btn-primary" value="Eliminar">
 		</div>
 	</form>
 </div>
@@ -44,7 +44,7 @@
 				'ID_Incidente' : $('#ID_Incidente').val(), 
 			 };
 			$.ajax({
-				url: 'http://localhost/smartcity/Incidente/eliminar_incidentes.php',
+				url: 'https://smartcityhyo.tk/api/Incidente/eliminar_incidentes.php',
 				type: 'POST',
 				data : JSON.stringify(data),
 				datatype: 'json',

@@ -44,11 +44,11 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <label>Fechad de inicio</label>
-                    <input type="date" name="OBR_Fecha_Inicio" id="OBR_Fecha_Inicio" class="form-control">
+                    <input type="text" name="OBR_Fecha_Inicio" id="OBR_Fecha_Inicio" class="form-control">
                 </div>
                 <div class="col-md-3 mb-3">
                     <label>Fecha de fin</label>
-                    <input type="date" name="OBR_Fecha_Fin" id="OBR_Fecha_Fin" class="form-control">
+                    <input type="text" name="OBR_Fecha_Fin" id="OBR_Fecha_Fin" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -101,7 +101,7 @@
 
 			 };
 			$.ajax({
-				url: 'http://localhost/smartcity/Obra/editar_obra.blade.php',
+				url: 'https://smartcityhyo.tk/api/Obra/editar_obra.blade.php',
 				type: 'POST',
 				data : JSON.stringify(data),
 				datatype: 'json',

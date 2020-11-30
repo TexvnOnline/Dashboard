@@ -43,7 +43,7 @@
 				'PQ_Longitud' : $('#PQ_Longitud').val()
 			 };
 			$.ajax({
-				url: 'http://smartcityhuancayo.herokuapp.com/Parque/Insertar_Parque.php',
+				url: 'https://smartcityhyo.tk/api/Parque/Insertar_Parque.php',
 				type: 'POST',
 				data : JSON.stringify(data),
 				datatype: 'json',

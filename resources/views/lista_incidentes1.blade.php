@@ -28,7 +28,7 @@
 
     <script>
         const xhttp = new XMLHttpRequest();
-        xhttp.open('GET', 'http://localhost/smartcity/Incidente/listar_incidentes.php', true);
+        xhttp.open('GET', 'https://smartcityhyo.tk/api/Incidente/listar_incidentes.php', true);
         xhttp.send();
         xhttp.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
@@ -63,7 +63,7 @@
                           </div>
 
                           <div class="card-footer text-muted">
-                            <a href="/eliminar_incidente" class="btn btn-danger float-right"><i class="fas fa-trash-alt"></i></a>
+                            <a href="/dashboardcity/eliminar_incidente" class="btn btn-danger float-right"><i class="fas fa-trash-alt"></i></a>
                         </div>
 
                         </div>

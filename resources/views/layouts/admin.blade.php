@@ -159,7 +159,7 @@
 
 {!! Html::script('adminlte/dist/js/demo.js') !!}
 
-
+{!! Html::script('adminlte/plugins/chart.js/Chart.min.js') !!} 
 {{--  {!! Html::script('adminlte/plugins/jquery/jquery.min.js') !!} 
 <!-- Bootstrap 4 -->
 {!! Html::script('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') !!} 

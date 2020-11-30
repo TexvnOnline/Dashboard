@@ -18,7 +18,7 @@
                 <i class="fas fa-times"></i></button>
         </div>
     </div>
-    <form id="form" method="POST">
+    <form enctype="multipart/form-data" id="fupForm" >
         <div class="card-body ">
 
             <div class="form-group">
@@ -31,11 +31,19 @@
             </div>
             <div class="form-row">
                 <div class="col-md-6 mb-3">
-                    <label>Tipo</label>
-                    <input type="text" name="ID_Tipo" id="ID_Tipo" class="form-control">
+
+                    
+                      <label for="">Tipo de obra </label>
+                      <select class="form-control" name="ID_Tipo" id="ID_Tipo">
+                        <option>-- Seleccione un tipo de obra --</option>
+                        <option value="1">Transporte</option>
+                      </select>
+                
+
+
                 </div>
                 <div class="col-md-3 mb-3">
-                    <label>Fechad de inicio</label>
+                    <label>Fecha de inicio</label>
                     <input type="text" name="OBR_Fecha_Inicio" id="OBR_Fecha_Inicio" class="form-control">
                 </div>
                 <div class="col-md-3 mb-3">
@@ -61,13 +69,21 @@
                 <label>Duración dela obra en días</label>
                 <input type="text" name="OBR_Dias_Calendarios" id="OBR_Dias_Calendarios" class="form-control">
             </div>
+
+
+            <div class="form-group">
+                
+                
+
+                <label for="">Imagen</label>
+                <input type="file" class="form-control-file" name="OBR_Foto" id="OBR_Foto">
+            </div>
+
+
         </div>
 
-        <div class="card-footer">
-            <a class="btn btn-danger float-right" href="#">Cancelar</a>
-            <input id="submit" type="button" name="submit" class="btn btn-primary" value="Guardar">
-        </div>
-        
+        <input type="submit" name="submit" class="btn btn-danger submitBtn" value="SAVE"/>
+
     </form>
 </div>
 @endsection
@@ -75,30 +91,56 @@
 @section('scripts')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-	$(document).ready(function(){
-		$("#submit").on('click', function(){
-			var data = { 
-				'OBR_Nombre' : $('#OBR_Nombre').val(), 
-				'OBR_Descripcion' : $('#OBR_Descripcion').val(),
-                'ID_Tipo' : $('#ID_Tipo').val(),
-                'OBR_Fecha_Inicio' : $('#OBR_Fecha_Inicio').val(), 
-				'OBR_Fecha_Fin' : $('#OBR_Fecha_Fin').val(),
-				'OBR_Monto' : $('#OBR_Monto').val(),
-				'OBR_Coordenada_X' : $('#OBR_Coordenada_X').val(), 
-				'OBR_Coordenada_Y' : $('#OBR_Coordenada_Y').val(),
-                'OBR_Dias_Calendarios' : $('#OBR_Dias_Calendarios').val()
 
-			 };
-			$.ajax({
-				url: 'http://localhost/smartcity/Obra/Insert_obra.php',
-				type: 'POST',
-				data : JSON.stringify(data),
-				datatype: 'json',
-				success : function(data) {
-					console.log(data);
-				},
-			})
-		});
-	});
+
+
+
+
+$(document).ready(function(e){
+    $("#fupForm").on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'https://smartcityhyo.tk/api/Obra/Insert_obra.php', 
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            beforeSend: function(){
+                $('.submitBtn').attr("disabled","disabled");
+                $('#fupForm').css("opacity",".5");
+            },
+            success: function(msg){
+                $('.statusMsg').html('');
+                if(msg == 'ok'){
+                    $('#fupForm')[0].reset();
+                    $('.statusMsg').html('<span style="font-size:18px;color:#34A853">Form data submitted successfully.</span>');
+                }else{
+                    $('.statusMsg').html('<span style="font-size:18px;color:#EA4335">Some problem occurred, please try again.</span>');
+                }
+                $('#fupForm').css("opacity","");
+                $(".submitBtn").removeAttr("disabled");
+            }
+        });
+    });
+    
+    //file type validation
+    $("#file").change(function() {
+        var file = this.files[0];
+        var imagefile = file.type;
+        var match= ["image/jpeg","image/png","image/jpg"];
+        if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
+            alert('Please select a valid image file (JPEG/JPG/PNG).');
+            $("#file").val('');
+            return false;
+        }
+    });
+});
+
+
+
+
+
+
 </script>
 @endsection

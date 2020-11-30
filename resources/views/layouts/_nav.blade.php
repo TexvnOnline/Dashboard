@@ -34,6 +34,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{route('sensores')}}" class="nav-link">
+                        <i class="far fa-building nav-icon"></i>
+                        <p>Gráficos</p>
+                    </a>
+                </li>
+
             </ul>
         </li>
         {{--  INCIDENTES DE TRANCITO  --}}
@@ -101,6 +108,18 @@
                         <p>Empresas</p>
                     </a>
                 </li>
+
+                {{--  listar incidentes  --}}
+
+                
+
+                <li class="nav-item">
+                    <a href="{{route('lista_incidentes')}}" class="nav-link">
+                        <i class="far fa-building nav-icon"></i>
+                        <p>Listar </p>
+                    </a>
+                </li>
+
             </ul>
         </li>
 

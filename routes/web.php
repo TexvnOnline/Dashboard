@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('registrar_imagen', function() {
+    return view('registrar_imagen');
+})->name('registrar_imagen');
+
+
+
+Route::get('panel_incidentes', function() {
+    return view('panel_incidentes');
+})->name('panel_incidentes');
+
+
+
 Route::get('lista_incidentes', function() {
     return view('lista_incidentes1');
 })->name('lista_incidentes');

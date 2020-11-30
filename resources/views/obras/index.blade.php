@@ -6,6 +6,18 @@
     <div class="card-header">
         <h3 class="card-title">Gestión de obras</h3>
         
+        <div class="card-tools">
+            <ul class="nav nav-pills ml-auto">
+              
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('registrar_obra')}}" title="Agregar" >
+                        <i class="fas fa-plus"></i> Registrar obra
+                    </a>
+                </li>
+            </ul>
+        </div>
+
 
     </div>
     <div class="card-body table-responsive p-0">
@@ -40,7 +52,7 @@
 
     <script>
         const xhttp = new XMLHttpRequest();
-        xhttp.open('GET', 'http://smartcityhyo.tk/api/Obra/Listar_Obra.php', true);
+        xhttp.open('GET', 'https://smartcityhyo.tk/api/Obra/Listar_Obra.php', true);
         xhttp.send();
         xhttp.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
@@ -64,7 +76,7 @@
                         <td>${item.Encargado_Nombre}</td>
 
                         <td>
-                            <a  href="/editar_obra" class="btn btn-light"><i class="far fa-edit"></i></a>
+                            <a  href=" /dashboardcity/editar_obra" class="btn btn-light"><i class="far fa-edit"></i></a>
                         </td>
 
                     </tr>
