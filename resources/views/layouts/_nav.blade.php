@@ -359,6 +359,14 @@
                     </a>
                 </li>
             </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{route('livestream')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Camaras</p>
+                    </a>
+                </li>
+            </ul>
         </li>
 
         <li class="nav-item has-treeview">

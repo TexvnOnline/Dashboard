@@ -268,6 +268,9 @@ Route::get('/seguridad', function(){
      return view('seguridad');
  })->name('seguridad');
 
+Route::get('/livestream', function(){
+     return view('livestream');
+ })->name('livestream');
 
  Route::get('/home', 'HomeController@index')->name('home');
 

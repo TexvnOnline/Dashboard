@@ -93,6 +93,22 @@ window.addEventListener('load',getLocations)
           <h5><i class="icon fas fa-exclamation-triangle"></i> Cantidad delitos captados!</h5>
           <h6><ul id=resiste></ul></h6>
         </div>
+        <br>
+        <h3 class="card-title">
+          <i class="fas fa-exclamation-triangle"></i>
+          Visualizar Camaras en vivo
+        </h3>
+        <br>
+        <br>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group me-2" role="group" aria-label="First group">
+            <a href="livestream"><button type="button" class="btn btn-primary">Camara 1</button></a>
+            <button type="button" class="btn btn-primary">Camara 2</button>
+            <button type="button" class="btn btn-primary">Camara 3</button>
+            <button type="button" class="btn btn-primary">Camara 4</button>
+            <button type="button" class="btn btn-primary">Camara 5</button>
+          </div>
+        </div>
       </div>
 </div>
 
